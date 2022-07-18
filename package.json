@@ -1,0 +1,23 @@
+{
+  "name": "ecommerce-microservices",
+  "version": "1.0.0",
+  "description": "This is a basic microservices project for my portfolio ecommerce website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajatKotian/ecommerce-microservices.git"
+  },
+  "author": "Rajat Ramesh Kotian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajatKotian/ecommerce-microservices/issues"
+  },
+  "homepage": "https://github.com/rajatKotian/ecommerce-microservices#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
