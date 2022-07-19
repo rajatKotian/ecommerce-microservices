@@ -1,5 +1,12 @@
-function sayMyName(name: any): void {
-    console.log("You're Again Change 👍");
-}
+import express from 'express'
 
-sayMyName("Heisenberg");
+//Express App declaration
+let app = express()
+
+
+
+
+
+app.listen(2040, () => {
+    console.log(`server is listening on 2040`);
+});

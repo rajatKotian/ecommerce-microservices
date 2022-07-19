@@ -1,5 +1,11 @@
 "use strict";
-function sayMyName(name) {
-    console.log("You're Again Change 👍");
-}
-sayMyName("Heisenberg");
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+//Express App declaration
+let app = (0, express_1.default)();
+app.listen(2040, () => {
+    console.log(`server is listening on 2040`);
+});
