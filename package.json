@@ -4,6 +4,9 @@
   "description": "This is a basic microservices project for my portfolio ecommerce website",
   "main": "app.js",
   "scripts": {
+    "start": "tsc && node src/app.js",
+    "start:dev": "tsc && nodemon src/app.js",
+    "watch": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +22,9 @@
   "dependencies": {
     "express": "^4.18.1",
     "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "typescript": "^4.7.4"
   }
 }
