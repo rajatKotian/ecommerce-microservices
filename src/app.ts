@@ -4,6 +4,10 @@ import express from 'express'
 let app = express()
 
 
+app.get("/", (req, res) => {
+    res.send("Hello Geeks");
+});
+
 
 app.listen(2040, () => {
     console.log(`server is listening on 2040`);
