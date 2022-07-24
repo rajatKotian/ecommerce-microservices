@@ -9,3 +9,4 @@ let app = (0, express_1.default)();
 app.listen(2040, () => {
     console.log(`server is listening on 2040`);
 });
+// mongodb+srv://root:jxVrYmlq9HQo8vR1@cluster0.jcaqg.mongodb.net/?retryWrites=true&w=majority
