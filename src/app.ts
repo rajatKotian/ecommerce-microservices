@@ -2,15 +2,13 @@ import express from 'express'
 
 //Express App declaration
 let app = express()
+let port = process.env.PORT || 3120
 
+app.get('/', (req, res) => {
+    res.send("Every thing is fine")
+})
 
-app.get("/", (req, res) => {
-    res.send("Hello Geeks");
+app.listen(port, () => {
+    console.log(`server is listening on ${port}`);
 });
 
-
-app.listen(2040, () => {
-    console.log(`server is listening on 2040`);
-});
-
-// mongodb+srv://root:jxVrYmlq9HQo8vR1@cluster0.jcaqg.mongodb.net/?retryWrites=true&w=majority

@@ -6,7 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 //Express App declaration
 let app = (0, express_1.default)();
-app.listen(2040, () => {
-    console.log(`server is listening on 2040`);
+let port = process.env.PORT || 3120;
+app.get('/', (req, res) => {
+    res.send("Every thing is fine");
 });
-// mongodb+srv://root:jxVrYmlq9HQo8vR1@cluster0.jcaqg.mongodb.net/?retryWrites=true&w=majority
+app.listen(port, () => {
+    console.log(`server is listening on ${port}`);
+});
