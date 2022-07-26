@@ -1,8 +1,11 @@
 import express from 'express'
+import { AppConfig } from './config'
+
 
 //Express App declaration
 let app = express()
-let port = process.env.PORT || 2000
+let port = AppConfig.get("express:port")
+
 
 
 app.get('/', (req, res) => {
