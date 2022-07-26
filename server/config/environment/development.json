@@ -1,0 +1,8 @@
+{
+    "mongoDB": {
+        "uri": "mongodb+srv://root:jxVrYmlq9HQo8vR1@cluster0.jcaqg.mongodb.net/?retryWrites=true&w=majority"
+    },
+    "express": {
+        "port": 2000
+    }
+}
