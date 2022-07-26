@@ -4,8 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const nconf_1 = __importDefault(require("nconf"));
-const helpers_1 = __importDefault(require("../utils/helpers"));
-let log = helpers_1.default.log;
 let environment = process.env.NODE_ENV || "development";
 let configClient = nconf_1.default.argv()
     .env()

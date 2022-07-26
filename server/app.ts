@@ -1,5 +1,6 @@
 import express from 'express'
 import { AppConfig } from './config'
+import DatabaseClient from './db'
 
 
 //Express App declaration
@@ -13,6 +14,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, async () => {
+    await DatabaseClient.connect()
     console.log(`server is listening on ${port}`);
 });
 
