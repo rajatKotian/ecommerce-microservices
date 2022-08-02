@@ -10,7 +10,7 @@ let port = AppConfig.get("express:port") || 3000
 
 
 app.get('/', (req, res) => {
-    res.send("Every thing is fine")
+    res.send("Every thing is not fine")
 })
 
 app.listen(port, async () => {

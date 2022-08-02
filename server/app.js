@@ -8,7 +8,7 @@ const config_1 = require("./config");
 const db_1 = __importDefault(require("./db"));
 //Express App declaration
 let app = (0, express_1.default)();
-let port = config_1.AppConfig.get("express:port");
+let port = config_1.AppConfig.get("express:port") || 3000;
 app.get('/', (req, res) => {
     res.send("Every thing is fine");
 });
