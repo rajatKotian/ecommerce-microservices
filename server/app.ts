@@ -5,7 +5,7 @@ import DatabaseClient from './db'
 
 //Express App declaration
 let app = express()
-let port = AppConfig.get("express:port")
+let port = AppConfig.get("express:port") || 3000
 
 
 
