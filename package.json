@@ -5,9 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "tsc && node server/app.js",
-    "start:dev": "tsc && nodemon server/app.js",
-    "watch": "tsc -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "nodemon -L server/app.ts"
   },
   "repository": {
     "type": "git",
