@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  ecom-micro:
+    build: .
+    ports:
+      - "3000:6553"
+    volumes:
+      - /Users/rajatkotian/Documents/my_porfolio_projects/ecommerce-microservices:/app
+  redis:
+    image: "redis"
+    ports:
+      - "6379:6379"
+networks:
+  node-network:
+    driver: bridge
