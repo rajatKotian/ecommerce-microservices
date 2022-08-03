@@ -5,14 +5,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const config_1 = require("./config");
-const db_1 = __importDefault(require("./db"));
+const db_1 = require("./db");
 //Express App declaration
 let app = (0, express_1.default)();
 let port = config_1.AppConfig.get("express:port") || 3000;
 app.get('/', (req, res) => {
-    res.send("Every thing will surely be fine");
+    res.send({ success: true, msg: "Routes is working fine" });
 });
 app.listen(port, async () => {
-    await db_1.default.connect();
+    await db_1.DatabaseClient.connect();
     console.log(`server is listening on ${port}`);
 });

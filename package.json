@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "tsc && node server/app.js",
-    "start:dev": "nodemon -L server/app.ts"
+    "start:dev": "tsc && nodemon server/app.js",
+    "watch": "tsc -w",
+    "test": "nodemon -L server/app.ts"
   },
   "repository": {
     "type": "git",
@@ -21,8 +23,7 @@
     "express": "^4.18.1",
     "mongoose": "^6.4.7",
     "nconf": "^0.12.0",
-    "nodemon": "^2.0.19",
-    "redis": "^4.2.0"
+    "nodemon": "^2.0.19"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
