@@ -8,7 +8,6 @@ let app = express()
 let port = AppConfig.get("express:port") || 3000
 
 
-
 app.get('/', (req, res) => {
     res.send({ success: true, msg: "This route is working fine, ofcourse" })
 })
