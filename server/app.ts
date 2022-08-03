@@ -1,6 +1,6 @@
 import express from 'express'
 import { AppConfig } from './config'
-import DatabaseClient from './db'
+import { DatabaseClient } from './db'
 
 
 //Express App declaration
