@@ -1,7 +1,8 @@
 import redis, { createClient } from 'redis';
 import { AppConfig } from '../config';
 import { log } from '../utils/helpers/Logger';
-const { port } = AppConfig.get('redis');
+import { isEmpty } from 'lodash';
+const { port, password } = AppConfig.get('redis');
 
 
 export default class Redis {
@@ -9,21 +10,21 @@ export default class Redis {
     static shared: Redis;
     params: any;
     redisPort: any;
-    constructor() {
-        this.connect()
-    }
+    redisClient = createClient()
+
 
     async connect() {
 
         const client = createClient();
 
-        client.on('error', (err) => {
-            console.log('Redis Client Error', err)
+
+        client.on('error', (error: any) => {
+            console.log('Redis Client Error', error)
         }).on('connect', () => {
             console.log('Redis Client Success')
         });
 
-
+        await client.connect();
     }
 
 }

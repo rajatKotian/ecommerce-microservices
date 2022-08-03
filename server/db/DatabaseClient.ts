@@ -18,7 +18,7 @@ export default class DatabaseClient {
                     reject(error);
                 }
                 else {
-                    console.log("Mongodb connection successful")
+                    console.log("Mongodb connection Successful")
                     resolve({});
                 }
             })
