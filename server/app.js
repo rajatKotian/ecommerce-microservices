@@ -16,9 +16,9 @@ let mongoDB = new db_1.DatabaseClient();
 mongoDB.connect().then(async (res) => {
     await redis.connect();
     app.get('/', (req, res) => {
-        res.send({ success: true, msg: "Routes is working fine" });
+        res.send({ success: true, msg: "Routes changes is working fine" });
+    });
+    app.listen(port, async () => {
+        console.log(`server is listening on ${port}`);
     });
 }).catch();
-app.listen(port, async () => {
-    console.log(`server is listening on ${port}`);
-});

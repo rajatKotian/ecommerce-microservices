@@ -10,21 +10,23 @@ export default class Redis {
     static shared: Redis;
     params: any;
     redisPort: any;
-    redisClient = createClient()
+    client: any;
 
 
     async connect() {
+        let host = "host.docker.internal"
+        this.client = createClient({
+            url: `redis://default@${host}:6379`
+        });
 
-        const client = createClient();
 
-
-        client.on('error', (error: any) => {
+        this.client.on('error', (error: any) => {
             console.log('Redis Client Error', error)
         }).on('connect', () => {
             console.log('Redis Client Success')
         });
 
-        await client.connect();
+        await this.client.connect();
     }
 
 }
