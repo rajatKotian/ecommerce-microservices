@@ -1,14 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const redis_1 = require("redis");
-const Logger_1 = require("../utils/helpers/Logger");
+const config_1 = require("../config");
+const { port } = config_1.AppConfig.get('redis');
 class Redis {
     constructor() {
-        this.redisClient = (0, redis_1.createClient)();
         this.connect();
     }
-    connect() {
-        (0, Logger_1.log)("hello world");
+    async connect() {
+        const client = (0, redis_1.createClient)();
+        client.on('error', (err) => {
+            console.log('Redis Client Error', err);
+        }).on('connect', () => {
+            console.log('Redis Client Success');
+        });
     }
 }
 exports.default = Redis;

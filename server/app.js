@@ -9,10 +9,16 @@ const db_1 = require("./db");
 //Express App declaration
 let app = (0, express_1.default)();
 let port = config_1.AppConfig.get("express:port") || 3000;
-app.get('/', (req, res) => {
-    res.send({ success: true, msg: "Routes is working fine" });
-});
+let { redisPort } = config_1.AppConfig.get("redis");
+//Client Declarations
+let redis = new db_1.RedisClient();
+let mongoDB = new db_1.DatabaseClient();
+mongoDB.connect().then(async (res) => {
+    await redis.connect();
+    app.get('/', (req, res) => {
+        res.send({ success: true, msg: "Routes is working fine" });
+    });
+}).catch();
 app.listen(port, async () => {
-    await db_1.DatabaseClient.connect();
     console.log(`server is listening on ${port}`);
 });

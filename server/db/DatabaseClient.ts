@@ -4,13 +4,23 @@ import { Helper } from '../utils/helpers'
 import { log } from '../utils/helpers/Logger'
 
 export default class DatabaseClient {
+    constructor() {
+        // this.connect()
+    }
 
-    static connect(): Promise<any> {
+    connect(): Promise<any> {
         return new Promise((resolve, reject) => {
             let { uri, options } = AppConfig.get("mongoDB")
 
             Mongoose.connect(uri, options, (error) => {
-                error ? reject(error) : resolve({});
+                if (error) {
+                    console.log("Mongodb connection Unsuccessful")
+                    reject(error);
+                }
+                else {
+                    console.log("Mongodb connection successful")
+                    resolve({});
+                }
             })
         })
     }
