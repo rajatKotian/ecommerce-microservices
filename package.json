@@ -5,9 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start": "tsc && node server/app.js",
-    "start:dev": "tsc && nodemon server/app.js",
+    "start:dev": "NODE_ENV=dev  tsconfig-paths/register tsc && nodemon server/app.js",
     "watch": "tsc -w",
-    "test": "nodemon -L server/app.ts"
+    "test:start": "nodemon -L server/app.ts",
+    "test": "NODE_ENV=test mocha --check-leaks  -r tsconfig-paths/register  \"test/**/*.spec.ts\""
   },
   "repository": {
     "type": "git",
