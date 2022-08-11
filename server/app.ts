@@ -20,6 +20,10 @@ mongoDB.connect().then(async res => {
         res.send({ success: true, msg: "Routes changes is working fine" })
     })
 
+    app.get('/new-endpoint', (req, res) => {
+        res.send({ success: true, msg: "Routes changes is working fine" })
+    })
+
     app.listen(port, async () => {
         console.log(`server is listening on ${port}`);
     });
