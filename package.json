@@ -8,7 +8,7 @@
     "start:dev": "NODE_ENV=dev  tsconfig-paths/register tsc && nodemon server/app.js",
     "watch": "tsc -w",
     "test:start": "nodemon -L server/app.ts",
-    "test": "NODE_ENV=test mocha --check-leaks  -r tsconfig-paths/register  \"test/**/*.spec.ts\""
+    "test": "NODE_ENV=test mocha --check-leaks  -r tsconfig-paths/register -r ts-node/register  \"test/**/*.spec.ts\""
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,8 @@
     "chai": "^4.3.6",
     "mocha": "^10.0.0",
     "supertest": "^6.2.4",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.7.4"
   }
 }
