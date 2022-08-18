@@ -11,7 +11,7 @@ class DatabaseClient {
     }
     connect() {
         return new Promise((resolve, reject) => {
-            let { uri, options } = config_1.AppConfig.get("mongoDB");
+            let { uri, options, dockerUri } = config_1.AppConfig.get("mongoDB");
             mongoose_1.default.connect(uri, options, (error) => {
                 if (error) {
                     console.log("Mongodb connection Unsuccessful");

@@ -2,7 +2,7 @@ import redis, { createClient } from 'redis';
 import { AppConfig } from '../config';
 import { log } from '../utils/helpers/Logger';
 import { isEmpty } from 'lodash';
-const { port, password } = AppConfig.get('redis');
+const { port, host, docker, url, dockerUrl } = AppConfig.get('redis');
 
 
 export default class Redis {
@@ -14,19 +14,17 @@ export default class Redis {
 
 
     async connect() {
-        let host = "host.docker.internal"
         this.client = createClient({
-            url: `redis://default@${host}:6379`
+            url: docker ? dockerUrl : url
         });
 
-
-        this.client.on('error', (error: any) => {
-            console.log('Redis Client Error', error)
-        }).on('connect', () => {
+        this.client.connect().then(() => {
             console.log('Redis Client Success')
-        });
+        }).catch((error: any) => {
+            console.log('Redis Client Error', error)
+        })
 
-        await this.client.connect();
+
     }
 
 }
