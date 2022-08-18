@@ -10,8 +10,7 @@ export default class DatabaseClient {
 
     connect(): Promise<any> {
         return new Promise((resolve, reject) => {
-            let { uri, options } = AppConfig.get("mongoDB")
-
+            let { uri, options, dockerUri } = AppConfig.get("mongoDB")
             Mongoose.connect(uri, options, (error) => {
                 if (error) {
                     console.log("Mongodb connection Unsuccessful")

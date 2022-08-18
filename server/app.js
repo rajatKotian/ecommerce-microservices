@@ -22,3 +22,4 @@ mongoDB.connect().then(async (res) => {
         console.log(`server is listening on ${port}`);
     });
 }).catch();
+exports.default = app;

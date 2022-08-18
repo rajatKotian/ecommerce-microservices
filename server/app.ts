@@ -17,11 +17,13 @@ let mongoDB = new DatabaseClient()
 mongoDB.connect().then(async res => {
     await redis.connect()
     app.get('/', (req, res) => {
-        res.send({ success: true, msg: "Routes changes is working fine" })
+        res.send({ success: true, msg: "Routes changes is working fine really" })
     })
 
     app.listen(port, async () => {
         console.log(`server is listening on ${port}`);
     });
 }).catch()
+
+export default app
 
