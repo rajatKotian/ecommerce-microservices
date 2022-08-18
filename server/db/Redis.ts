@@ -24,7 +24,6 @@ export default class Redis {
             console.log('Redis Client Error', error)
         })
 
-
     }
 
 }
