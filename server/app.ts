@@ -1,5 +1,6 @@
 import express from 'express'
 import { AppConfig } from './config'
+import routes from './apis/routes'
 import { DatabaseClient, RedisClient } from './db'
 import { log } from './utils/helpers/Logger'
 
@@ -19,6 +20,8 @@ mongoDB.connect().then(async res => {
     app.get('/', (req, res) => {
         res.send({ success: true, msg: "Routes changes is working fine really" })
     })
+
+    app.use(routes)
 
     app.listen(port, async () => {
         console.log(`server is listening on ${port}`);
