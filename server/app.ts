@@ -2,7 +2,7 @@ import express from 'express'
 import { AppConfig } from './config'
 import routes from './apis/routes'
 import { DatabaseClient, RedisClient } from './db'
-import { log } from './utils/helpers/Logger'
+import bodyParser from 'body-parser'
 
 
 //Express App declaration
@@ -14,6 +14,10 @@ let { redisPort } = AppConfig.get("redis")
 //Client Declarations
 let redis = new RedisClient()
 let mongoDB = new DatabaseClient()
+
+// Body-parser middleware
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 mongoDB.connect().then(async res => {
     await redis.connect()

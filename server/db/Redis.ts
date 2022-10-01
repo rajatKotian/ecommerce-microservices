@@ -1,6 +1,5 @@
 import redis, { createClient } from 'redis';
 import { AppConfig } from '../config';
-import { log } from '../utils/helpers/Logger';
 import { isEmpty } from 'lodash';
 const { port, host, docker, url, dockerUrl } = AppConfig.get('redis');
 
@@ -18,7 +17,7 @@ export default class Redis {
             url: docker ? dockerUrl : url
         });
 
-        this.client.connect().then(() => {
+        this.client.connect(url).then(() => {
             console.log('Redis Client Success')
         }).catch((error: any) => {
             console.log('Redis Client Error', error)

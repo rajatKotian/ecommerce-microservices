@@ -4,7 +4,7 @@ import { RestController } from "./controllers";
 let router = express.Router();
 let controller = new RestController()
 
-router.get('/test-route', controller.testRoute)
+router.get('/', controller.testRoute)
 
 
 export default router
