@@ -10,7 +10,6 @@ export default class RestController {
             Logger.error("This is an error log");
             res.send({ success: false, msg: error })
         }
-
     }
 
 }
