@@ -8,7 +8,6 @@ import bodyParser from 'body-parser'
 //Express App declaration
 let app = express()
 let port = AppConfig.get("express:port") || 3000
-let { redisPort } = AppConfig.get("redis")
 
 
 //Client Declarations
