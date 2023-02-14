@@ -39,7 +39,6 @@ export default class APIService {
     async call() {
         try {
             const { body, method, endpoint, params, headers } = this.config
-            // await this.initHeaders()
             let url = `${AppConfig.get(`baseURLs:backendUrl`)}${endpoint}`
             this.client.get((endpoint).toString(), {
                 params,
@@ -51,18 +50,6 @@ export default class APIService {
         }
 
     }
-
-    // async initHeaders() {
-    //     try {
-    //         let { headers, } = this.config
-    //         const { isAuth, token } = this.config
-    //         isAuth && (headers = { ...headers, Authorisation: `Bearer ${token}` })
-
-    //     } catch (error) {
-    //         console.log("error", error)
-    //     }
-
-    // }
 
 
 }
