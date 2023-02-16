@@ -1,8 +1,8 @@
 import assert from "assert";
 import Logger from "../../../utils/helpers/Logger";
 import { IAuthService } from "../interface/common.interface";
-import { IUserNew } from "../interface/request";
-import { IServiceLayerResponse } from "../interface/response";
+import { IUser } from "../interface/request";
+import { IServiceLayerResponse, IRepositoryLayerResponse } from "../interface/response";
 import { User } from "../modal/schemas";
 
 export default class ServiceLayer implements IAuthService {
@@ -13,11 +13,11 @@ export default class ServiceLayer implements IAuthService {
     updateUser = async () => { };
     updateOneUser = async () => { };
 
-    createNewUser = async (args: IUserNew) => {
+    createNewUser = async (args: IUser): Promise<IRepositoryLayerResponse> => {
         let response: IServiceLayerResponse;
         try {
 
-            const payload: IUserNew = {
+            const payload: IUser = {
                 firstName: 'Rajat',
                 lastName: 'Kotian',
                 mobile: '9999999999',
@@ -29,12 +29,12 @@ export default class ServiceLayer implements IAuthService {
                 isActive: false,
                 createdBy: "507f191e810c19729de860ea",
             }
-            const user = await new this.User(payload);
-            console.log(user)
+            const user = await new User(payload).save();
+            console.log("USER", user)
             response = { success: true }
         } catch (error) {
             Logger.error("This is an error log", JSON.stringify(error));
-            response = { success: false, error }
+            response = { success: false }
 
         }
         return response

@@ -14,10 +14,11 @@ export default class RestController {
     testRoute = async (req: any, res: any) => {
         try {
             const response = await this.authService.createNewUser(req.body)
-            res.send(200, response)
+            console.log('RESPONSE', response)
+            res.status(400).send(response)
         } catch (error) {
             Logger.error("This is an error log");
-            res.send(400, { success: false, msg: error })
+            res.status(400).send({ success: false, msg: error })
         }
     }
 
