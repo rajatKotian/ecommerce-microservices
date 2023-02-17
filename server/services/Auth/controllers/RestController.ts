@@ -1,14 +1,13 @@
 import assert from "assert";
 import { APIService } from "../../../lib"
 import Logger from "../../../utils/helpers/Logger";
-import { IAuthService } from "../interface/common.interface";
-import ServiceLayer from "../service";
+import AuthServiceLayer from "../service";
 
 
 export default class RestController {
-    private authService: IAuthService;
+    private authService: any;
     constructor() {
-        this.authService = new ServiceLayer();
+        this.authService = new AuthServiceLayer();
     }
 
     testRoute = async (req: any, res: any) => {

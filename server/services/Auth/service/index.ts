@@ -1,15 +1,14 @@
 import assert from "assert";
 import { APIError } from "../../../utils/helpers/errorHandlers/base.error.helper";
 import Logger from "../../../utils/helpers/Logger";
-import { IAuthService } from "../interface/common.interface";
-import { IAuthRepository } from "../interface/repository";
+import { IRepository } from "../interface/repository";
 import { IUser } from "../interface/request";
 import { IServiceLayerResponse, IRepositoryLayerResponse } from "../interface/response";
 import { User } from "../modal/schemas";
 import AuthRepository from "../repository/auth.repository";
 
-export default class ServiceLayer implements IAuthService {
-    authRepository: IAuthRepository;
+export default class AuthServiceLayer {
+    authRepository: IRepository;
     constructor() {
         this.authRepository = new AuthRepository();
         this.createNewUser = this.createNewUser.bind(this);
@@ -19,7 +18,7 @@ export default class ServiceLayer implements IAuthService {
         let response: IServiceLayerResponse;
         try {
             let response: IRepositoryLayerResponse;
-            const data = await this.authRepository.createUser(args);
+            const data = await this.authRepository.create(args);
             assert.ok(false);
             response = { success: true, data }
             return response;

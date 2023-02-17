@@ -1,24 +1,24 @@
 import assert from "assert";
-import { ObjectId } from "mongoose";
-import { IAuthRepository } from "../interface/repository";
+import { ObjectId, Types } from "mongoose";
+import { IRepository } from "../interface/repository";
 import { IUser } from "../interface/request";
 import { IRepositoryLayerResponse } from "../interface/response";
 import { User } from "../modal/schemas";
 
-export default class AuthRepository implements IAuthRepository {
+export default class AuthRepository implements IRepository {
     constructor() {
-        this.createUser = this.createUser.bind(this);
+        this.create = this.create.bind(this);
     }
 
-    createUser = async (args: IUser): Promise<any> => new User(args).save();
+    create = async (args: IUser): Promise<any> => new User(args).save();
 
-    deleteUser = async (args: ObjectId[]): Promise<IRepositoryLayerResponse> => {
+    delete = async (args: ObjectId[]): Promise<IRepositoryLayerResponse> => {
         return { success: true };
     }
-    updateUser = async (query: IUser, payload: IUser): Promise<IRepositoryLayerResponse> => {
+    update = async (query: IUser, payload: IUser): Promise<IRepositoryLayerResponse> => {
         return { success: true };
     };
-    updateOneUser = async (args: ObjectId[], payload: IUser): Promise<IRepositoryLayerResponse> => {
+    updateOne = async (args: ObjectId[], payload: IUser): Promise<IRepositoryLayerResponse> => {
         return { success: true };
     };
     getAll = async (query: IUser): Promise<IRepositoryLayerResponse> => {
