@@ -1,2 +1,2 @@
-import RestController from './RestController'
+import RestController from './rest.controller'
 export { RestController }
