@@ -2,7 +2,7 @@ import assert from "assert";
 import { APIService } from "../../../lib"
 import Logger from "../../../utils/helpers/Logger";
 import { IAuthService } from "../interface/common.interface";
-import ServiceLayer from "../services";
+import ServiceLayer from "../service";
 
 
 export default class RestController {
