@@ -1,3 +1,4 @@
+import assert from "assert";
 import { APIService } from "../../../lib"
 import Logger from "../../../utils/helpers/Logger";
 import { IAuthService } from "../interface/common.interface";
@@ -26,10 +27,11 @@ export default class RestController {
                 createdBy: "507f191e810c19729de860ea",
             }
             const response = await this.authService.createNewUser(req.body)
+            assert.ok(response.success);
             res.status(200).send(response)
         } catch (error) {
             Logger.error("This is an error log");
-            res.status(400).send({ success: false, msg: error })
+            res.status(400).send(error)
         }
     }
 

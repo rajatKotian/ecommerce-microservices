@@ -1,3 +1,4 @@
+import assert from "assert";
 import { ObjectId } from "mongoose";
 import { IAuthRepository } from "../interface/repository";
 import { IUser } from "../interface/request";
@@ -9,15 +10,7 @@ export default class AuthRepository implements IAuthRepository {
         this.createUser = this.createUser.bind(this);
     }
 
-    createUser = async (args: IUser): Promise<IRepositoryLayerResponse> => {
-        try {
-            const user = await new User(args).save();
-            return { success: true, data: user };
-        } catch (error) {
-            return { success: false, error };
-        }
-
-    }
+    createUser = async (args: IUser): Promise<any> => new User(args).save();
 
     deleteUser = async (args: ObjectId[]): Promise<IRepositoryLayerResponse> => {
         return { success: true };

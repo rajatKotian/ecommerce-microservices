@@ -1,5 +1,5 @@
 import winston from 'winston'
-import { LOGGER_CONSTANTS } from "../AppConstants"
+import { LOGGER_CONSTANTS } from "../constants"
 
 // class Logger {
 //     static log(...values: any) {

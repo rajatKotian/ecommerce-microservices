@@ -1,6 +1,6 @@
 import axios, { Axios } from 'axios'
 import { AppConfig } from '../config';
-import { ENVIRONMENTS, REST_METHODS } from '../utils/AppConstants';
+import { ENVIRONMENTS, REST_METHODS } from '../utils/constants';
 
 interface MethodsInterface {
     GET: "get",

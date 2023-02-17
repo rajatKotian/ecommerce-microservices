@@ -1,4 +1,5 @@
 import assert from "assert";
+import { APIError } from "../../../utils/helpers/errorHandlers/base.error.helper";
 import Logger from "../../../utils/helpers/Logger";
 import { IAuthService } from "../interface/common.interface";
 import { IAuthRepository } from "../interface/repository";
@@ -17,11 +18,15 @@ export default class ServiceLayer implements IAuthService {
     createNewUser = async (args: IUser): Promise<IRepositoryLayerResponse> => {
         let response: IServiceLayerResponse;
         try {
-            response = await this.authRepository.createUser(args);
+            let response: IRepositoryLayerResponse;
+            const data = await this.authRepository.createUser(args);
+            assert.ok(false);
+            response = { success: true, data }
+            return response;
+
         } catch (error) {
-            Logger.error("This is an error log", JSON.stringify(error));
-            response = { success: false }
+            Logger.error(JSON.stringify(error));
+            throw new APIError(false, 400, true);
         }
-        return response
     }
 }
