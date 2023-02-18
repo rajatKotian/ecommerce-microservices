@@ -1,21 +1,11 @@
 import winston from 'winston'
 import { LOGGER_CONSTANTS } from "../constants"
 
-// class Logger {
-//     static log(...values: any) {
-//         return console.log(...values)
-//     }
-// }
-
-
-
 const level = () => {
     const env = process.env.NODE_ENV || 'development'
     const isDevelopment = env === 'development'
     return isDevelopment ? 'debug' : 'warn'
 }
-
-
 winston.addColors(LOGGER_CONSTANTS.COLORS)
 
 const format = winston.format.combine(
@@ -25,8 +15,6 @@ const format = winston.format.combine(
         (info) => `${info.timestamp} ${info.level}: ${info.message}`,
     ),
 )
-
-
 
 const transports = [
     new winston.transports.Console(),

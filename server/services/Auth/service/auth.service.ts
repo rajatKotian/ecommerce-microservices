@@ -1,5 +1,5 @@
 import assert from "assert";
-import { APIError } from "../../../utils/helpers/errorHandlers/base.error.helper";
+import { APIError } from "../../../utils/errorHandlers/base.error.helper";
 import Logger from "../../../utils/helpers/Logger";
 import { IRepository } from "../interface/repository";
 import { IUser } from "../interface/request";
