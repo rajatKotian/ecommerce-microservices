@@ -8,14 +8,13 @@ import { User } from "../modal/schemas";
 import AuthRepository from "../repository/auth.repository";
 
 export default class AuthServiceLayer {
-    authRepository: IRepository;
+    private authRepository: IRepository;
     constructor() {
         this.authRepository = new AuthRepository();
         this.createNewUser = this.createNewUser.bind(this);
     }
 
     createNewUser = async (args: IUser): Promise<IRepositoryLayerResponse> => {
-        let response: IServiceLayerResponse;
         try {
             let response: IRepositoryLayerResponse;
             const data = await this.authRepository.create(args);
