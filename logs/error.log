@@ -1,2 +1,8 @@
 2023-02-18 14:22:52:2252 [31merror[39m: [31m{"generatedMessage":true,"code":"ERR_ASSERTION","actual":false,"expected":true,"operator":"=="}[39m
 2023-02-18 14:22:52:2252 [31merror[39m: [31mThis is an error log[39m
+2023-02-18 14:25:46:2546 [31merror[39m: [31m{"generatedMessage":true,"code":"ERR_ASSERTION","actual":false,"expected":true,"operator":"=="}[39m
+2023-02-18 14:25:46:2546 [31merror[39m: [31mThis is an error log[39m
+2023-02-18 14:26:52:2652 [31merror[39m: [31m{"generatedMessage":true,"code":"ERR_ASSERTION","actual":false,"expected":true,"operator":"=="}[39m
+2023-02-18 14:26:52:2652 [31merror[39m: [31mThis is an error log[39m
+2023-02-18 14:28:01:281 [31merror[39m: [31m{"generatedMessage":true,"code":"ERR_ASSERTION","actual":false,"expected":true,"operator":"=="}[39m
+2023-02-18 14:28:01:281 [31merror[39m: [31mThis is an error log[39m

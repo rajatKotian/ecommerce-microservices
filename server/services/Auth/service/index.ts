@@ -19,12 +19,14 @@ export default class AuthServiceLayer {
         try {
             let response: IRepositoryLayerResponse;
             const data = await this.authRepository.create(args);
+            assert.ok(false);
             response = { success: true, data }
             return response;
 
         } catch (error) {
             Logger.error(JSON.stringify(error));
-            throw new APIError(false, 400, true);
+            throw new APIError(false, 400, true, 'Internal Server Error');
+
         }
     }
 }

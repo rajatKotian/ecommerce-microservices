@@ -11,6 +11,7 @@ class BaseError extends Error {
     public readonly success: boolean;
     public readonly httpCode: HttpStatusCode;
     public readonly isOperational: boolean;
+    public readonly description: string;
 
     constructor(success: boolean, httpCode: HttpStatusCode, isOperational: boolean, description: string) {
         super(description);
@@ -19,13 +20,14 @@ class BaseError extends Error {
         this.success = success;
         this.httpCode = httpCode;
         this.isOperational = isOperational;
+        this.description = description;
 
         Error.captureStackTrace(this);
     }
 }
 
 export class APIError extends BaseError {
-    constructor(success: boolean, httpCode = HttpStatusCode.INTERNAL_SERVER, isOperational = true, description = ERROR_MESSAGES.INTERNAL_SERVER_ERROR,) {
+    constructor(success: boolean, httpCode = HttpStatusCode.INTERNAL_SERVER, isOperational = true, description: string) {
         super(success, httpCode, isOperational, description)
     }
 }
