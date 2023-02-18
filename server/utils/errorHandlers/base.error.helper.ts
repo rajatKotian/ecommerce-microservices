@@ -13,7 +13,7 @@ class BaseError extends Error {
     public readonly isOperational: boolean;
     public readonly description: string;
 
-    constructor(success: boolean, httpCode: HttpStatusCode, isOperational: boolean, description: string) {
+    constructor(success: boolean, httpCode: HttpStatusCode, isOperational: boolean, description: any) {
         super(description);
         Object.setPrototypeOf(this, new.target.prototype);
 
@@ -27,7 +27,7 @@ class BaseError extends Error {
 }
 
 export class APIError extends BaseError {
-    constructor(success: boolean, httpCode = HttpStatusCode.INTERNAL_SERVER, isOperational = true, description: string) {
+    constructor(success: boolean, httpCode = HttpStatusCode.INTERNAL_SERVER, isOperational = true, description: any) {
         super(success, httpCode, isOperational, description)
     }
 }

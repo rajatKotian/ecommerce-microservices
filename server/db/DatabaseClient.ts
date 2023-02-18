@@ -1,6 +1,5 @@
 import Mongoose from 'mongoose'
 import { AppConfig } from '../config'
-import { Helper } from '../utils/helpers'
 
 export default class DatabaseClient {
     constructor() {

@@ -18,7 +18,6 @@ export default class AuthServiceLayer {
         try {
             let response: IRepositoryLayerResponse;
             const data = await this.authRepository.create(args);
-            assert.ok(false);
             response = { success: true, data }
             return response;
 

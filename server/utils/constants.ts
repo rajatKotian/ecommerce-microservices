@@ -12,7 +12,9 @@ export const REST_METHODS = Object.freeze({
     PATCH: "patch",
 })
 export const ERROR_MESSAGES = Object.freeze({
-    INTERNAL_SERVER_ERROR: "Internal Server Error"
+    INTERNAL_SERVER_ERROR: "Internal Server Error",
+    EMAIL_VALIDATION: "Email id cannot be empty",
+    PASSWORD_VALIDATION: "Password cannot be empty"
 })
 
 export const LOGGER_CONSTANTS = Object.freeze({
