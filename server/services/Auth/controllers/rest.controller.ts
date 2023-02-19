@@ -26,20 +26,21 @@ export default class RestController {
         }
     }
 
-    registerUser = async (req: any, res: any) => {
+    register = async (req: any, res: any) => {
         try {
-            const errors = checkErrors(req);
-            const response = await this.authService.createNewUser(req.body)
+            checkErrors(req);
+            const response = await this.authService.registerNewUser(req.body)
             assert.ok(response.success);
             res.status(200).send(response)
         } catch (error) {
             res.status(400).send(error)
         }
     }
-    loginUser = async (req: any, res: any) => {
+
+    login = async (req: any, res: any) => {
         try {
-            const errors = checkErrors(req);
-            const response = await this.authService.createNewUser(req.body)
+            checkErrors(req);
+            const response = await this.authService.loginUser(req.body)
             assert.ok(response.success);
             res.status(200).send(response)
         } catch (error) {

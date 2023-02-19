@@ -11,10 +11,10 @@ export default class AuthServiceLayer {
     private authRepository: IRepository;
     constructor() {
         this.authRepository = new AuthRepository();
-        this.createNewUser = this.createNewUser.bind(this);
+        this.registerNewUser = this.registerNewUser.bind(this);
     }
 
-    createNewUser = async (args: IUser): Promise<IRepositoryLayerResponse> => {
+    registerNewUser = async (args: IUser): Promise<IRepositoryLayerResponse> => {
         try {
             let response: IRepositoryLayerResponse;
             const data = await this.authRepository.create(args);
