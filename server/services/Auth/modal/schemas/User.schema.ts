@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
+import { AppConfig } from "../../../../config";
 
 let Schema = mongoose.Schema;
 
@@ -66,7 +67,34 @@ let userSchema = new Schema({
     },
 
 }, { timestamps: true });
+
+userSchema.pre("save", function (next) {
+    const user = this
+    const salt = AppConfig.get('passwordSalt');
+
+    if (this.isModified("password") || this.isNew) {
+        bcrypt.genSalt(10, function (saltError, salt) {
+            if (saltError) {
+                return next(saltError)
+            } else {
+                bcrypt.hash(user?.password || '', salt, function (hashError, hash) {
+                    if (hashError) {
+                        return next(hashError)
+                    }
+
+                    user.password = hash
+                    next()
+                })
+            }
+        })
+    } else {
+        return next()
+    }
+})
+
 userSchema.index({ firstName: "text", lastName: "text" });
+
+
 
 interface IUserModel extends IUser, mongoose.Document { }
 export default mongoose.model<IUserModel>('users', userSchema);
