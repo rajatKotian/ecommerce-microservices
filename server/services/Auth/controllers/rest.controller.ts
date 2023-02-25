@@ -10,12 +10,9 @@ import { AuthService } from "../service";
 
 export default class RestController {
     private authService: any;
-    private helper: any;
-    private encrypt: IEncryption;
 
     constructor() {
         this.authService = new AuthService();
-        this.encrypt = new Encrypt();
     }
 
     testRoute = async (req: any, res: any) => {
