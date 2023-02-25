@@ -5,6 +5,7 @@ import { Encrypt } from "../../../utils/encryptionHelper";
 import { checkErrors } from "../../../utils/helpers";
 import Logger from "../../../utils/helpers/Logger";
 import { IEncryption } from "../../../utils/interface";
+import { IServiceLayerResponse } from "../interface/response";
 import { AuthService } from "../service";
 
 
@@ -27,10 +28,9 @@ export default class RestController {
         try {
             checkErrors(req);
             const response = await this.authService.registerNewUser(req.body)
-            assert.ok(response.success);
-            res.status(200).send(response)
-        } catch (error) {
-            res.status(400).send(error)
+            res.status(response.httpCode).send(response)
+        } catch (error: any) {
+            res.status(error?.httpCode || 500).send(error)
         }
     }
 

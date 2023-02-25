@@ -13,3 +13,4 @@
 2023-02-18 15:46:19:4619 [31merror[39m: [31mThis is an error log[39m
 2023-02-18 15:47:06:476 [31merror[39m: [31mThis is an error log[39m
 2023-02-19 11:54:34:5434 [31merror[39m: [31mThis is an error log[39m
+2023-02-25 20:29:47:2947 [31merror[39m: [31m{"generatedMessage":true,"code":"ERR_ASSERTION","actual":false,"expected":true,"operator":"=="}[39m
