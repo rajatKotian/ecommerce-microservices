@@ -21,6 +21,24 @@ export const ERROR_MESSAGES = Object.freeze({
     FIRSTNAME_VALIDATION: "FirstName cannot be empty",
     PASSWORD_VALIDATION: "Password cannot be empty"
 })
+export const HTTP_SUCCESS_STATUS_CODE = Object.freeze({
+    OK: 200,
+    CREATED: 201,
+    ACCEPTED: 202,
+    PARTIAL_INFORMATION: 203,
+    NO_INFORMATION: 204,
+})
+
+export const HTTP_ERROR_STATUS_CODE = Object.freeze({
+    BAD_REQUEST: 400,
+    UNAUTHORIZED: 401,
+    PAYMENT_REQUIRED: 402,
+    FORBIDDEN: 403,
+    NOT_FOUND: 404,
+    INTERNAL_SERVER: 500,
+    NOT_IMPLEMENTED: 501,
+})
+
 
 export const LOGGER_CONSTANTS = Object.freeze({
     COLORS: {

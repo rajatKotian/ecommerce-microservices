@@ -1,11 +1,13 @@
 import assert from "assert";
-import { APIError } from "../../../utils/errorHandlers/base.error.helper";
+import { APIError } from "../../../utils/responseHandlers/error.helper";
 import Logger from "../../../utils/helpers/Logger";
 import { IRepository } from "../interface/repository";
 import { IUser } from "../interface/request";
-import { IServiceLayerResponse, IRepositoryLayerResponse } from "../interface/response";
+import { IServiceLayerResponse } from "../interface/response";
 import { User } from "../modal/schemas";
 import AuthRepository from "../repository/auth.repository";
+import { APISuccess } from "../../../utils/responseHandlers/success.helper";
+import { ERROR_MESSAGES, HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE } from "../../../utils/constants";
 
 export default class AuthServiceLayer {
     private authRepository: IRepository;
@@ -14,17 +16,21 @@ export default class AuthServiceLayer {
         this.registerNewUser = this.registerNewUser.bind(this);
     }
 
-    registerNewUser = async (args: IUser): Promise<IRepositoryLayerResponse> => {
+    registerNewUser = async (args: IUser): Promise<IServiceLayerResponse> => {
         try {
-            let response: IRepositoryLayerResponse;
             const data = await this.authRepository.create(args);
-            response = { success: true, data }
-            return response;
+            return new APISuccess(
+                true, HTTP_SUCCESS_STATUS_CODE.CREATED, data
+            );
 
         } catch (error) {
             Logger.error(JSON.stringify(error));
-            throw new APIError(false, 400, true, 'Internal Server Error');
-
+            throw new APIError(
+                false,
+                HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER,
+                true,
+                ERROR_MESSAGES.INTERNAL_SERVER_ERROR
+            );
         }
     }
 }

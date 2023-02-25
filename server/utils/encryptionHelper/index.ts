@@ -1,4 +1,3 @@
-import { Cipher } from 'crypto';
 import cryptoJS from 'crypto-js';
 import { AppConfig } from '../../config';
 import { IEncryption } from '../interface';
