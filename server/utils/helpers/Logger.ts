@@ -19,7 +19,7 @@ const format = winston.format.combine(
 const transports = [
     new winston.transports.Console(),
     new winston.transports.File({
-        filename: 'logs/error.log',
+        filename: '/Users/rajatkotian/Documents/my_porfolio_projects/ecommerce-microservices/server/logs/error.log',
         level: 'error',
     }),
     new winston.transports.File({ filename: 'logs/all.log' }),

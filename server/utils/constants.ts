@@ -19,7 +19,8 @@ export const ERROR_MESSAGES = Object.freeze({
     MOBILE_VALIDATION: "Add a valid mobile number and countryCode",
     EMAIL_VALIDATION: "Email id cannot be empty",
     FIRSTNAME_VALIDATION: "FirstName cannot be empty",
-    PASSWORD_VALIDATION: "Password cannot be empty"
+    PASSWORD_VALIDATION: "Password cannot be empty",
+    INVALID_CREDENTIALS: "Sorry! Invalid Credentials"
 })
 export const HTTP_SUCCESS_STATUS_CODE = Object.freeze({
     OK: 200,

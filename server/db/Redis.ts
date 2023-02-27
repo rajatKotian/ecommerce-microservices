@@ -2,6 +2,7 @@ import redis, { createClient } from 'redis';
 import { AppConfig } from '../config';
 import { isEmpty } from 'lodash';
 const { port, host, docker, url, dockerUrl } = AppConfig.get('redis');
+import session from 'express-session'
 
 
 export default class Redis {

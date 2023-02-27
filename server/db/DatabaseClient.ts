@@ -8,7 +8,7 @@ export default class DatabaseClient {
             Mongoose.set('strictQuery', true);
             Mongoose.connect(uri, options, (error) => {
                 if (error) {
-                    console.log("Mongodb connection Unsuccessful")
+                    console.log("Mongodb connection Failed")
                     reject(error);
                 }
                 else {

@@ -12,7 +12,7 @@ export default class AuthRepository implements IRepository {
 
     create = async (args: IUser): Promise<any> => new User(args).save();
 
-    delete = async (args: ObjectId[]): Promise<IRepositoryLayerResponse> => {
+    delete = async (args: ObjectId[]): Promise<any> => {
         return { success: true };
     }
     update = async (query: IUser, payload: IUser): Promise<IRepositoryLayerResponse> => {
@@ -24,8 +24,6 @@ export default class AuthRepository implements IRepository {
     getAll = async (query: IUser): Promise<IRepositoryLayerResponse> => {
         return { success: true };
     };
-    getOne = async (args: ObjectId): Promise<IRepositoryLayerResponse> => {
-        return { success: true };
-    }
 
+    getOne = async (query: IUser): Promise<any> => User.findOne(query)
 }

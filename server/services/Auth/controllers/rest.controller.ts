@@ -1,11 +1,7 @@
 import assert from "assert";
-import { validationResult } from "express-validator";
-import { APIService } from "../../../lib"
-import { Encrypt } from "../../../utils/encryptionHelper";
+import { HTTP_ERROR_STATUS_CODE } from "../../../utils/constants";
 import { checkErrors } from "../../../utils/helpers";
 import Logger from "../../../utils/helpers/Logger";
-import { IEncryption } from "../../../utils/interface";
-import { IServiceLayerResponse } from "../interface/response";
 import { AuthService } from "../service";
 
 
@@ -29,8 +25,9 @@ export default class RestController {
             checkErrors(req);
             const response = await this.authService.registerNewUser(req.body)
             res.status(response.httpCode).send(response)
-        } catch (error: any) {
-            res.status(error?.httpCode || 500).send(error)
+        } catch (error) {
+            Logger.error(error);
+            res.status(HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER).send(error)
         }
     }
 
@@ -41,7 +38,8 @@ export default class RestController {
             assert.ok(response.success);
             res.status(200).send(response)
         } catch (error) {
-            res.status(400).send(error)
+            Logger.error(error);
+            res.status(HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER).send(error)
         }
     }
 }

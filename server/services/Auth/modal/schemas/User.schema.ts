@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import { AppConfig } from "../../../../config";
+import { ERROR_MESSAGES } from "../../../../utils/constants";
+import Logger from "../../../../utils/helpers/Logger";
 
 let Schema = mongoose.Schema;
 
@@ -16,7 +18,7 @@ export interface IUser {
     isActive: boolean;
     createdBy: string;
     updatedBy: string;
-    comparePassword(candidatePassword: string): Promise<boolean>;
+    checkPassword(candidatePassword: string | undefined): Promise<boolean>;
 };
 
 let userSchema = new Schema({
@@ -45,6 +47,11 @@ let userSchema = new Schema({
         type: String,
         required: false
     },
+    isActive: {
+        type: Boolean,
+        required: true,
+        default: true
+    },
     isEmailVerified: {
         type: Boolean,
         required: true,
@@ -70,7 +77,6 @@ let userSchema = new Schema({
 
 userSchema.pre("save", function (next) {
     const user = this
-    const salt = AppConfig.get('passwordSalt');
 
     if (this.isModified("password") || this.isNew) {
         bcrypt.genSalt(10, function (saltError, salt) {
@@ -81,7 +87,6 @@ userSchema.pre("save", function (next) {
                     if (hashError) {
                         return next(hashError)
                     }
-
                     user.password = hash
                     next()
                 })
@@ -91,6 +96,11 @@ userSchema.pre("save", function (next) {
         return next()
     }
 })
+
+userSchema.methods.checkPassword = async function (password: string): Promise<boolean> {
+    Logger.debug(`${password} ${this.password}`)
+    return await bcrypt.compare(password, this.password);
+};
 
 userSchema.index({ firstName: "text", lastName: "text" });
 
