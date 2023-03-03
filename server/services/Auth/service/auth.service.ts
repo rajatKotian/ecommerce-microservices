@@ -11,6 +11,7 @@ import Logger from "../../../utils/helpers/Logger";
 import passport from "passport";
 import jwt from "jsonwebtoken";
 import { AppConfig } from "../../../config";
+import Redis from "../../../db/Redis";
 
 export default class AuthServiceLayer {
     private authRepository: IRepository;
@@ -51,44 +52,19 @@ export default class AuthServiceLayer {
                 email: args?.email,
                 isActive: true
             });
-            await data.checkPassword(args?.password)
-
-            if (!args.email) {
-                new APISuccess(
-                    false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, ERROR_MESSAGES.EMAIL_VALIDATION
-                );
-            }
-            else if (!args.password) {
+            const checkPassword = await data.checkPassword(args?.password)
+            if (!checkPassword) {
                 return new APISuccess(
-                    false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, ERROR_MESSAGES.PASSWORD_VALIDATION
+                    false, HTTP_ERROR_STATUS_CODE.NOT_FOUND, ERROR_MESSAGES.INCORRECT_PASSWORD
                 );
-            }
-            else {
-                passport.authenticate("local", function (err: any, user: IUser) {
-                    if (err) {
-                        return new APISuccess(
-                            false, HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER, ERROR_MESSAGES.INTERNAL_SERVER_ERROR
-                        );
-                    }
-                    else {
-                        if (!user) {
-                            return new APISuccess(
-                                false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, ERROR_MESSAGES.INVALID_CREDENTIALS
-                            );
-                        }
-                        else {
-                            const token = jwt.sign({ userId: user._id, username: user.email }, secretkey, { expiresIn: "24h" });
-                            return new APISuccess(
-                                false, HTTP_SUCCESS_STATUS_CODE.ACCEPTED, { token }
-                            );
-                        }
-                    }
-                })
-            }
 
+            }
+            const token = jwt.sign({
+                name: `${data?.firstName} ${data?.lastName}`, email: args?.email
+            }, secretkey, { expiresIn: "24h" });
 
             return new APISuccess(
-                true, HTTP_SUCCESS_STATUS_CODE.CREATED, data
+                true, HTTP_SUCCESS_STATUS_CODE.ACCEPTED, { token }
             );
 
         } catch (error) {

@@ -36,26 +36,28 @@ mongoDB.connect().then(async res => {
     };
 
     await redis.connect()
+    let accessLogStream = fs.createWriteStream(path.join(__dirname, '/logs/access.log'), { flags: 'a' })
+
+    //Set middleware;
+    app.use(
+        (req: any, res: any, next) => {
+            req.redisClient = req?.redisClient ?? redis;
+            next();
+        },
+        session(expressSession),
+        passport.initialize(),
+        passport.session(),
+        morgan('combined', { stream: accessLogStream }),
+        routes
+    );
 
     app.get('/', (req, res) => {
         res.send({ success: true, msg: "Routes changes is working fine really" })
     })
-    app.use(session(expressSession))
-
-    app.use(passport.initialize());
-    app.use(passport.session());
-
     if (AppConfig.get('environment') === 'production') {
         app.set('trust proxy', 1) // trust first proxy
         expressSession.cookie.secure = true // serve secure cookies
     }
-
-
-    let accessLogStream = fs.createWriteStream(path.join(__dirname, '/logs/access.log'), { flags: 'a' })
-
-    app.use(morgan('combined', { stream: accessLogStream }))
-
-    app.use(routes)
 
     app.listen(port, async () => {
         console.log(`Server is listening on ${port}`);

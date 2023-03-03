@@ -26,4 +26,15 @@ export default class Redis {
 
     }
 
+    async setKey(key: string, value: any) {
+        await this.client.set(key, value);
+    }
+
+    async getKey(key: string) {
+        await this.client.get(key);
+    }
+
+    async expire(key: any, time: any) {
+        this.client.expire(key, parseInt(time));
+    };
 }

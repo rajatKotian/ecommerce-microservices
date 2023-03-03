@@ -21,7 +21,8 @@ export const ERROR_MESSAGES = Object.freeze({
     FIRSTNAME_VALIDATION: "FirstName cannot be empty",
     PASSWORD_VALIDATION: "Password cannot be empty",
     INVALID_CREDENTIALS: "Sorry! Invalid Credentials",
-    USER_EXISTS: "User already Exists, Try logging in!"
+    USER_EXISTS: "User already Exists, Try logging in!",
+    INCORRECT_PASSWORD: "Invalid email or password"
 })
 export const HTTP_SUCCESS_STATUS_CODE = Object.freeze({
     OK: 200,

@@ -35,7 +35,6 @@ export default class RestController {
         try {
             checkErrors(req);
             const response = await this.authService.loginUser(req.body)
-            assert.ok(response.success);
             res.status(200).send(response)
         } catch (error) {
             Logger.error(error);
