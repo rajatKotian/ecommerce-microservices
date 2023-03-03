@@ -15,6 +15,8 @@ import Redis from "../../../db/Redis";
 
 export default class AuthServiceLayer {
     private authRepository: IRepository;
+    private secretkey: string = AppConfig.get('passport:secret')
+
     constructor() {
         this.authRepository = new AuthRepository();
         this.registerNewUser = this.registerNewUser.bind(this);
@@ -47,7 +49,6 @@ export default class AuthServiceLayer {
 
     loginUser = async (args: { email: string, password: string }): Promise<IServiceLayerResponse> => {
         try {
-            const secretkey = AppConfig.get('passport:secret')
             const data: any = await this.authRepository.getOne({
                 email: args?.email,
                 isActive: true
@@ -57,11 +58,11 @@ export default class AuthServiceLayer {
                 return new APISuccess(
                     false, HTTP_ERROR_STATUS_CODE.NOT_FOUND, ERROR_MESSAGES.INCORRECT_PASSWORD
                 );
-
             }
+
             const token = jwt.sign({
                 name: `${data?.firstName} ${data?.lastName}`, email: args?.email
-            }, secretkey, { expiresIn: "24h" });
+            }, this.secretkey, { expiresIn: "24h" });
 
             return new APISuccess(
                 true, HTTP_SUCCESS_STATUS_CODE.ACCEPTED, { token }
