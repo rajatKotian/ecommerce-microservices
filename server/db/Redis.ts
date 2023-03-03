@@ -14,15 +14,15 @@ export default class Redis {
 
 
     async connect() {
-        this.client = createClient({
-            url: docker ? dockerUrl : url
-        });
-
-        this.client.connect(url).then(() => {
+        try {
+            this.client = createClient({
+                url: docker ? dockerUrl : url
+            });
+            await this.client.connect(url)
             console.log('Redis Client Success')
-        }).catch((error: any) => {
+        } catch (error) {
             console.log('Redis Client Error', error)
-        })
+        }
 
     }
 
@@ -31,10 +31,10 @@ export default class Redis {
     }
 
     async getKey(key: string) {
-        await this.client.get(key);
+        return await this.client.get(key);
     }
 
-    async expire(key: any, time: any) {
-        this.client.expire(key, parseInt(time));
+    async expire(key: string, time: any) {
+        await this.client.expire(key, parseInt(time));
     };
 }
