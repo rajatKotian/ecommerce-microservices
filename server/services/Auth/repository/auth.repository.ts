@@ -12,6 +12,11 @@ export default class AuthRepository implements IRepository {
 
     create = async (args: IUser): Promise<any> => new User(args).save();
 
+    exists = async (args: IUser): Promise<any> => {
+        const user: IUser[] = await User.find(args)
+        return user.length !== 0
+    };
+
     delete = async (args: ObjectId[]): Promise<any> => {
         return { success: true };
     }

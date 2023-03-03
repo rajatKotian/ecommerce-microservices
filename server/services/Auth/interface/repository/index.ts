@@ -5,6 +5,7 @@ import { IRepositoryLayerResponse } from "../response"
 export interface IRepository {
     create: (args: IUser) => Promise<any>
     delete: (args: ObjectId[]) => Promise<IRepositoryLayerResponse>
+    exists: (query: IUser) => Promise<any>
     update: (query: IUser, payload: IUser) => Promise<IRepositoryLayerResponse>
     updateOne: (args: ObjectId[], payload: IUser) => Promise<IRepositoryLayerResponse>
     getOne: (query: IUser) => Promise<any>

@@ -1,0 +1,2 @@
+2023-03-03 20:05:19:519 [31merror[39m: [31m{"generatedMessage":true,"code":"ERR_ASSERTION","actual":false,"expected":true,"operator":"=="}[39m
+2023-03-03 20:05:19:519 [31merror[39m: [31mInternal Server Error[39m

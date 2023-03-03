@@ -8,6 +8,9 @@ import AuthRepository from "../repository/auth.repository";
 import { APISuccess } from "../../../utils/responseHandlers/success.helper";
 import { ERROR_MESSAGES, HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE, LOGGER_CONSTANTS } from "../../../utils/constants";
 import Logger from "../../../utils/helpers/Logger";
+import passport from "passport";
+import jwt from "jsonwebtoken";
+import { AppConfig } from "../../../config";
 
 export default class AuthServiceLayer {
     private authRepository: IRepository;
@@ -18,6 +21,13 @@ export default class AuthServiceLayer {
 
     registerNewUser = async (args: IUser): Promise<IServiceLayerResponse> => {
         try {
+            console.log(args);
+            const userExist = await this.authRepository.exists({ email: args?.email });
+            if (userExist) {
+                return new APISuccess(
+                    false, HTTP_ERROR_STATUS_CODE.FORBIDDEN, ERROR_MESSAGES.USER_EXISTS
+                );
+            }
             const data = await this.authRepository.create(args);
             return new APISuccess(
                 true, HTTP_SUCCESS_STATUS_CODE.CREATED, data
@@ -36,11 +46,47 @@ export default class AuthServiceLayer {
 
     loginUser = async (args: { email: string, password: string }): Promise<IServiceLayerResponse> => {
         try {
+            const secretkey = AppConfig.get('passport:secret')
             const data: any = await this.authRepository.getOne({
                 email: args?.email,
                 isActive: true
             });
             await data.checkPassword(args?.password)
+
+            if (!args.email) {
+                new APISuccess(
+                    false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, ERROR_MESSAGES.EMAIL_VALIDATION
+                );
+            }
+            else if (!args.password) {
+                return new APISuccess(
+                    false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, ERROR_MESSAGES.PASSWORD_VALIDATION
+                );
+            }
+            else {
+                passport.authenticate("local", function (err: any, user: IUser) {
+                    if (err) {
+                        return new APISuccess(
+                            false, HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER, ERROR_MESSAGES.INTERNAL_SERVER_ERROR
+                        );
+                    }
+                    else {
+                        if (!user) {
+                            return new APISuccess(
+                                false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, ERROR_MESSAGES.INVALID_CREDENTIALS
+                            );
+                        }
+                        else {
+                            const token = jwt.sign({ userId: user._id, username: user.email }, secretkey, { expiresIn: "24h" });
+                            return new APISuccess(
+                                false, HTTP_SUCCESS_STATUS_CODE.ACCEPTED, { token }
+                            );
+                        }
+                    }
+                })
+            }
+
+
             return new APISuccess(
                 true, HTTP_SUCCESS_STATUS_CODE.CREATED, data
             );
