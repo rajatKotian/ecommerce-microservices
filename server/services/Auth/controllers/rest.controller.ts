@@ -14,7 +14,7 @@ export default class RestController {
         this.authService = new AuthService();
     }
 
-    testRoute = async (req: any, res: any) => {
+    testRoute = async (req: Request, res: any) => {
         try {
             res.status(200).send('This route is working well')
         } catch (error) {
