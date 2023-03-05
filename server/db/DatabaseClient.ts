@@ -1,5 +1,6 @@
 import Mongoose from 'mongoose'
 import { AppConfig } from '../config'
+import Logger from '../utils/helpers/Logger';
 
 export default class DatabaseClient {
     connect(): Promise<any> {
@@ -8,11 +9,11 @@ export default class DatabaseClient {
             Mongoose.set('strictQuery', true);
             Mongoose.connect(uri, options, (error) => {
                 if (error) {
-                    console.log("Mongodb connection Failed")
+                    Logger.info("Mongodb connection Failed")
                     reject(error);
                 }
                 else {
-                    console.log("Mongodb connection Successful")
+                    Logger.info("Mongodb connection Successful")
                     resolve({});
                 }
             })

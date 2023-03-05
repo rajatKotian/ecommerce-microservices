@@ -51,3 +51,13 @@
 2023-03-05 19:44:18:4418 [32minfo[39m: [32mRajat Kotian rajat.kotian@gmail.com[39m
 2023-03-05 19:45:27:4527 [34mdebug[39m: [34m123123123123 $2a$10$t2Qk4qnxqVedMqfF4TSDN.zTnL4oVCsWWcgn/ol/1wBNqs/SX7PVy[39m
 2023-03-05 19:45:27:4527 [32minfo[39m: [32mRajat Kotian rajat.kotian@gmail.com[39m
+2023-03-05 20:03:15:315 [31merror[39m: [31mRedis Client Success[39m
+2023-03-05 20:03:41:341 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-05 20:03:41:341 [31merror[39m: [31mRedis Client Success[39m
+2023-03-05 20:03:41:341 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-05 20:04:14:414 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-05 20:04:14:414 [31merror[39m: [31mRedis Client Success[39m
+2023-03-05 20:04:14:414 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-05 20:04:34:434 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-05 20:04:34:434 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-05 20:04:34:434 [32minfo[39m: [32mServer is listening on 6553[39m

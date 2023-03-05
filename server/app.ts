@@ -11,6 +11,7 @@ import { AppConfig } from './config'
 import routes from './apis/routes'
 import { DatabaseClient, RedisClient } from './db'
 import { redisMiddleware } from './services/Auth/utils/middleware/redis'
+import Logger from './utils/helpers/Logger'
 
 
 
@@ -54,12 +55,12 @@ mongoDB.connect().then(async res => {
         res.send({ success: true, msg: "Routes changes is working fine really" })
     })
     if (AppConfig.get('environment') === 'production') {
-        app.set('trust proxy', 1) // trust first proxy
-        expressSession.cookie.secure = true // serve secure cookies
+        app.set('trust proxy', 1)
+        expressSession.cookie.secure = true 
     }
 
     app.listen(port, async () => {
-        console.log(`Server is listening on ${port}`);
+        Logger.info(`Server is listening on ${port}`);
     });
 })
 

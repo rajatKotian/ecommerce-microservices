@@ -3,6 +3,7 @@ import { AppConfig } from '../config';
 import { isEmpty } from 'lodash';
 const { port, host, docker, url, dockerUrl } = AppConfig.get('redis');
 import session from 'express-session'
+import Logger from '../utils/helpers/Logger';
 
 
 export default class Redis {
@@ -17,9 +18,9 @@ export default class Redis {
                 url: docker ? dockerUrl : url
             });
             await this.client.connect(url)
-            console.log('Redis Client Success')
+            Logger.info('Redis Client Success')
         } catch (error) {
-            console.log('Redis Client Error', error)
+            Logger.error('Redis Client Error', error)
         }
 
     }

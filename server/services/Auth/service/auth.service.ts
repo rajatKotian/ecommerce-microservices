@@ -20,7 +20,6 @@ export default class AuthServiceLayer implements IAuthService {
 
     registerNewUser = async (req: Request, args: IUser): Promise<IServiceLayerResponse> => {
         try {
-            console.log(args);
             const userExist = await this.authRepository.exists({ email: args?.email });
             if (userExist) {
                 return new APISuccess(
