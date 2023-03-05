@@ -3,19 +3,15 @@ import { APIError } from "../../../utils/responseHandlers/error.helper";
 import { IRepository } from "../interface/repository";
 import { IUser } from "../interface/request";
 import { IServiceLayerResponse } from "../interface/response";
-import { User } from "../modal/schemas";
 import AuthRepository from "../repository/auth.repository";
 import { APISuccess } from "../../../utils/responseHandlers/success.helper";
 import { ERROR_MESSAGES, HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE, LOGGER_CONSTANTS } from "../../../utils/constants";
 import Logger from "../../../utils/helpers/Logger";
-import passport from "passport";
-import jwt from "jsonwebtoken";
-import { AppConfig } from "../../../config";
-import Redis from "../../../db/Redis";
 import { Request } from "express";
 import { initiateSession } from "../utils/helpers/session";
+import { IAuthService } from "../interface/service";
 
-export default class AuthServiceLayer {
+export default class AuthServiceLayer implements IAuthService {
     private authRepository: IRepository;
     constructor() {
         this.authRepository = new AuthRepository();
