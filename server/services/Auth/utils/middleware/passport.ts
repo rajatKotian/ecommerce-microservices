@@ -3,11 +3,8 @@ import passport from "passport";
 import passportJWT from "passport-jwt"
 import passportLocal from 'passport-local'
 import { AppConfig } from "../../../../config";
-import Redis from "../../../../db/Redis";
 import { ERROR_MESSAGES, HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE } from "../../../../utils/constants";
-import Logger from "../../../../utils/helpers/Logger";
 import { APIError } from "../../../../utils/responseHandlers/error.helper";
-import { APISuccess } from "../../../../utils/responseHandlers/success.helper";
 import AuthRepository from "../../repository/auth.repository";
 
 
