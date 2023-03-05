@@ -1,4 +1,5 @@
 import assert from "assert";
+import { Request, Response } from "express";
 import { HTTP_ERROR_STATUS_CODE } from "../../../utils/constants";
 import { checkErrors } from "../../../utils/helpers";
 import Logger from "../../../utils/helpers/Logger";
@@ -21,10 +22,10 @@ export default class RestController {
         }
     }
 
-    register = async (req: any, res: any) => {
+    register = async (req: Request, res: Response) => {
         try {
             checkErrors(req);
-            const response = await this.authService.registerNewUser(req.body)
+            const response = await this.authService.registerNewUser(req, req.body)
             res.status(response.httpCode).send(response)
         } catch (error) {
             Logger.error(error);
@@ -32,7 +33,7 @@ export default class RestController {
         }
     }
 
-    login = async (req: any, res: any) => {
+    login = async (req: Request, res: Response) => {
         try {
             checkErrors(req);
             const response = await this.authService.loginUser(req, req.body)

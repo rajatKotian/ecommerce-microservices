@@ -18,7 +18,7 @@ export default class AuthServiceLayer implements IAuthService {
         this.registerNewUser = this.registerNewUser.bind(this);
     }
 
-    registerNewUser = async (args: IUser): Promise<IServiceLayerResponse> => {
+    registerNewUser = async (req: Request, args: IUser): Promise<IServiceLayerResponse> => {
         try {
             console.log(args);
             const userExist = await this.authRepository.exists({ email: args?.email });
@@ -28,8 +28,14 @@ export default class AuthServiceLayer implements IAuthService {
                 );
             }
             const data = await this.authRepository.create(args);
+
+            const token = initiateSession(req, {
+                firstName: data?.firstName,
+                lastName: data?.lastName,
+                email: data?.email,
+            });
             return new APISuccess(
-                true, HTTP_SUCCESS_STATUS_CODE.CREATED, data
+                true, HTTP_SUCCESS_STATUS_CODE.CREATED, token
             );
 
         } catch (error) {
