@@ -10,6 +10,7 @@ import crypto from 'crypto'
 import { AppConfig } from './config'
 import routes from './apis/routes'
 import { DatabaseClient, RedisClient } from './db'
+import { redisMiddleware } from './services/Auth/utils/middleware/redis'
 
 
 
@@ -40,10 +41,7 @@ mongoDB.connect().then(async res => {
 
     //Set middleware;
     app.use(
-        (req: any, res: any, next) => {
-            req.redisClient = req?.redisClient ?? redis;
-            next();
-        },
+        redisMiddleware(redis),
         session(expressSession),
         passport.initialize(),
         passport.session(),
