@@ -21,6 +21,7 @@ let port = AppConfig.get("express:port") || 3000
 
 //Client Declarations
 let redis = new RedisClient()
+RedisClient.shared = redis
 let mongoDB = new DatabaseClient()
 
 // Body-parser middleware

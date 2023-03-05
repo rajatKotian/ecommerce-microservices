@@ -8,9 +8,7 @@ import session from 'express-session'
 export default class Redis {
     // Configs
     static shared: Redis;
-    params: any;
-    redisPort: any;
-    client: any;
+    private client: any;
 
 
     async connect() {

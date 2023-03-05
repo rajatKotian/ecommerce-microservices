@@ -29,7 +29,7 @@ export default class AuthServiceLayer implements IAuthService {
             }
             const data = await this.authRepository.create(args);
 
-            const token = initiateSession(req, {
+            const token = await initiateSession(req, {
                 firstName: data?.firstName,
                 lastName: data?.lastName,
                 email: data?.email,
@@ -62,7 +62,7 @@ export default class AuthServiceLayer implements IAuthService {
                 );
             }
 
-            const token = initiateSession(req, {
+            const token = await initiateSession(req, {
                 firstName: data?.firstName,
                 lastName: data?.lastName,
                 email: args?.email,
