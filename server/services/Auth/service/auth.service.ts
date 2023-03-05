@@ -12,11 +12,11 @@ import passport from "passport";
 import jwt from "jsonwebtoken";
 import { AppConfig } from "../../../config";
 import Redis from "../../../db/Redis";
+import { Request } from "express";
+import { initiateSession } from "../utils/helpers/session";
 
 export default class AuthServiceLayer {
     private authRepository: IRepository;
-    private secretkey: string = AppConfig.get('passport:secret')
-
     constructor() {
         this.authRepository = new AuthRepository();
         this.registerNewUser = this.registerNewUser.bind(this);
@@ -47,7 +47,7 @@ export default class AuthServiceLayer {
         }
     }
 
-    loginUser = async (args: { email: string, password: string }): Promise<IServiceLayerResponse> => {
+    loginUser = async (req: Request, args: { email: string, password: string }): Promise<IServiceLayerResponse> => {
         try {
             const data: any = await this.authRepository.getOne({
                 email: args?.email,
@@ -60,9 +60,11 @@ export default class AuthServiceLayer {
                 );
             }
 
-            const token = jwt.sign({
-                name: `${data?.firstName} ${data?.lastName}`, email: args?.email
-            }, this.secretkey, { expiresIn: "24h" });
+            const token = initiateSession(req, {
+                firstName: data?.firstName,
+                lastName: data?.lastName,
+                email: args?.email,
+            });
 
             return new APISuccess(
                 true, HTTP_SUCCESS_STATUS_CODE.ACCEPTED, { token }
