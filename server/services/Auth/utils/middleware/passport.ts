@@ -1,8 +1,10 @@
+import { Request } from "express";
 import passport from "passport";
 import passportJWT from "passport-jwt"
 import passportLocal from 'passport-local'
 import { AppConfig } from "../../../../config";
-import { HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE } from "../../../../utils/constants";
+import Redis from "../../../../db/Redis";
+import { ERROR_MESSAGES, HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE } from "../../../../utils/constants";
 import Logger from "../../../../utils/helpers/Logger";
 import { APIError } from "../../../../utils/responseHandlers/error.helper";
 import { APISuccess } from "../../../../utils/responseHandlers/success.helper";
@@ -19,16 +21,24 @@ passport.use(
         {
             jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
             secretOrKey: AppConfig.get('passport:secret'),
+            passReqToCallback: true
         },
-        async ({ email }, done) => {
+        async (req: any,
+            payload: { email: string },
+            done: any) => {
             try {
                 try {
                     const user = await Auth.getOne({
-                        email
+                        email: payload.email
                     });
+                    const token = await req.redisClient.getKey(payload.email)
                     if (!user) {
                         return done(true, new APIError(
-                            false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, true, 'Invalid username or password'
+                            false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, true, ERROR_MESSAGES.INVALID_CREDENTIALS
+                        ));
+                    } else if (!token) {
+                        return done(true, new APIError(
+                            false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, true, ERROR_MESSAGES.SESSION_EXPIRED
                         ));
                     }
                     return done(false, user)

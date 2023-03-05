@@ -17,8 +17,7 @@ export const initiateSession = async (req: any, data: {
         const token = jwt.sign({
             name: `${data?.firstName} ${data?.lastName}`, email: data?.email
         }, secretkey, { expiresIn: expiry });
-        console.log('REDIS===>', await redis.setKey(data?.email, token));
-        console.log('REDIS===>', await redis.getKey(data?.email));
+        await redis.setKey(data?.email, token);
 
         return token
     } catch (error) {
