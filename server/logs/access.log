@@ -38,3 +38,4 @@
 ::ffff:172.18.0.1 - - [06/Mar/2023:18:04:07 +0000] "GET /v1/auth/get-profile HTTP/1.1" 201 416 "-" "PostmanRuntime/7.31.1"
 ::ffff:172.18.0.1 - - [06/Mar/2023:18:31:33 +0000] "GET /v1/auth/get-profile HTTP/1.1" 201 416 "-" "PostmanRuntime/7.31.1"
 ::ffff:172.18.0.1 - - [06/Mar/2023:18:32:25 +0000] "GET /v1/auth/get-profile HTTP/1.1" 201 416 "-" "PostmanRuntime/7.31.1"
+::ffff:172.18.0.1 - - [06/Mar/2023:18:33:40 +0000] "GET /v1/auth/get-profile HTTP/1.1" 201 416 "-" "PostmanRuntime/7.31.1"

@@ -48,7 +48,6 @@ export default class RestController {
         try {
             checkErrors(req);
             const response = await this.authService.getProfileDetails(req)
-            console.log('Response ====>', response)
             res.status(response.httpCode).send(response)
         } catch (error) {
             Logger.error(error);
