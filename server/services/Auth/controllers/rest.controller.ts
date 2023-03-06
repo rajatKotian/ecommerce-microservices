@@ -43,4 +43,16 @@ export default class RestController {
             res.status(HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER).send(error)
         }
     }
+
+    getProfile = async (req: Request, res: Response) => {
+        try {
+            checkErrors(req);
+            const response = await this.authService.getProfileDetails(req)
+            console.log('Response ====>', response)
+            res.status(response.httpCode).send(response)
+        } catch (error) {
+            Logger.error(error);
+            res.status(HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER).send(error)
+        }
+    }
 }

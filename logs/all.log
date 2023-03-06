@@ -61,3 +61,57 @@
 2023-03-05 20:04:34:434 [32minfo[39m: [32mMongodb connection Successful[39m
 2023-03-05 20:04:34:434 [32minfo[39m: [32mRedis Client Success[39m
 2023-03-05 20:04:34:434 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-05 20:05:03:53 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-05 20:05:03:53 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-05 20:05:03:53 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 17:41:45:4145 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 17:41:45:4145 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 17:41:45:4145 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 17:45:12:4512 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 17:45:12:4512 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 17:45:12:4512 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 17:49:31:4931 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 17:49:31:4931 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 17:49:31:4931 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 17:49:49:4949 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 17:49:49:4949 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 17:49:49:4949 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 17:49:57:4957 [31merror[39m: [31m[object Object][39m
+2023-03-06 17:50:28:5028 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 17:50:28:5028 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 17:50:28:5028 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 17:51:06:516 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 17:51:06:516 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 17:51:06:516 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 17:51:30:5130 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 17:51:30:5130 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 17:51:30:5130 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 17:51:46:5146 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 17:51:46:5146 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 17:51:46:5146 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 17:52:02:522 [34mdebug[39m: [34m123123123123 $2a$10$t2Qk4qnxqVedMqfF4TSDN.zTnL4oVCsWWcgn/ol/1wBNqs/SX7PVy[39m
+2023-03-06 17:52:02:522 [32minfo[39m: [32mRajat Kotian rajat.kotian@gmail.com[39m
+2023-03-06 17:53:53:5353 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 17:53:53:5353 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 17:53:53:5353 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 18:01:27:127 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 18:01:27:127 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 18:01:27:127 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 18:01:45:145 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 18:01:45:145 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 18:01:45:145 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 18:03:17:317 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 18:03:17:317 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 18:03:17:317 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 18:04:02:42 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 18:04:02:42 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 18:04:02:42 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 18:32:21:3221 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 18:32:21:3221 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 18:32:21:3221 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 18:33:01:331 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 18:33:01:331 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 18:33:01:331 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-06 18:33:17:3317 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-06 18:33:17:3317 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-06 18:33:17:3317 [32minfo[39m: [32mServer is listening on 6553[39m

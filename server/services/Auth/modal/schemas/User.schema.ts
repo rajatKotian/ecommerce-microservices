@@ -73,7 +73,15 @@ let userSchema = new Schema({
         required: false
     },
 
-}, { timestamps: true });
+}, {
+    timestamps: true,
+    toObject: {
+        transform: function (doc, user, options) {
+            delete user.password;
+            return user;
+        }
+    }
+});
 
 userSchema.pre("save", function (next) {
     const user = this

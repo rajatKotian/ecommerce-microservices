@@ -10,5 +10,6 @@ let controller = new RestController()
 router.get('/', passport.authenticate('jwt', { session: false }), controller.testRoute)
 router.post('/login', checkSchema(loginUserSchema), controller.login)
 router.post('/register', checkSchema(registerUserSchema), controller.register);
+router.get('/get-profile', passport.authenticate('jwt', { session: false }), controller.getProfile);
 
 export default router
