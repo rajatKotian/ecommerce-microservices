@@ -20,11 +20,16 @@ export default class AuthRepository implements IRepository {
     delete = async (args: ObjectId[]): Promise<any> => {
         return { success: true };
     }
-    update = async (query: IUser, payload: IUser): Promise<IRepositoryLayerResponse> => {
-        return { success: true };
+    update = async (query: IUser, payload: IUser): Promise<IRepositoryLayerResponse | null> => {
+        return User.findOneAndUpdate(query, payload)
     };
-    updateOne = async (args: ObjectId[], payload: IUser): Promise<IRepositoryLayerResponse> => {
-        return { success: true };
+
+    updateOne = async (query: string | IUser, payload: IUser, options?: {}): Promise<IRepositoryLayerResponse | null> => {
+        if (typeof query == 'string') {
+            return User.findByIdAndUpdate(query, payload, options)
+        } else {
+            return User.findOneAndUpdate(query, payload, options)
+        }
     };
     getAll = async (query: IUser): Promise<IRepositoryLayerResponse> => {
         return { success: true };

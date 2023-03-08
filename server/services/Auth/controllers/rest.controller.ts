@@ -46,8 +46,18 @@ export default class RestController {
 
     getProfile = async (req: Request, res: Response) => {
         try {
-            checkErrors(req);
             const response = await this.authService.getProfileDetails(req)
+            res.status(response.httpCode).send(response)
+        } catch (error) {
+            Logger.error(error);
+            res.status(HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER).send(error)
+        }
+    }
+
+    updateProfile = async (req: Request, res: Response) => {
+        try {
+            checkErrors(req);
+            const response = await this.authService.updateProfileDetails(req, req.body)
             res.status(response.httpCode).send(response)
         } catch (error) {
             Logger.error(error);

@@ -17,6 +17,24 @@ export default class AuthServiceLayer implements IAuthService {
         this.authRepository = new AuthRepository();
         this.registerNewUser = this.registerNewUser.bind(this);
     }
+    updateProfileDetails = async (req: Request, args: IUser): Promise<IServiceLayerResponse> => {
+        try {
+            const userInfo: IUser | undefined = req?.user
+            const id: string = userInfo?._id || ''
+            const user = await this.authRepository.updateOne(id, args, { new: true });
+            return new APISuccess(
+                true, HTTP_SUCCESS_STATUS_CODE.CREATED, user
+            );
+        } catch (error) {
+            Logger.error(JSON.stringify(error));
+            throw new APIError(
+                false,
+                HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER,
+                true,
+                ERROR_MESSAGES.INTERNAL_SERVER_ERROR
+            );
+        }
+    }
     getProfileDetails = async (req: Request): Promise<IServiceLayerResponse> => {
         try {
             const userInfo: IUser | undefined = req?.user

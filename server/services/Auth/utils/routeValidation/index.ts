@@ -7,6 +7,11 @@ export const registerUserSchema: Schema = {
         notEmpty: true,
         errorMessage: ERROR_MESSAGES.FIRSTNAME_VALIDATION,
     },
+    lastName: {
+        in: ['body'],
+        notEmpty: true,
+        errorMessage: ERROR_MESSAGES.FIRSTNAME_VALIDATION,
+    },
     mobile: {
         in: ['body'],
         notEmpty: true,
