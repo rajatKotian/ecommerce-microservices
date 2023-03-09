@@ -25,6 +25,7 @@ export const ERROR_MESSAGES = Object.freeze({
     INCORRECT_PASSWORD: "Invalid email or password",
     SESSION_EXPIRED: "Session Expired! Try logging in again",
     USER_ID: "User id not found",
+    CANNOT_UPDATE_PASSWORD: "Cannot update password!",
 })
 export const HTTP_SUCCESS_STATUS_CODE = Object.freeze({
     OK: 200,

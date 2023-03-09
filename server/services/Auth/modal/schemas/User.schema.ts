@@ -37,7 +37,8 @@ let userSchema = new Schema({
     },
     password: {
         type: String,
-        required: false
+        required: false,
+        select: false 
     },
     mobile: {
         type: String,

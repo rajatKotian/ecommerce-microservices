@@ -21,6 +21,11 @@ export default class AuthServiceLayer implements IAuthService {
         try {
             const userInfo: IUser | undefined = req?.user
             const id: string = userInfo?._id || ''
+            if (args.password) {
+                return new APISuccess(
+                    false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, ERROR_MESSAGES.CANNOT_UPDATE_PASSWORD
+                );
+            }
             const user = await this.authRepository.updateOne(id, args, { new: true });
             return new APISuccess(
                 true, HTTP_SUCCESS_STATUS_CODE.CREATED, user
