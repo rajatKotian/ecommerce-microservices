@@ -10,9 +10,12 @@ import Logger from "../../../utils/helpers/Logger";
 import { Request } from "express";
 import { initiateSession } from "../utils/helpers/session";
 import { IAuthService } from "../interface/service";
+import { NodeMailerClient } from "../../../utils/nodeMailer";
+import { sendEmailVerificationLink } from "../utils/helpers/emailers";
 
 export default class AuthServiceLayer implements IAuthService {
     private authRepository: IRepository;
+    private sendEmail = NodeMailerClient.sendMail
     constructor() {
         this.authRepository = new AuthRepository();
         this.registerNewUser = this.registerNewUser.bind(this);
@@ -68,11 +71,16 @@ export default class AuthServiceLayer implements IAuthService {
             }
             const data = await this.authRepository.create(args);
 
+            // Initiate Session for new user
             const token = await initiateSession(req, {
                 firstName: data?.firstName,
                 lastName: data?.lastName,
                 email: data?.email,
             });
+
+            // Send Verification Email
+            sendEmailVerificationLink(data?.email, this.sendEmail);
+
             return new APISuccess(
                 true, HTTP_SUCCESS_STATUS_CODE.CREATED, token
             );

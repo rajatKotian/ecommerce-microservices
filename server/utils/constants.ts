@@ -27,6 +27,11 @@ export const ERROR_MESSAGES = Object.freeze({
     USER_ID: "User id not found",
     CANNOT_UPDATE_PASSWORD: "Cannot update password!",
 })
+
+export const EMAIL_SUBJECTS = Object.freeze({
+    VERIFY_EMAIL: "Welcome to [customer portal], please verify your email address",
+});
+
 export const HTTP_SUCCESS_STATUS_CODE = Object.freeze({
     OK: 200,
     CREATED: 201,
