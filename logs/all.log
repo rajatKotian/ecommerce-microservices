@@ -302,3 +302,6 @@
 2023-03-10 07:41:18:4118 [32minfo[39m: [32mMongodb connection Successful[39m
 2023-03-10 07:41:18:4118 [32minfo[39m: [32mRedis Client Success[39m
 2023-03-10 07:41:18:4118 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-10 07:52:11:5211 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-10 07:52:11:5211 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-10 07:52:11:5211 [32minfo[39m: [32mServer is listening on 6553[39m

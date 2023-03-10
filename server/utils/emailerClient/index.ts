@@ -1,5 +1,5 @@
 import NodeMailer from './nodeMailer'
 
-export default {
+export {
     NodeMailer
 }

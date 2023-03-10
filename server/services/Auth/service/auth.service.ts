@@ -11,11 +11,11 @@ import { Request } from "express";
 import { initiateSession } from "../utils/helpers/session";
 import { IAuthService } from "../interface/service";
 import { sendEmailVerificationLink } from "../utils/helpers/emailers";
-import NodeMailerClient from "../../../utils/emailerClient/nodeMailer";
+import { NodeMailer } from "../../../utils/emailerClient";
 
 export default class AuthServiceLayer implements IAuthService {
     private authRepository: IRepository;
-    private sendEmail = NodeMailerClient.sendMail;
+    private sendEmail = NodeMailer.sendMail;
     constructor() {
         this.authRepository = new AuthRepository();
         this.registerNewUser = this.registerNewUser.bind(this);
