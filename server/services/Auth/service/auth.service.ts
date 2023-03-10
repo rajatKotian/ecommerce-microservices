@@ -19,6 +19,9 @@ export default class AuthServiceLayer implements IAuthService {
     constructor() {
         this.authRepository = new AuthRepository();
         this.registerNewUser = this.registerNewUser.bind(this);
+        this.updateProfileDetails = this.updateProfileDetails.bind(this);
+        this.getProfileDetails = this.getProfileDetails.bind(this);
+        this.loginUser = this.loginUser.bind(this);
     }
     updateProfileDetails = async (req: Request, args: IUser): Promise<IServiceLayerResponse> => {
         try {
