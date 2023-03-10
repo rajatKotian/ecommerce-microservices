@@ -10,12 +10,12 @@ import Logger from "../../../utils/helpers/Logger";
 import { Request } from "express";
 import { initiateSession } from "../utils/helpers/session";
 import { IAuthService } from "../interface/service";
-import { NodeMailerClient } from "../../../utils/nodeMailer";
 import { sendEmailVerificationLink } from "../utils/helpers/emailers";
+import NodeMailerClient from "../../../utils/emailerClient/nodeMailer";
 
 export default class AuthServiceLayer implements IAuthService {
     private authRepository: IRepository;
-    private sendEmail = NodeMailerClient.sendMail
+    private sendEmail = NodeMailerClient.sendMail;
     constructor() {
         this.authRepository = new AuthRepository();
         this.registerNewUser = this.registerNewUser.bind(this);
