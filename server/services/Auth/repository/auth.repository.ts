@@ -1,6 +1,6 @@
 import assert from "assert";
 import { ObjectId, Types } from "mongoose";
-import { IRepository } from "../interface/repository";
+import { IRepository } from "../../../utils/interface/repository";
 import { IUser } from "../interface/request";
 import { IRepositoryLayerResponse } from "../interface/response";
 import { User } from "../modal/schemas";

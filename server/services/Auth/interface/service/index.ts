@@ -1,6 +1,6 @@
 import { Request } from "express";
+import { IServiceLayerResponse } from "../../../../utils/interface/response";
 import { IUser } from "../request";
-import { IServiceLayerResponse } from "../response";
 
 export interface IAuthService {
     registerNewUser(req: Request, args: IUser): Promise<IServiceLayerResponse>

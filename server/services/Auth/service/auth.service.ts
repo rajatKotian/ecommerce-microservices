@@ -1,8 +1,6 @@
 import assert from "assert";
 import { APIError } from "../../../utils/responseHandlers/error.helper";
-import { IRepository } from "../interface/repository";
 import { IUser } from "../interface/request";
-import { IServiceLayerResponse } from "../interface/response";
 import AuthRepository from "../repository/auth.repository";
 import { APISuccess } from "../../../utils/responseHandlers/success.helper";
 import { ERROR_MESSAGES, HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE, LOGGER_CONSTANTS } from "../../../utils/constants";
@@ -12,6 +10,8 @@ import { initiateSession } from "../utils/helpers/session";
 import { IAuthService } from "../interface/service";
 import { sendEmailVerificationLink } from "../utils/helpers/emailers";
 import { NodeMailer } from "../../../utils/emailerClient";
+import { IRepository } from "../../../utils/interface/repository";
+import { IServiceLayerResponse } from "../../../utils/interface/response";
 
 export default class AuthServiceLayer implements IAuthService {
     private authRepository: IRepository;
