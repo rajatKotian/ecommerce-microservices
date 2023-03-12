@@ -7,6 +7,6 @@ import passport from './utils/middleware/passport'
 
 let router = express.Router();
 let controller = new RestController()
-router.get('/', passport.authenticate('jwt', { session: false }), controller.testRoute)
+router.get('/', controller.testRoute)
 
 export default router

@@ -67,3 +67,5 @@
 ::ffff:172.18.0.1 - - [10/Mar/2023:07:23:21 +0000] "POST /v1/auth/register HTTP/1.1" 201 246 "-" "PostmanRuntime/7.31.1"
 ::ffff:172.18.0.1 - - [10/Mar/2023:07:29:58 +0000] "POST /v1/auth/register HTTP/1.1" 201 246 "-" "PostmanRuntime/7.31.1"
 ::ffff:172.18.0.1 - - [10/Mar/2023:07:38:26 +0000] "POST /v1/auth/register HTTP/1.1" 201 246 "-" "PostmanRuntime/7.31.1"
+::ffff:172.18.0.1 - - [12/Mar/2023:19:40:47 +0000] "GET /cart HTTP/1.1" 404 143 "-" "PostmanRuntime/7.31.1"
+::ffff:172.18.0.1 - - [12/Mar/2023:19:41:36 +0000] "GET /v1/cart HTTP/1.1" 202 26 "-" "PostmanRuntime/7.31.1"
