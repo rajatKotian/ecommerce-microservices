@@ -1,5 +1,5 @@
 import { ObjectId } from "mongoose"
-import { IUser } from "../../../services/Cart/interface/request"
+import { IUser } from "../../../services/Auth/interface/request"
 import { IRepositoryLayerResponse } from "../response"
 
 export interface IRepository {

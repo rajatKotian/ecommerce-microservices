@@ -4,6 +4,7 @@
   "description": "This is a basic microservices project for my portfolio ecommerce website",
   "main": "app.js",
   "scripts": {
+    "proto-gen": "bash proto-gen.sh",
     "start": "tsc && node server/app.js",
     "start:dev": "NODE_ENV=development nodemon -L server/app.ts",
     "watch": "tsc -w",
@@ -21,6 +22,8 @@
   },
   "homepage": "https://github.com/rajatKotian/ecommerce-microservices#readme",
   "dependencies": {
+    "@grpc/grpc-js": "^1.8.12",
+    "@grpc/proto-loader": "^0.7.5",
     "aes-encryption": "^1.0.4",
     "axios": "^0.27.2",
     "bcrypt": "^5.1.0",
