@@ -12,6 +12,7 @@ import routes from './apis/routes'
 import { DatabaseClient, RedisClient } from './db'
 import { redisMiddleware } from './services/Auth/utils/middleware/redis'
 import Logger from './utils/helpers/Logger'
+import { GRPCServer } from './utils/servers/GRPCServer'
 
 
 
@@ -30,6 +31,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 mongoDB.connect().then(async res => {
+
+    GRPCServer.startServer()
 
     const expressSession = {
         secret: AppConfig.get('passport:secret'),
