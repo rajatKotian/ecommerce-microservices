@@ -1,36 +1,67 @@
 import express from 'express'
+import passport from 'passport'
+import morgan from 'morgan'
+import fs from 'fs'
+import bodyParser from 'body-parser'
+import path from 'path'
+import session from 'express-session'
+import crypto from 'crypto'
+
 import { AppConfig } from './config'
 import routes from './apis/routes'
 import { DatabaseClient, RedisClient } from './db'
-import bodyParser from 'body-parser'
+import { redisMiddleware } from './services/Auth/utils/middleware/redis'
+import Logger from './utils/helpers/Logger'
+import { GRPCServer } from './utils/servers/GRPCServer'
+
 
 
 //Express App declaration
 let app = express()
 let port = AppConfig.get("express:port") || 3000
-let { redisPort } = AppConfig.get("redis")
 
 
 //Client Declarations
-let redis = new RedisClient()
-let mongoDB = new DatabaseClient()
+RedisClient.startServer()
+DatabaseClient.startDBServer()
+GRPCServer.startServer()
+
 
 // Body-parser middleware
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-mongoDB.connect().then(async res => {
-    await redis.connect()
-    app.get('/', (req, res) => {
-        res.send({ success: true, msg: "Routes changes is working fine really" })
-    })
 
-    app.use(routes)
+const expressSession = {
+    secret: AppConfig.get('passport:secret'),
+    resave: true,
+    saveUninitialized: true,
+    cookie: { secure: true }
+};
 
-    app.listen(port, async () => {
-        console.log(`server is listening on ${port}`);
-    });
-}).catch()
+let accessLogStream = fs.createWriteStream(path.join(__dirname, '/logs/access.log'), { flags: 'a' })
+
+//Set middleware;
+app.use(
+    RedisClient.setRedisMiddleware(),
+    session(expressSession),
+    passport.initialize(),
+    passport.session(),
+    morgan('combined', { stream: accessLogStream }),
+    routes
+);
+
+app.get('/', (req, res) => {
+    res.send({ success: true, msg: "Routes changes is working fine really" })
+})
+if (AppConfig.get('environment') === 'production') {
+    app.set('trust proxy', 1)
+    expressSession.cookie.secure = true
+}
+
+app.listen(port, async () => {
+    Logger.info(`Server is listening on ${port}`);
+});
 
 export default app
 

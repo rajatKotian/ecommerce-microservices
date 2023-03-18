@@ -1,26 +1,32 @@
 import Mongoose from 'mongoose'
 import { AppConfig } from '../config'
-import { Helper } from '../utils/helpers'
+import Logger from '../utils/helpers/Logger';
 
 export default class DatabaseClient {
-    constructor() {
-        // this.connect()
-    }
+    private static server: DatabaseClient;
 
-    connect(): Promise<any> {
+    private constructor() {
         return new Promise((resolve, reject) => {
             let { uri, options, dockerUri } = AppConfig.get("mongoDB")
+            Mongoose.set('strictQuery', true);
             Mongoose.connect(uri, options, (error) => {
                 if (error) {
-                    console.log("Mongodb connection Unsuccessful")
+                    Logger.info("Mongodb connection Failed")
                     reject(error);
                 }
                 else {
-                    console.log("Mongodb connection Successful")
+                    Logger.info("Mongodb connection Successful")
                     resolve({});
                 }
             })
         })
+    }
+
+    public static startDBServer(): DatabaseClient {
+        if (!this.server) {
+            this.server = new DatabaseClient()
+        }
+        return this.server;
     }
 }
 
