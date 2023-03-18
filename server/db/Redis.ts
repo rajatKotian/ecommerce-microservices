@@ -35,9 +35,6 @@ export default class Redis {
         return this.server;
     }
     public static setRedisMiddleware() {
-        if (!this.server) {
-            this.server = new Redis();
-        }
         return redisMiddleware(this.server);
     }
 
