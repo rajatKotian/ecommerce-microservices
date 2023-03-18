@@ -38,7 +38,6 @@ export class GRPCServer {
         if (!this.server) {
             this.server = new GRPCServer();
         }
-
         return this.server;
     }
 

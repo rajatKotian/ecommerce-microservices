@@ -3,7 +3,9 @@ import { AppConfig } from '../config'
 import Logger from '../utils/helpers/Logger';
 
 export default class DatabaseClient {
-    connect(): Promise<any> {
+    private static server: DatabaseClient;
+
+    private constructor() {
         return new Promise((resolve, reject) => {
             let { uri, options, dockerUri } = AppConfig.get("mongoDB")
             Mongoose.set('strictQuery', true);
@@ -18,6 +20,13 @@ export default class DatabaseClient {
                 }
             })
         })
+    }
+
+    public static startDBServer(): DatabaseClient {
+        if (!this.server) {
+            this.server = new DatabaseClient()
+        }
+        return this.server;
     }
 }
 

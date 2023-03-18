@@ -4,13 +4,17 @@ import { isEmpty } from 'lodash';
 const { port, host, docker, url, dockerUrl } = AppConfig.get('redis');
 import session from 'express-session'
 import Logger from '../utils/helpers/Logger';
+import { redisMiddleware } from '../services/Auth/utils/middleware/redis';
 
 
 export default class Redis {
     // Configs
-    static shared: Redis;
+    private static server: Redis;
     private client: any;
 
+    private constructor() {
+        this.connect();
+    }
 
     async connect() {
         try {
@@ -23,6 +27,18 @@ export default class Redis {
             Logger.error('Redis Client Error', error)
         }
 
+    }
+    public static startServer() {
+        if (!this.server) {
+            this.server = new Redis();
+        }
+        return this.server;
+    }
+    public static setRedisMiddleware() {
+        if (!this.server) {
+            this.server = new Redis();
+        }
+        return redisMiddleware(this.server);
     }
 
     async setKey(key: string, value: any) {

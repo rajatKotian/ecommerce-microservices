@@ -437,3 +437,61 @@
 2023-03-17 20:35:28:3528 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
 2023-03-17 20:35:28:3528 [32minfo[39m: [32mRedis Client Success[39m
 2023-03-17 20:35:28:3528 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-18 19:56:10:5610 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-18 19:56:10:5610 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-18 19:56:10:5610 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-18 19:56:10:5610 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-18 20:02:23:223 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-18 20:02:23:223 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-18 20:02:23:223 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-18 20:02:23:223 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-18 20:02:54:254 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-18 20:02:54:254 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-18 20:02:54:254 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-18 20:02:54:254 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-18 20:03:13:313 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-18 20:03:13:313 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-18 20:03:13:313 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-18 20:03:13:313 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-18 20:08:49:849 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-18 20:08:49:849 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-18 20:08:49:849 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-18 20:08:49:849 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-18 20:10:26:1026 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-18 20:10:26:1026 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-18 20:10:26:1026 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-18 20:10:26:1026 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-18 20:10:37:1037 [34mdebug[39m: [34m123123123123 undefined[39m
+2023-03-18 20:10:37:1037 [31merror[39m: [31m{}[39m
+2023-03-18 20:10:37:1037 [31merror[39m: [31mInternal Server Error[39m
+2023-03-18 20:11:44:1144 [34mdebug[39m: [34m123123123123 undefined[39m
+2023-03-18 20:11:44:1144 [31merror[39m: [31m{}[39m
+2023-03-18 20:11:44:1144 [31merror[39m: [31mInternal Server Error[39m
+2023-03-18 20:13:11:1311 [32minfo[39m: [32mRajat Kotian rajat.kotian@gmail.com[39m
+2023-03-18 20:13:29:1329 [34mdebug[39m: [34mRevathi12# undefined[39m
+2023-03-18 20:13:29:1329 [31merror[39m: [31m{}[39m
+2023-03-18 20:13:29:1329 [31merror[39m: [31mInternal Server Error[39m
+2023-03-18 20:15:07:157 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-18 20:15:07:157 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-18 20:15:07:157 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-18 20:15:07:157 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-18 20:15:08:158 [34mdebug[39m: [34mRevathi12# undefined[39m
+2023-03-18 20:15:08:158 [31merror[39m: [31m{}[39m
+2023-03-18 20:15:08:158 [31merror[39m: [31mInternal Server Error[39m
+2023-03-18 20:16:35:1635 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-18 20:16:35:1635 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-18 20:16:35:1635 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-18 20:16:35:1635 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-18 20:16:39:1639 [34mdebug[39m: [34mRevathi12# undefined[39m
+2023-03-18 20:16:39:1639 [31merror[39m: [31m{}[39m
+2023-03-18 20:16:39:1639 [31merror[39m: [31mInternal Server Error[39m
+2023-03-18 20:17:16:1716 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-18 20:17:16:1716 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-18 20:17:16:1716 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-18 20:17:16:1716 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-18 20:17:20:1720 [34mdebug[39m: [34mRevathi12# $2a$10$tEMOhjDT/kITGkXQuv2IdOBZQdt2dYwKhDdApnUYpnl7XS3W0B/Oe[39m
+2023-03-18 20:17:20:1720 [32minfo[39m: [32mRajat Kotian rajat.kotian@gmail.com[39m
+2023-03-18 20:20:06:206 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-18 20:20:06:206 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-18 20:20:06:206 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-18 20:20:06:206 [32minfo[39m: [32mMongodb connection Successful[39m
