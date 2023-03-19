@@ -1,8 +1,6 @@
-import redis, { createClient } from 'redis';
+import { createClient } from 'redis';
 import { AppConfig } from '../config';
-import { isEmpty } from 'lodash';
-const { port, host, docker, url, dockerUrl } = AppConfig.get('redis');
-import session from 'express-session'
+const { docker, url, dockerUrl } = AppConfig.get('redis');
 import Logger from '../utils/helpers/Logger';
 import { redisMiddleware } from '../services/Auth/utils/middleware/redis';
 
@@ -35,9 +33,6 @@ export default class Redis {
         return this.server;
     }
     public static setRedisMiddleware() {
-        if (!this.server) {
-            this.server = new Redis();
-        }
         return redisMiddleware(this.server);
     }
 
