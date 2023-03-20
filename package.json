@@ -6,7 +6,7 @@
   "scripts": {
     "proto-gen": "bash proto-gen.sh",
     "start": "tsc && node server/app.js",
-    "start:dev": "NODE_ENV=development nodemon -L server/app.ts",
+    "start:dev": "NODE_ENV=development npm run proto-gen nodemon -L server/app.ts",
     "watch": "tsc -w",
     "test": "jest --config /Users/rajatkotian/Documents/my_porfolio_projects/ecommerce-microservices/server/config/environment/development.json --coverage",
     "test:watch": "jest --config /Users/rajatkotian/Documents/my_porfolio_projects/ecommerce-microservices/server/config/environment/development.json  --watch"

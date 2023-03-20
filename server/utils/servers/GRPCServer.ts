@@ -23,7 +23,10 @@ export class GRPCServer {
                 console.log(req, res);
             }
         } as AuthServiceHandlers)
-        server.bindAsync(`0.0.0.0:${this.port}`, ServerCredentials.createInsecure(), (err, port) => {
+        server.bindAsync(
+            `0.0.0.0:${this.port}`,
+            ServerCredentials.createInsecure(),
+            (err, port) => {
             if (err) {
                 Logger.error(err)
             }
