@@ -9,7 +9,7 @@ import { ICartService } from "../interface/service";
 import CartRepository from "../repository/auth.repository";
 
 export default class CartServiceLayer implements ICartService {
-    private cartRepository: IRepository;
+    private cartRepository: any;
     constructor() {
         this.cartRepository = new CartRepository();
     }

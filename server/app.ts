@@ -12,8 +12,6 @@ import routes from './apis/routes'
 import { DatabaseClient, RedisClient } from './db'
 import { redisMiddleware } from './services/Auth/utils/middleware/redis'
 import Logger from './utils/helpers/Logger'
-import { GRPCServer } from './utils/servers/GRPCServer'
-
 
 
 //Express App declaration
@@ -24,7 +22,6 @@ let port = AppConfig.get("express:port") || 3000
 //Client Declarations
 RedisClient.startServer()
 DatabaseClient.startDBServer()
-GRPCServer.startServer()
 
 
 // Body-parser middleware
