@@ -1,0 +1,97 @@
+2023-03-20 18:18:32:1832 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-20 18:18:32:1832 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-20 18:18:32:1832 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-20 18:18:32:1832 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-20 18:32:25:3225 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-20 18:32:25:3225 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-20 18:32:25:3225 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-20 18:32:25:3225 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-20 18:47:03:473 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-20 18:47:03:473 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-20 18:47:03:473 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-20 18:47:03:473 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 19:16:27:1627 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 19:16:27:1627 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:16:27:1627 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 19:16:27:1627 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 19:32:46:3246 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 19:32:46:3246 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:32:46:3246 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 19:32:46:3246 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 19:33:48:3348 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 19:33:48:3348 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:33:48:3348 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 19:33:48:3348 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 19:34:02:342 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 19:34:02:342 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:34:02:342 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 19:34:02:342 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 19:34:19:3419 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 19:34:19:3419 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:34:19:3419 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 19:34:19:3419 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 19:34:36:3436 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 19:34:36:3436 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:34:36:3436 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 19:34:36:3436 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 19:37:39:3739 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 19:37:39:3739 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:37:39:3739 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 19:37:39:3739 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 19:38:25:3825 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 19:38:25:3825 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:38:25:3825 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 19:38:25:3825 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 19:41:35:4135 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 19:41:35:4135 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:41:35:4135 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 19:41:35:4135 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 19:58:57:5857 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 19:58:57:5857 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:58:57:5857 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 19:58:57:5857 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-23 01:29:10:2910 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-23 01:29:10:2910 [31merror[39m: [31mRedis Client Error getaddrinfo ENOTFOUND host.docker.internal[39m
+2023-03-23 01:29:10:2910 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:59:20:5920 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 19:59:20:5920 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 19:59:20:5920 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 19:59:20:5920 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 20:00:25:025 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 20:00:25:025 [32minfo[39m: [32mGrpc Server started at port: 9909[39m
+2023-03-22 20:00:25:025 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 20:00:25:025 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 20:00:59:059 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 20:00:59:059 [32minfo[39m: [32mAuthentication service GRPC Server started at port: 9909[39m
+2023-03-22 20:00:59:059 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 20:00:59:059 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 20:01:31:131 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 20:01:31:131 [32minfo[39m: [32mAuthentication service GRPC Server started at port: 9909[39m
+2023-03-22 20:01:31:131 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 20:01:31:131 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 20:03:52:352 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 20:03:52:352 [32minfo[39m: [32mAuthentication service GRPC Server started at port: 9909[39m
+2023-03-22 20:03:52:352 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 20:03:52:352 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 20:04:09:49 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 20:04:09:49 [32minfo[39m: [32mAuthentication service GRPC Server started at port: 9909[39m
+2023-03-22 20:04:09:49 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 20:04:09:49 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 20:04:40:440 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 20:04:40:440 [32minfo[39m: [32mAuthentication service GRPC Server started at port: 9909[39m
+2023-03-22 20:04:40:440 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 20:04:40:440 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 20:05:56:556 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 20:05:56:556 [32minfo[39m: [32mAuthentication service GRPC Server started at port: 9909[39m
+2023-03-22 20:05:56:556 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 20:05:56:556 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 20:07:55:755 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 20:07:55:755 [32minfo[39m: [32mAuthentication service GRPC Server started at port: 9909[39m
+2023-03-22 20:07:55:755 [32minfo[39m: [32mCart service GRPC Server started at port: 9919[39m
+2023-03-22 20:07:55:755 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 20:07:55:755 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-22 20:08:42:842 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-22 20:08:42:842 [32minfo[39m: [32mAuthentication service GRPC Server started at port: 9909[39m
+2023-03-22 20:08:42:842 [32minfo[39m: [32mCart service GRPC Server started at port: 9919[39m
+2023-03-22 20:08:42:842 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-22 20:08:42:842 [32minfo[39m: [32mMongodb connection Successful[39m

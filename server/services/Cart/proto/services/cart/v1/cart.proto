@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package cart;
+
+
+service CartService {
+    rpc GetCart (GetUserRequest) returns (GetUserResponse);
+}
+
+message GetUserRequest {
+    string id = 1;
+}
+
+message GetUserResponse {
+    string item = 3;
+}
+
+
