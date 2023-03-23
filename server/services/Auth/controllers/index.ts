@@ -1,2 +1,3 @@
 import RestController from './rest.controller'
-export { RestController }
+import GRPCController from './grpc.controller'
+export { RestController, GRPCController }

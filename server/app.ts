@@ -44,7 +44,7 @@ app.use(
     session(expressSession),
     passport.initialize(),
     passport.session(),
-    morgan('combined', { stream: accessLogStream }),
+    morgan('dev', { stream: accessLogStream }),
     routes
 );
 

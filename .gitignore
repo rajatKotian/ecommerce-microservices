@@ -3,5 +3,7 @@ node_modules/
 package-lock.json
 server/config/environment/*
 proto/pb/*
+server/services/Auth/proto/pb/*
+server/services/Cart/proto/pb/*
 
 

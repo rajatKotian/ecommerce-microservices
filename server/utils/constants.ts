@@ -12,6 +12,14 @@ export const REST_METHODS = Object.freeze({
     PATCH: "patch",
 })
 
+export const GRPC_ERROR_MESSAGES = Object.freeze({
+    INVALID_REQUEST: "INVALID_REQUEST",
+})
+
+export const GRPC_ERROR_CODES = Object.freeze({
+    P2002: 'P2002',
+})
+
 export const ERROR_MESSAGES = Object.freeze({
     INTERNAL_SERVER_ERROR: "Internal Server Error",
     IS_EMAIL_VERIFIED_FLAG_ERROR: "Please add isEmailVerified flag for the user",

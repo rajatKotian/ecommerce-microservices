@@ -83,3 +83,9 @@
 ::ffff:172.18.0.1 - - [18/Mar/2023:20:17:44 +0000] "GET /v1/auth/ HTTP/1.1" 202 26 "-" "PostmanRuntime/7.31.3"
 ::ffff:172.18.0.1 - - [18/Mar/2023:20:17:52 +0000] "GET /v1/auth/get-profile HTTP/1.1" 401 - "-" "PostmanRuntime/7.31.3"
 ::ffff:172.18.0.1 - - [18/Mar/2023:20:17:56 +0000] "GET /v1/auth/get-profile HTTP/1.1" 201 416 "-" "PostmanRuntime/7.31.3"
+[0mPOST /auth/grpc/get-user [33m404[0m 1.132 ms - 158[0m
+[0mPOST /auth/grpc/get-user [33m404[0m 1.299 ms - 158[0m
+[0mPOST /auth/grpc/get-user [33m404[0m 0.652 ms - 158[0m
+[0mPOST /auth/grpc/get-user [33m404[0m 1.062 ms - 158[0m
+[0mPOST /auth/grpc/get-user [33m404[0m 1.299 ms - 158[0m
+[0mPOST /v1/auth/grpc/get-user [0m-[0m - ms - -[0m
