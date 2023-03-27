@@ -8,7 +8,7 @@ import moment from 'moment';
 
 export class GRPCClient {
     private static client: GRPCClient;
-    private port = AppConfig.get('grpc:authService:client')
+    private port = AppConfig.get('grpc:authService:port')
     private deadline = moment(new Date()).add(1, 'day').toDate()
 
 
@@ -40,7 +40,7 @@ export class GRPCClient {
                 console.error(err);
                 return;
             }
-            Logger.info("? gRPC Client is ready")
+            Logger.info(`Authentication service GRPC CLIENT started at port: ${this.port}`)
         });
     }
 

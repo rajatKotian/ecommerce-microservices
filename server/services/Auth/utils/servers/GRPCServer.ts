@@ -6,6 +6,7 @@ import Logger from '../../../../utils/helpers/Logger';
 import { ProtoGrpcType } from '../../proto/pb/auth';
 import { AuthServiceHandlers } from '../../proto/pb/auth/AuthService';
 import { GRPCController } from '../../controllers';
+import { GRPCClient } from './GRPCClient';
 
 
 export class GRPCServer {
@@ -34,6 +35,7 @@ export class GRPCServer {
                     Logger.error(err)
                 }
                 server.start();
+                GRPCClient.startServer();
                 Logger.info(`Authentication service GRPC Server started at port: ${port}`);
             })
     }
@@ -45,7 +47,6 @@ export class GRPCServer {
         }
         return this.server;
     }
-
 }
 
 
