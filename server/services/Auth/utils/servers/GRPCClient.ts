@@ -7,10 +7,10 @@ import Logger from '../../../../utils/helpers/Logger';
 import moment from 'moment';
 
 export class GRPCClient {
-    private static client: GRPCClient;
+    private static clientInstance: GRPCClient;
     private port = AppConfig.get('grpc:authService:port')
     private deadline = moment(new Date()).add(1, 'day').toDate()
-
+    private client;
 
     private constructor() {
 
@@ -31,11 +31,11 @@ export class GRPCClient {
         const grpcInstance = grpc.loadPackageDefinition(
             packageDef
         ) as unknown as ProtoGrpcType;
-        const client = new grpcInstance.auth.AuthService(
+        this.client = new grpcInstance.auth.AuthService(
             `0.0.0.0:${this.port}`,
             grpc.credentials.createInsecure()
         );
-        client.waitForReady(this.deadline, (err) => {
+        this.client.waitForReady(this.deadline, (err) => {
             if (err) {
                 console.error(err);
                 return;
@@ -46,10 +46,14 @@ export class GRPCClient {
 
 
     public static startServer(): GRPCClient {
-        if (!this.client) {
-            this.client = new GRPCClient();
+        if (!this.clientInstance) {
+            this.clientInstance = new GRPCClient();
         }
-        return this.client;
+        return this.clientInstance;
+    }
+
+    public static getClientInstance() {
+        return this.clientInstance.client;
     }
 
 }

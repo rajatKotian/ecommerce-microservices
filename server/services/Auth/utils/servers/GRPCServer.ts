@@ -7,13 +7,14 @@ import { ProtoGrpcType } from '../../proto/pb/auth';
 import { AuthServiceHandlers } from '../../proto/pb/auth/AuthService';
 import { GRPCController } from '../../controllers';
 import { GRPCClient } from './GRPCClient';
+import GRPCService from '../../service/grpc.service';
 
 
 export class GRPCServer {
 
     private static server: GRPCServer;
 
-    private grpcController: GRPCController;
+    private grpcService: GRPCService;
 
     private port = AppConfig.get('grpc:authService:port')
     private PROTO_FILE: string = '../../proto/services/auth/v1/auth.proto'
@@ -23,9 +24,10 @@ export class GRPCServer {
 
     private constructor() {
         const server = new Server();
-        this.grpcController = new GRPCController();
+        this.grpcService = new GRPCService();
+
         server.addService(this.authPackage.AuthService.service, {
-            GetUser: (req: any, res: any) => this.grpcController.getUserHandler(req, res)
+            GetUser: (req: any, res: any) => this.grpcService.getUserHandler(req, res)
         } as AuthServiceHandlers)
 
         server.bindAsync(

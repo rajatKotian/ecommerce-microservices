@@ -4,41 +4,34 @@ import { IRepository } from '../../../utils/interface/repository';
 import { GetUserRequest__Output } from '../proto/pb/auth/GetUserRequest';
 import { GRPC_ERROR_CODES, GRPC_ERROR_MESSAGES } from '../../../utils/constants';
 import { GetUserResponse } from '../proto/pb/auth/GetUserResponse';
+import { IGRPCController } from '../interface/service';
+import { GRPCClient } from '../utils/servers/GRPCClient';
+import { Request, Response } from 'express';
 
 export default class GRPCController {
-    private authRepository: IRepository
-    constructor() {
-        this.authRepository = new AuthRepository();
-    }
 
-    getUserHandler = async (
-        req: grpc.ServerUnaryCall<GetUserRequest__Output, GetUserResponse>,
-        res: grpc.sendUnaryData<GetUserResponse>
-    ) => {
-        try {
-            const user = await this.authRepository.getOne({
-                _id: req.request.id,
-            })
-
-
-            res(null,
-                {
-                    email: user.email,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
+    test = async (req: Request, res: Response) => {
+        GRPCClient.getClientInstance().GetUser(
+            {
+                id: req.params.id,
+            },
+            (err, data) => {
+                if (err) {
+                    return res.status(400).json({
+                        status: "fail",
+                        message: err.message
+                    })
                 }
-            )
-        } catch (err: any) {
-            if (err.code === GRPC_ERROR_CODES.P2002) {
-                res({
-                    code: grpc.status.INVALID_ARGUMENT,
-                    message: GRPC_ERROR_MESSAGES.INVALID_REQUEST,
-                });
+                return res.status(200).json({
+                    status: "success",
+                    data: {
+                        email: data?.email,
+                        firstName: data?.firstName,
+                        lastName: data?.lastName
+                    } 
+                })
             }
-            res({
-                code: grpc.status.INTERNAL,
-                message: err.message,
-            });
-        }
-    };
+        );
+
+    }
 };

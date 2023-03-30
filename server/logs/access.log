@@ -99,3 +99,6 @@
 [0mGET /v1/auth/ [32m202[0m 16.636 ms - 26[0m
 [0mGET /v1/auth/grpc [33m401[0m 4.822 ms - -[0m
 [0mGET /v1/auth/grpc [32m202[0m 16.396 ms - 26[0m
+[0mGET /v1/auth/grpc/?id=6425f4053f914fd71e40b940 [32m202[0m 23.945 ms - 26[0m
+[0mGET /v1/auth/grpc/?id=6425f4053f914fd71e40b940 [33m400[0m 84.597 ms - 91[0m
+[0mGET /v1/auth/grpc/?id=6425f4053f914fd71e40b940 [33m400[0m 51.187 ms - 91[0m
