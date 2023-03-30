@@ -8,17 +8,3 @@ export interface IAuthService {
     getProfileDetails(req: Request): Promise<IServiceLayerResponse>
     updateProfileDetails(req: Request, args: IUser): Promise<IServiceLayerResponse>
 };
-
-export interface IGRPCRouter {
-    registerNewUser(req: Request, args: IUser): Promise<IServiceLayerResponse>
-    loginUser(req: Request, args: { email: string, password: string }): Promise<IServiceLayerResponse>
-    getProfileDetails(req: Request): Promise<IServiceLayerResponse>
-    updateProfileDetails(req: Request, args: IUser): Promise<IServiceLayerResponse>
-};
-
-export interface IRESTRouter {
-    registerNewUser(req: Request, args: IUser): Promise<IServiceLayerResponse>
-    loginUser(req: Request, args: { email: string, password: string }): Promise<IServiceLayerResponse>
-    getProfileDetails(req: Request): Promise<IServiceLayerResponse>
-    updateProfileDetails(req: Request, args: IUser): Promise<IServiceLayerResponse>
-};
