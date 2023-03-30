@@ -27,6 +27,7 @@ export class GRPCServer {
         server.addService(this.authPackage.AuthService.service, {
             GetUser: (req: any, res: any) => this.grpcController.getUserHandler(req, res)
         } as AuthServiceHandlers)
+
         server.bindAsync(
             `0.0.0.0:${this.port}`,
             ServerCredentials.createInsecure(),
@@ -36,7 +37,7 @@ export class GRPCServer {
                 }
                 server.start();
                 GRPCClient.startServer();
-                Logger.info(`Authentication service GRPC Server started at port: ${port}`);
+                Logger.info(`Authentication service GRPC SERVER started at port: ${port}`);
             })
     }
 

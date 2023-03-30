@@ -1,5 +1,5 @@
 import * as express from 'express'
-import Auth from '../services/Auth'
+import Auth from '../services/Auth/router'
 import Cart from '../services/Cart'
 
 

@@ -89,3 +89,13 @@
 [0mPOST /auth/grpc/get-user [33m404[0m 1.062 ms - 158[0m
 [0mPOST /auth/grpc/get-user [33m404[0m 1.299 ms - 158[0m
 [0mPOST /v1/auth/grpc/get-user [0m-[0m - ms - -[0m
+[0mGET /v1/auth/ [33m401[0m 6.029 ms - -[0m
+[0mPOST /v1/auth/login [33m404[0m 145.384 ms - 71[0m
+[0mPOST /v1/auth/register [33m403[0m 19.838 ms - 82[0m
+[0mPOST /v1/auth/login [33m404[0m 106.534 ms - 71[0m
+[0mPOST /v1/auth/login [33m404[0m 130.513 ms - 71[0m
+[0mPOST /v1/auth/register [32m201[0m 162.158 ms - 246[0m
+[0mPOST /v1/auth/login [32m202[0m 117.229 ms - 256[0m
+[0mGET /v1/auth/ [32m202[0m 16.636 ms - 26[0m
+[0mGET /v1/auth/grpc [33m401[0m 4.822 ms - -[0m
+[0mGET /v1/auth/grpc [32m202[0m 16.396 ms - 26[0m

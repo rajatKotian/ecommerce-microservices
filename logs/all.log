@@ -461,3 +461,51 @@
 2023-03-27 19:56:15:5615 [32minfo[39m: [32mRedis Client Success[39m
 2023-03-27 19:56:15:5615 [32minfo[39m: [32mMongodb connection Successful[39m
 2023-03-27 19:56:15:5615 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-03-30 20:22:46:2246 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-30 20:22:46:2246 [32minfo[39m: [32mAuthentication service GRPC Server started at port: 9909[39m
+2023-03-30 20:22:46:2246 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-03-30 20:22:46:2246 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-30 20:22:46:2246 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-03-30 20:22:46:2246 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-30 20:24:22:2422 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-30 20:24:22:2422 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-03-30 20:24:22:2422 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-03-30 20:24:22:2422 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-30 20:24:22:2422 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-30 20:24:22:2422 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-03-30 20:26:50:2650 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-30 20:26:50:2650 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-03-30 20:26:50:2650 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-03-30 20:26:50:2650 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-30 20:26:50:2650 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-30 20:26:50:2650 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-03-30 20:27:23:2723 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-30 20:27:23:2723 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-03-30 20:27:23:2723 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-03-30 20:27:23:2723 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-30 20:27:23:2723 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-30 20:27:23:2723 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-03-30 20:30:17:3017 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-30 20:30:17:3017 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-03-30 20:30:17:3017 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-03-30 20:30:17:3017 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-30 20:30:17:3017 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-03-30 20:30:17:3017 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-30 20:30:29:3029 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-30 20:30:29:3029 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-03-30 20:30:29:3029 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-03-30 20:30:29:3029 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-30 20:30:29:3029 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-30 20:30:29:3029 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-03-30 20:38:36:3836 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-03-30 20:38:36:3836 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-03-30 20:38:36:3836 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-03-30 20:38:36:3836 [32minfo[39m: [32mRedis Client Success[39m
+2023-03-30 20:38:36:3836 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-03-30 20:38:36:3836 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-03-30 20:39:39:3939 [34mdebug[39m: [34m123123123123 $2a$10$tEMOhjDT/kITGkXQuv2IdOBZQdt2dYwKhDdApnUYpnl7XS3W0B/Oe[39m
+2023-03-30 20:39:58:3958 [34mdebug[39m: [34m123123123123 $2a$10$tEMOhjDT/kITGkXQuv2IdOBZQdt2dYwKhDdApnUYpnl7XS3W0B/Oe[39m
+2023-03-30 20:41:02:412 [34mdebug[39m: [34m123123123123 $2a$10$tEMOhjDT/kITGkXQuv2IdOBZQdt2dYwKhDdApnUYpnl7XS3W0B/Oe[39m
+2023-03-30 20:41:41:4141 [32minfo[39m: [32mRajat Kotian rajat.kotian@gmail.com[39m
+2023-03-30 20:41:47:4147 [34mdebug[39m: [34m123123123123 $2a$10$oKFGXpaA1MVbjwHZn/zD7eABYf0YBxIHGC/vx9O/A1XCHI2Ud3Wfq[39m
+2023-03-30 20:41:48:4148 [32minfo[39m: [32mRajat Kotian rajat.kotian@gmail.com[39m
