@@ -20,14 +20,13 @@ export default class GRPCController {
             },
             (err, data) => {
                 if (err) {
-                    const httpCode = HTTP_ERROR_STATUS_CODE.BAD_REQUEST;
-                    const error = new APIError(
+                    const error: APIError = new APIError(
                         false,
-                        httpCode,
+                        HTTP_ERROR_STATUS_CODE.BAD_REQUEST,
                         true,
                         err.message
                     );
-                    return res.status(httpCode).send(error);
+                    return res.status(error.httpCode).send(error);
                 }
                 const response: APISuccess = new APISuccess(
                     true,
