@@ -9,12 +9,13 @@ import { GRPCClient } from '../utils/servers/GRPCClient';
 import { APIError } from '../../../utils/responseHandlers/error.helper';
 import { APISuccess } from '../../../utils/responseHandlers/success.helper';
 import { Request, Response } from 'express';
+import { AuthServiceClient } from '../proto/pb/auth/AuthService';
 
 export default class GRPCController {
-
+    private clientInstance: AuthServiceClient = GRPCClient.getClientInstance();
     test = async (req: Request, res: Response) => {
         const id: string = req.query.id as string;
-        GRPCClient.getClientInstance().GetUser(
+        this.clientInstance.GetUser(
             {
                 id
             },
