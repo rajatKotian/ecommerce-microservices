@@ -1,7 +1,7 @@
 import * as grpc from '@grpc/grpc-js';
 import AuthRepository from '../repository/auth.repository';
 import { IRepository } from '../../../utils/interface/repository';
-import { GetUserRequest__Output } from '../proto/pb/auth/GetUserRequest';
+import { GetUserRequest, GetUserRequest__Output } from '../proto/pb/auth/GetUserRequest';
 import { GRPC_ERROR_CODES, GRPC_ERROR_MESSAGES } from '../../../utils/constants';
 import { GetUserResponse } from '../proto/pb/auth/GetUserResponse';
 import { IGRPCService } from '../interface/service';
@@ -15,14 +15,13 @@ export default class GRPCService implements IGRPCService {
     }
 
     getUserHandler = async (
-        req: grpc.ServerUnaryCall<GetUserRequest__Output, GetUserResponse>,
+        req: grpc.ServerUnaryCall<GetUserRequest, GetUserResponse>,
         res: grpc.sendUnaryData<GetUserResponse>
     ) => {
         try {
             const user = await this.grpcServiceRepository.getOne({
                 _id: req.request.id,
             })
-
             res(null,
                 {
                     email: user.email,

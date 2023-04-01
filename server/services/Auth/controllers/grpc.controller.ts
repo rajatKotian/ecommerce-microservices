@@ -2,34 +2,39 @@ import * as grpc from '@grpc/grpc-js';
 import AuthRepository from '../repository/auth.repository';
 import { IRepository } from '../../../utils/interface/repository';
 import { GetUserRequest__Output } from '../proto/pb/auth/GetUserRequest';
-import { GRPC_ERROR_CODES, GRPC_ERROR_MESSAGES } from '../../../utils/constants';
+import { GRPC_ERROR_CODES, GRPC_ERROR_MESSAGES, HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE } from '../../../utils/constants';
 import { GetUserResponse } from '../proto/pb/auth/GetUserResponse';
 import { IGRPCController } from '../interface/service';
 import { GRPCClient } from '../utils/servers/GRPCClient';
+import { APIError } from '../../../utils/responseHandlers/error.helper';
+import { APISuccess } from '../../../utils/responseHandlers/success.helper';
 import { Request, Response } from 'express';
 
 export default class GRPCController {
 
     test = async (req: Request, res: Response) => {
+        const id: string = req.query.id as string;
         GRPCClient.getClientInstance().GetUser(
             {
-                id: req.params.id,
+                id
             },
             (err, data) => {
                 if (err) {
-                    return res.status(400).json({
-                        status: "fail",
-                        message: err.message
-                    })
+                    const httpCode = HTTP_ERROR_STATUS_CODE.BAD_REQUEST;
+                    const error = new APIError(
+                        false,
+                        httpCode,
+                        true,
+                        err.message
+                    );
+                    return res.status(httpCode).send(error);
                 }
-                return res.status(200).json({
-                    status: "success",
-                    data: {
-                        email: data?.email,
-                        firstName: data?.firstName,
-                        lastName: data?.lastName
-                    } 
-                })
+                const response: APISuccess = new APISuccess(
+                    true,
+                    HTTP_SUCCESS_STATUS_CODE.ACCEPTED,
+                    data
+                )
+                return res.status(response.httpCode).json(response)
             }
         );
 
