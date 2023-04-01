@@ -34,7 +34,7 @@ export default class GRPCController {
                     HTTP_SUCCESS_STATUS_CODE.ACCEPTED,
                     data
                 )
-                return res.status(response.httpCode).json(response)
+                return res.status(response.httpCode).send(response)
             }
         );
 
