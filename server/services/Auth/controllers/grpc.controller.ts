@@ -12,10 +12,9 @@ import { Request, Response } from 'express';
 import { AuthServiceClient } from '../proto/pb/auth/AuthService';
 
 export default class GRPCController {
-    private clientInstance: AuthServiceClient = GRPCClient.getClientInstance();
     test = async (req: Request, res: Response) => {
         const id: string = req.query.id as string;
-        this.clientInstance.GetUser(
+        GRPCClient.getClientInstance().GetUser(
             {
                 id
             },
@@ -34,7 +33,7 @@ export default class GRPCController {
                     HTTP_SUCCESS_STATUS_CODE.ACCEPTED,
                     data
                 )
-                return res.status(response.httpCode).send(response)
+                return res.status(response.httpCode).json(response)
             }
         );
 

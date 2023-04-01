@@ -5,6 +5,7 @@ import { ProtoGrpcType } from '../../proto/pb/auth';
 import { AppConfig } from '../../../../config';
 import Logger from '../../../../utils/helpers/Logger';
 import moment from 'moment';
+import { AuthServiceClient } from '../../proto/pb/auth/AuthService';
 
 export class GRPCClient {
     private static clientInstance: GRPCClient;
@@ -52,7 +53,7 @@ export class GRPCClient {
         return this.clientInstance;
     }
 
-    public static getClientInstance() {
+    public static getClientInstance(): AuthServiceClient {
         return this.clientInstance.client;
     }
 
