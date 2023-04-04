@@ -12,7 +12,7 @@ import { Request, Response } from 'express';
 import { AuthServiceClient } from '../proto/pb/auth/AuthService';
 
 export default class GRPCController {
-    test = async (req: Request, res: Response) => {
+    getUserById = async (req: Request, res: Response) => {
         const id: string = req.query.id as string;
         GRPCClient.getClientInstance().GetUser(
             {
