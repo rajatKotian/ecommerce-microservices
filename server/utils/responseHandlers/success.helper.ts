@@ -7,13 +7,22 @@ enum HttpSuccessStatusCode {
     PARTIAL_INFORMATION = 203,
     NO_INFORMATION = 204,
 }
+enum HttpErrorStatusCode {
+    BAD_REQUEST = 400,
+    UNAUTHORIZED = 401,
+    PAYMENT_REQUIRED = 402,
+    FORBIDDEN = 403,
+    NOT_FOUND = 404,
+    INTERNAL_SERVER = 500,
+    NOT_IMPLEMENTED = 501,
+}
 
 class BaseSuccess {
     public readonly success: boolean;
-    public readonly httpCode: HttpSuccessStatusCode;
+    public readonly httpCode: HttpSuccessStatusCode | HttpErrorStatusCode;
     public readonly response: any;
 
-    constructor(success: boolean, httpCode: HttpSuccessStatusCode, response: any) {
+    constructor(success: boolean, httpCode: HttpSuccessStatusCode | HttpErrorStatusCode, response: any) {
         Object.setPrototypeOf(this, new.target.prototype);
 
         this.success = success;

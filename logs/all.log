@@ -801,3 +801,11 @@
 2023-04-04 20:16:04:164 [32minfo[39m: [32mRedis Client Success[39m
 2023-04-04 20:16:04:164 [32minfo[39m: [32mMongodb connection Successful[39m
 2023-04-04 20:16:04:164 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-04-17 20:22:12:2212 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-04-17 20:22:12:2212 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-04-17 20:22:12:2212 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-04-17 20:22:12:2212 [32minfo[39m: [32mRedis Client Success[39m
+2023-04-17 20:22:12:2212 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-04-17 20:22:12:2212 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-04-17 20:57:13:5713 [34mdebug[39m: [34m123123123123 $2a$10$oKFGXpaA1MVbjwHZn/zD7eABYf0YBxIHGC/vx9O/A1XCHI2Ud3Wfq[39m
+2023-04-17 20:57:13:5713 [32minfo[39m: [32mRajat Kotian rajat.kotian@gmail.com[39m

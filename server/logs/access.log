@@ -161,3 +161,4 @@
 [0mGET /v1/auth/grpc/get-user-by-id?id=6425f4053f914fd71e40b940 [32m202[0m 14.791 ms - 119[0m
 [0mGET /v1/auth/get-profile [32m201[0m 16.413 ms - 416[0m
 [0mGET /v1/auth/get-profile [32m201[0m 19.643 ms - 416[0m
+[0mPOST /v1/auth/login [32m202[0m 154.881 ms - 256[0m
