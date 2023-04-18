@@ -1,11 +1,10 @@
 import assert from "assert";
 import { Request, Response } from "express";
-import { HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE } from "../../../utils/constants";
+import { HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE, ServiceType } from "../../../utils/constants";
 import { checkErrors } from "../../../utils/helpers";
 import Logger from "../../../utils/helpers/Logger";
 import { IAuthService } from "../interface/service";
 import { AuthService } from "../service";
-
 
 export default class RestController {
     private authService: IAuthService;

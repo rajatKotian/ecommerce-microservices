@@ -1,27 +1,67 @@
-// Responsibilites of this client
-/*
 
-This client will have 1 responsilbilites to make a api call
+import { AppConfig } from "../../config";
+import { IAPIService } from "../interface";
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
+import qs from 'qs';
 
-This api call can be of two types.
 
-    1.intra-service-call (grpc)
-    2.External call (http or websockets)
+const paramsSerializer = (params: any) => qs.stringify(params, { arrayFormat: 'brackets' });
 
-    Each type of call have its own method declared with designated enpoints provided by the caller from constants 
-    and will be highly decoupled.
-    
-    Flow of the call
-    Client request ---> invoke a api call with necessary parameters (intra-service or external) --->
- */
+class APIClient {
+    private axiosInstance: AxiosInstance;
+    private baseUrl: string = AppConfig.get('baseURLs:backendUrl')
 
-class APIService {
+    constructor() {
+        this.axiosInstance = axios.create({
+            baseURL: this.baseUrl,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            paramsSerializer: paramsSerializer
+        });
 
-    grpcCall() {
-        console.log('GRPC call');
+/* TODO: HANDLE TOKENS HERE */
+
+        // this.axiosInstance.interceptors.request.use(async (config: AxiosRequestConfig) => {
+        //
+        //     let refresh = LocalStorageService.getItem<string>('refreshToken');
+        //     let accessToken = LocalStorageService.getItem<string>('accessToken');
+        //     if (accessToken) {
+        //         config.headers = {
+        //             'x-refresh': refresh,
+        //             Authorization: 'Bearer ' + accessToken,
+        //             'Content-Type': 'application/json'
+        //         }
+        //     }
+
+        //     return config;
+        // });
+
+        this.axiosInstance.interceptors.response.use(
+            (response: AxiosResponse) => {
+                return response;
+            },
+            (error: any) => {
+                throw error;
+            }
+        );
     }
 
-    httpCall() {
-        console.log('HTTP call');
+    public get(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<any>> {
+        return this.axiosInstance.get(url, config);
+    }
+
+    public post(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse<any>> {
+        return this.axiosInstance.post(url, data, config);
+    }
+
+    public put(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse<any>> {
+        return this.axiosInstance.put(url, data, config);
+    }
+
+    public delete(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<any>> {
+        return this.axiosInstance.delete(url, config);
     }
 }
+
+export default APIClient;

@@ -1,3 +1,9 @@
+export enum ServiceType {
+    HTTP,
+    GRPC
+}
+
+
 export const ENVIRONMENTS = Object.freeze({
     PRODUCTION: "production",
     DEVELOPMENT: "development",
