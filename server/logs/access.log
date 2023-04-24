@@ -238,3 +238,6 @@
 [0mGET /_next/webpack-hmr [33m404[0m 5.400 ms - 156[0m
 [0mGET /_next/webpack-hmr [33m404[0m 4.340 ms - 156[0m
 [0mGET /_next/webpack-hmr [33m404[0m 2.343 ms - 156[0m
+[0mGET /_next/webpack-hmr [33m404[0m 3.455 ms - 156[0m
+[0mGET /v1/auth/grpc/get-user-by-id?id=6425f4053f914fd71e40b940 [32m202[0m 73.879 ms - 119[0m
+[0mPUT /v1/auth/update-profile [33m401[0m 3.895 ms - -[0m
