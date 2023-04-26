@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package inventory;
+
+
+service InventoryService {
+    rpc GetInventory (GetInventoryRequest) returns (GetInventoryResponse);
+}
+
+message GetInventoryRequest {
+    string id = 1;
+}
+
+message GetInventoryResponse {
+    string item = 3;
+}
+
+
