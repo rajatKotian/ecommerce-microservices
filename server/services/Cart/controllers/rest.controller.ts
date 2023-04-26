@@ -8,10 +8,10 @@ import { CartService } from "../service";
 
 
 export default class RestController {
-    private authService: ICartService;
+    private cartService: ICartService;
 
     constructor() {
-        this.authService = new CartService();
+        this.cartService = new CartService();
     }
 
     testRoute = async (req: Request, res: any) => {

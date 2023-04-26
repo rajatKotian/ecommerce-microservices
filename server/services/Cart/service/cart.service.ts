@@ -6,7 +6,7 @@ import Logger from "../../../utils/helpers/Logger";
 import { Request } from "express";
 import { initiateSession } from "../utils/helpers/session";
 import { ICartService } from "../interface/service";
-import CartRepository from "../repository/auth.repository";
+import CartRepository from "../repository/cart.repository";
 
 export default class CartServiceLayer implements ICartService {
     private cartRepository: any;
