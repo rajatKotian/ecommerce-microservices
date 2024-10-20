@@ -1,10 +1,9 @@
 node_modules/
 .vscode/
 package-lock.json
-server/config/environment/*
+/server/config/environment/*
 proto/pb/*
-server/services/Auth/proto/pb/*
-server/services/Cart/proto/pb/*
-server/logs/*
-
+/server/services/Auth/proto/pb/*
+/server/services/Cart/proto/pb/*
+/server/logs/*
 
