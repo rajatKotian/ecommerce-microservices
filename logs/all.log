@@ -1057,3 +1057,153 @@
 2023-04-26 18:41:09:419 [32minfo[39m: [32mRedis Client Success[39m
 2023-04-26 18:41:09:419 [32minfo[39m: [32mMongodb connection Successful[39m
 2023-04-26 18:41:09:419 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-04-27 18:15:38:1538 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-04-27 18:15:38:1538 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-04-27 18:15:38:1538 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-04-27 18:15:38:1538 [32minfo[39m: [32mRedis Client Success[39m
+2023-04-27 18:15:38:1538 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-04-27 18:15:38:1538 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-04-28 18:40:30:4030 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-04-28 18:40:30:4030 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-04-28 18:40:30:4030 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-04-28 18:40:30:4030 [32minfo[39m: [32mRedis Client Success[39m
+2023-04-28 18:40:30:4030 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-04-28 18:40:30:4030 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-05-06 18:50:02:502 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-05-06 18:50:02:502 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-05-06 18:50:02:502 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-05-06 18:50:02:502 [32minfo[39m: [32mRedis Client Success[39m
+2023-05-06 18:50:02:502 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-05-06 18:50:02:502 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-05-07 16:04:08:48 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-05-07 16:04:08:48 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-05-07 16:04:08:48 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-05-07 16:04:08:48 [32minfo[39m: [32mRedis Client Success[39m
+2023-05-07 16:04:08:48 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-05-07 16:04:08:48 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-05-10 14:21:33:2133 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-05-10 14:21:33:2133 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-05-10 14:21:33:2133 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-05-10 14:21:33:2133 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-05-10 14:21:33:2133 [32minfo[39m: [32mRedis Client Success[39m
+2023-05-10 14:21:33:2133 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-05-16 19:24:21:2421 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-05-16 19:24:21:2421 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-05-16 19:24:21:2421 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-05-16 19:24:21:2421 [32minfo[39m: [32mRedis Client Success[39m
+2023-05-16 19:24:21:2421 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-05-16 19:24:21:2421 [32minfo[39m: [32mMongodb connection Successful[39m
+2023-05-17 18:46:48:4648 [32minfo[39m: [32mServer is listening on 6553[39m
+2023-05-17 18:46:48:4648 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2023-05-17 18:46:48:4648 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2023-05-17 18:46:48:4648 [32minfo[39m: [32mRedis Client Success[39m
+2023-05-17 18:46:48:4648 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2023-05-17 18:46:48:4648 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-20 14:16:05:165 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 14:16:05:165 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 14:16:05:165 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 14:16:05:165 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 14:16:05:165 [31merror[39m: [31mRedis Client Error getaddrinfo ENOTFOUND host.docker.internal[39m
+2024-10-20 14:16:35:1635 [32minfo[39m: [32mMongodb connection Failed[39m
+2024-10-20 14:28:24:2824 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 14:28:24:2824 [31merror[39m: [31mRedis Client Error getaddrinfo ENOTFOUND host.docker.internal[39m
+2024-10-20 14:28:24:2824 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 14:28:24:2824 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 14:28:24:2824 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 14:28:54:2854 [32minfo[39m: [32mMongodb connection Failed[39m
+2024-10-20 14:58:22:5822 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 14:58:22:5822 [31merror[39m: [31mRedis Client Error getaddrinfo ENOTFOUND host.docker.internal[39m
+2024-10-20 14:58:22:5822 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 14:58:22:5822 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 14:58:22:5822 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 14:58:28:5828 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-20 15:06:35:635 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:06:35:635 [31merror[39m: [31mRedis Client Error getaddrinfo ENOTFOUND host.docker.internal[39m
+2024-10-20 15:06:35:635 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:06:35:635 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:06:35:635 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:06:40:640 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-20 15:06:59:659 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:06:59:659 [31merror[39m: [31mRedis Client Error getaddrinfo ENOTFOUND host.docker.internal[39m
+2024-10-20 15:06:59:659 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:06:59:659 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:06:59:659 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:07:01:71 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-20 15:07:36:736 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:07:36:736 [31merror[39m: [31mRedis Client Error getaddrinfo ENOTFOUND host.docker.internal[39m
+2024-10-20 15:07:36:736 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:07:36:736 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:07:36:736 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:07:42:742 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-20 15:09:33:933 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:09:33:933 [31merror[39m: [31mRedis Client Error getaddrinfo ENOTFOUND host.docker.internal[39m
+2024-10-20 15:09:33:933 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:09:33:933 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:09:33:933 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:09:38:938 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-20 15:09:43:943 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:09:43:943 [31merror[39m: [31mRedis Client Error getaddrinfo ENOTFOUND host.docker.internal[39m
+2024-10-20 15:09:43:943 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:09:43:943 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:09:43:943 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:09:46:946 [31merror[39m: [31mRedis Client Error Invalid URL[39m
+2024-10-20 15:09:46:946 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:09:46:946 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:09:46:946 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:09:46:946 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:09:49:949 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-20 15:10:11:1011 [31merror[39m: [31mRedis Client Error Invalid URL[39m
+2024-10-20 15:10:11:1011 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:10:11:1011 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:10:11:1011 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:10:11:1011 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:10:14:1014 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-20 15:11:41:1141 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:11:41:1141 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:11:41:1141 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:11:41:1141 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:11:44:1144 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:11:44:1144 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:11:44:1144 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:11:44:1144 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:11:44:1144 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-20 15:12:04:124 [32minfo[39m: [32m{[39m
+[32m  socket: {[39m
+[32m    host: 'redis-18020.c264.ap-south-1-1.ec2.redns.redis-cloud.com',[39m
+[32m    port: 18020[39m
+[32m  }[39m
+[32m}[39m
+2024-10-20 15:12:04:124 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:12:04:124 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:12:04:124 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:12:04:124 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:12:04:124 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-20 15:12:11:1211 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-20 15:12:18:1218 [32minfo[39m: [32m{[39m
+[32m  socket: {[39m
+[32m    host: 'redis-18020.c264.ap-south-1-1.ec2.redns.redis-cloud.com',[39m
+[32m    port: 18020[39m
+[32m  }[39m
+[32m}[39m
+2024-10-20 15:12:18:1218 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:12:18:1218 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:12:18:1218 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:12:19:1219 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:12:19:1219 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-20 15:12:22:1222 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:12:22:1222 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:12:22:1222 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:12:22:1222 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:12:22:1222 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-20 15:12:23:1223 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-20 15:12:44:1244 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:12:44:1244 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:12:44:1244 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:12:44:1244 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:12:44:1244 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-20 15:12:51:1251 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:12:51:1251 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:12:51:1251 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:12:51:1251 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:12:51:1251 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-20 15:12:52:1252 [32minfo[39m: [32mMongodb connection Successful[39m

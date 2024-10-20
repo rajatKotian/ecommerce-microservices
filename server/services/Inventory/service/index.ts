@@ -1,3 +1,3 @@
-import CartService from './cart.service'
+import CartService from './inventory.service'
 
 export { CartService }

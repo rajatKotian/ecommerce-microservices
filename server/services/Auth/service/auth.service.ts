@@ -51,7 +51,7 @@ export default class AuthServiceLayer implements IAuthService {
             const userInfo: IUser | undefined = req?.user
             const user = await this.authRepository.getOne({ email: userInfo?.email });
             return new APISuccess(
-                true, HTTP_SUCCESS_STATUS_CODE.CREATED, user
+                true, HTTP_SUCCESS_STATUS_CODE.OK, user
             );
         } catch (error) {
             Logger.error(JSON.stringify(error));

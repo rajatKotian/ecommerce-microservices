@@ -1,2 +1,0 @@
-2023-03-23 01:28:46:2846 [31merror[39m: [31mRedis Client Error getaddrinfo ENOTFOUND host.docker.internal[39m
-2023-03-23 01:29:10:2910 [31merror[39m: [31mRedis Client Error getaddrinfo ENOTFOUND host.docker.internal[39m

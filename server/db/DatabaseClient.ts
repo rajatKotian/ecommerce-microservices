@@ -7,7 +7,7 @@ export default class DatabaseClient {
 
     private constructor() {
         return new Promise((resolve, reject) => {
-            let { uri, options, dockerUri } = AppConfig.get("mongoDB")
+            let { uri, options } = AppConfig.get("mongoDB")
             Mongoose.set('strictQuery', true);
             Mongoose.connect(uri, options, (error) => {
                 if (error) {

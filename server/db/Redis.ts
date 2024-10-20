@@ -1,6 +1,6 @@
 import { createClient } from 'redis';
 import { AppConfig } from '../config';
-const { docker, url, dockerUrl } = AppConfig.get('redis');
+const { url, port } = AppConfig.get('redis');
 import Logger from '../utils/helpers/Logger';
 import { redisMiddleware } from '../services/Auth/utils/middleware/redis';
 
@@ -17,7 +17,10 @@ export default class Redis {
     async connect() {
         try {
             this.client = createClient({
-                url: docker ? dockerUrl : url
+                socket: {
+                    host: url,
+                    port: port
+                }
             });
             await this.client.connect(url)
             Logger.info('Redis Client Success')
@@ -32,6 +35,7 @@ export default class Redis {
         }
         return this.server;
     }
+
     public static setRedisMiddleware() {
         return redisMiddleware(this.server);
     }
