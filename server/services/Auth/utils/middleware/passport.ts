@@ -31,11 +31,11 @@ passport.use(
                     const token = await req.redisClient.getKey(payload.email)
                     if (!user) {
                         return done(true, new APIError(
-                            false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, true, ERROR_MESSAGES.INVALID_CREDENTIALS
+                            false, HttpErrorStatusCode.BAD_REQUEST, true, ERROR_MESSAGES.INVALID_CREDENTIALS
                         ));
                     } else if (!token) {
                         return done(true, new APIError(
-                            false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, true, ERROR_MESSAGES.SESSION_EXPIRED
+                            false, HttpErrorStatusCode.BAD_REQUEST, true, ERROR_MESSAGES.SESSION_EXPIRED
                         ));
                     }
                     return done(false, user)

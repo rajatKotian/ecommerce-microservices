@@ -1230,3 +1230,37 @@
 2024-10-21 22:15:55:1555 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
 2024-10-21 22:15:55:1555 [32minfo[39m: [32mRedis Client Success[39m
 2024-10-21 22:15:56:1556 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-21 22:40:21:4021 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-21 22:40:21:4021 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-21 22:40:22:4022 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-21 22:42:07:427 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-21 22:42:07:427 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-21 22:42:07:427 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-21 22:43:05:435 [31merror[39m: [31m{}[39m
+2024-10-21 22:43:05:435 [31merror[39m: [31mInternal Server Error[39m
+2024-10-21 22:43:37:4337 [32minfo[39m: [32mRajat Kotian rajat.kotian@gmail.com[39m
+2024-10-21 22:43:37:4337 [31merror[39m: [31mNOAUTH Authentication required[39m
+2024-10-21 22:43:37:4337 [31merror[39m: [31m{"level":"\u001b[31merror\u001b[39m","timestamp":"2024-10-21 22:43:37:4337"}[39m
+2024-10-21 22:43:38:4338 [31merror[39m: [31mInternal Server Error[39m
+2024-10-21 22:43:45:4345 [34mdebug[39m: [34m123123123123 $2a$10$XKtU.QkwxrmYlJCh0377FebAV8NNaUUQMDAbooUlHvlDKDtRjmkYK[39m
+2024-10-21 22:43:46:4346 [32minfo[39m: [32mRajat Kotian rajat.kotian@gmail.com[39m
+2024-10-21 22:43:46:4346 [31merror[39m: [31mNOAUTH Authentication required[39m
+2024-10-21 22:43:46:4346 [31merror[39m: [31m{"level":"\u001b[31merror\u001b[39m","timestamp":"2024-10-21 22:43:46:4346"}[39m
+2024-10-21 22:43:46:4346 [31merror[39m: [31mInternal Server Error[39m
+2024-10-21 22:43:47:4347 [34mdebug[39m: [34m123123123123 $2a$10$XKtU.QkwxrmYlJCh0377FebAV8NNaUUQMDAbooUlHvlDKDtRjmkYK[39m
+2024-10-21 22:43:47:4347 [32minfo[39m: [32mRajat Kotian rajat.kotian@gmail.com[39m
+2024-10-21 22:43:47:4347 [31merror[39m: [31mNOAUTH Authentication required[39m
+2024-10-21 22:43:47:4347 [31merror[39m: [31m{"level":"\u001b[31merror\u001b[39m","timestamp":"2024-10-21 22:43:47:4347"}[39m
+2024-10-21 22:43:47:4347 [31merror[39m: [31mInternal Server Error[39m
+2024-10-21 22:46:37:4637 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-21 22:46:37:4637 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-21 22:46:38:4638 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-21 22:46:52:4652 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-21 22:46:53:4653 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-21 22:46:53:4653 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-21 22:47:54:4754 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-21 22:47:54:4754 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-21 22:47:55:4755 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-21 22:47:58:4758 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-21 22:47:58:4758 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-21 22:47:58:4758 [32minfo[39m: [32mMongodb connection Successful[39m

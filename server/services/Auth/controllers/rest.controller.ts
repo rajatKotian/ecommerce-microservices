@@ -1,6 +1,6 @@
 import assert from "assert";
 import { Request, Response } from "express";
-import { HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE, ServiceType } from "../../../utils/constants";
+import { HttpErrorStatusCode, HttpSuccessStatusCode, ServiceType } from "../../../utils/constants";
 import { checkErrors } from "../../../utils/helpers";
 import Logger from "../../../utils/helpers/Logger";
 import { IAuthService } from "../interface/service";
@@ -15,7 +15,7 @@ export default class RestController {
 
     testRoute = async (req: any, res: any) => {
         try {
-            res.status(HTTP_SUCCESS_STATUS_CODE.ACCEPTED).send('This route is working well')
+            res.status(HttpSuccessStatusCode.ACCEPTED).send('This route is working well')
         } catch (error) {
             res.status(400).send(error)
         }
@@ -28,7 +28,7 @@ export default class RestController {
             res.status(response.httpCode).send(response)
         } catch (error) {
             Logger.error(error);
-            res.status(HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER).send(error)
+            res.status(HttpErrorStatusCode.INTERNAL_SERVER).send(error)
         }
     }
 
@@ -39,7 +39,7 @@ export default class RestController {
             res.status(response.httpCode).send(response)
         } catch (error) {
             Logger.error(error);
-            res.status(HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER).send(error)
+            res.status(HttpErrorStatusCode.INTERNAL_SERVER).send(error)
         }
     }
 
@@ -49,7 +49,7 @@ export default class RestController {
             res.status(response.httpCode).send(response)
         } catch (error) {
             Logger.error(error);
-            res.status(HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER).send(error)
+            res.status(HttpErrorStatusCode.INTERNAL_SERVER).send(error)
         }
     }
 
@@ -60,7 +60,7 @@ export default class RestController {
             res.status(response.httpCode).send(response)
         } catch (error) {
             Logger.error(error);
-            res.status(HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER).send(error)
+            res.status(HttpErrorStatusCode.INTERNAL_SERVER).send(error)
         }
     }
 }

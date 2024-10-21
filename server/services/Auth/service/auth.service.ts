@@ -3,7 +3,7 @@ import { APIError } from "../../../utils/responseHandlers/error.helper";
 import { IUser } from "../interface/request";
 import AuthRepository from "../repository/auth.repository";
 import { APISuccess } from "../../../utils/responseHandlers/success.helper";
-import { ERROR_MESSAGES, HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE, LOGGER_CONSTANTS } from "../../../utils/constants";
+import { ERROR_MESSAGES, HttpErrorStatusCode, HttpSuccessStatusCode } from "../../../utils/constants";
 import Logger from "../../../utils/helpers/Logger";
 import { Request } from "express";
 import { initiateSession } from "../utils/helpers/session";
@@ -29,18 +29,18 @@ export default class AuthServiceLayer implements IAuthService {
             const id: string = userInfo?._id || ''
             if (args.password) {
                 return new APISuccess(
-                    false, HTTP_ERROR_STATUS_CODE.BAD_REQUEST, ERROR_MESSAGES.CANNOT_UPDATE_PASSWORD
+                    false, HttpErrorStatusCode.BAD_REQUEST, ERROR_MESSAGES.CANNOT_UPDATE_PASSWORD
                 );
             }
             const user = await this.authRepository.updateOne(id, args, { new: true });
             return new APISuccess(
-                true, HTTP_SUCCESS_STATUS_CODE.CREATED, user
+                true, HttpSuccessStatusCode.CREATED, user
             );
         } catch (error) {
             Logger.error(JSON.stringify(error));
             throw new APIError(
                 false,
-                HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER,
+                HttpErrorStatusCode.INTERNAL_SERVER,
                 true,
                 ERROR_MESSAGES.INTERNAL_SERVER_ERROR
             );
@@ -51,13 +51,13 @@ export default class AuthServiceLayer implements IAuthService {
             const userInfo: IUser | undefined = req?.user
             const user = await this.authRepository.getOne({ email: userInfo?.email });
             return new APISuccess(
-                true, HTTP_SUCCESS_STATUS_CODE.OK, user
+                true, HttpSuccessStatusCode.OK, user
             );
         } catch (error) {
             Logger.error(JSON.stringify(error));
             throw new APIError(
                 false,
-                HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER,
+                HttpErrorStatusCode.INTERNAL_SERVER,
                 true,
                 ERROR_MESSAGES.INTERNAL_SERVER_ERROR
             );
@@ -69,7 +69,7 @@ export default class AuthServiceLayer implements IAuthService {
             const userExist = await this.authRepository.exists({ email: args?.email });
             if (userExist) {
                 return new APISuccess(
-                    false, HTTP_ERROR_STATUS_CODE.FORBIDDEN, ERROR_MESSAGES.USER_EXISTS
+                    false, HttpErrorStatusCode.FORBIDDEN, ERROR_MESSAGES.USER_EXISTS
                 );
             }
             const data = await this.authRepository.create(args);
@@ -85,14 +85,14 @@ export default class AuthServiceLayer implements IAuthService {
             sendEmailVerificationLink(data?.email, this.sendEmail);
 
             return new APISuccess(
-                true, HTTP_SUCCESS_STATUS_CODE.CREATED, token
+                true, HttpSuccessStatusCode.CREATED, token
             );
 
         } catch (error) {
             Logger.error(JSON.stringify(error));
             throw new APIError(
                 false,
-                HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER,
+                HttpErrorStatusCode.INTERNAL_SERVER,
                 true,
                 ERROR_MESSAGES.INTERNAL_SERVER_ERROR
             );
@@ -108,7 +108,7 @@ export default class AuthServiceLayer implements IAuthService {
             const checkPassword = await data.checkPassword(args?.password)
             if (!checkPassword) {
                 return new APISuccess(
-                    false, HTTP_ERROR_STATUS_CODE.NOT_FOUND, ERROR_MESSAGES.INCORRECT_PASSWORD
+                    false, HttpErrorStatusCode.NOT_FOUND, ERROR_MESSAGES.INCORRECT_PASSWORD
                 );
             }
 
@@ -119,14 +119,14 @@ export default class AuthServiceLayer implements IAuthService {
             });
 
             return new APISuccess(
-                true, HTTP_SUCCESS_STATUS_CODE.ACCEPTED, { token }
+                true, HttpSuccessStatusCode.ACCEPTED, { token }
             );
 
         } catch (error) {
             Logger.error(JSON.stringify(error));
             throw new APIError(
                 false,
-                HTTP_ERROR_STATUS_CODE.INTERNAL_SERVER,
+                HttpErrorStatusCode.INTERNAL_SERVER,
                 true,
                 ERROR_MESSAGES.INTERNAL_SERVER_ERROR
             );
