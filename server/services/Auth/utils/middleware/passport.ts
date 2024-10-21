@@ -3,7 +3,7 @@ import passport from "passport";
 import passportJWT from "passport-jwt"
 import passportLocal from 'passport-local'
 import { AppConfig } from "../../../../config";
-import { ERROR_MESSAGES, HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE } from "../../../../utils/constants";
+import { ERROR_MESSAGES, HttpErrorStatusCode } from "../../../../utils/constants";
 import { APIError } from "../../../../utils/responseHandlers/error.helper";
 import AuthRepository from "../../repository/auth.repository";
 

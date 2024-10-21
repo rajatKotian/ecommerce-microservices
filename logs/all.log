@@ -1264,3 +1264,6 @@
 2024-10-21 22:47:58:4758 [32minfo[39m: [32mServer is listening on 6553[39m
 2024-10-21 22:47:58:4758 [32minfo[39m: [32mRedis Client Success[39m
 2024-10-21 22:47:58:4758 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-21 23:02:13:213 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-21 23:02:13:213 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-21 23:02:13:213 [32minfo[39m: [32mMongodb connection Successful[39m

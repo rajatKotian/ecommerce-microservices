@@ -1,6 +1,6 @@
 import assert from "assert";
 import { Request, Response } from "express";
-import { HTTP_ERROR_STATUS_CODE, HTTP_SUCCESS_STATUS_CODE } from "../../../utils/constants";
+import { HttpSuccessStatusCode } from "../../../utils/constants";
 import { checkErrors } from "../../../utils/helpers";
 import Logger from "../../../utils/helpers/Logger";
 import { ICartService } from "../interface/service";
