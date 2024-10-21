@@ -20,7 +20,7 @@ class APIClient {
             paramsSerializer: paramsSerializer
         });
 
-/* TODO: HANDLE TOKENS HERE */
+        /* TODO: HANDLE TOKENS HERE */
 
         // this.axiosInstance.interceptors.request.use(async (config: AxiosRequestConfig) => {
         //

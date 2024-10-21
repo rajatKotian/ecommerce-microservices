@@ -1207,3 +1207,26 @@
 2024-10-20 15:12:51:1251 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
 2024-10-20 15:12:51:1251 [32minfo[39m: [32mRedis Client Success[39m
 2024-10-20 15:12:52:1252 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-20 15:16:40:1640 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-20 15:16:40:1640 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-20 15:16:40:1640 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-20 15:16:40:1640 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-20 15:16:40:1640 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-20 15:16:48:1648 [32minfo[39m: [32mMongodb connection Successful[39m
+2024-10-21 22:15:06:156 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-21 22:15:06:156 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-21 22:15:06:156 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-21 22:15:06:156 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-21 22:15:06:156 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-21 22:15:36:1536 [32minfo[39m: [32mMongodb connection Failed[39m
+2024-10-21 22:15:44:1544 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-21 22:15:44:1544 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-21 22:15:44:1544 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-21 22:15:44:1544 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-21 22:15:44:1544 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-21 22:15:55:1555 [32minfo[39m: [32mServer is listening on 6553[39m
+2024-10-21 22:15:55:1555 [32minfo[39m: [32mAuthentication service GRPC SERVER started at port: 9909[39m
+2024-10-21 22:15:55:1555 [32minfo[39m: [32mCart service GRPC Server started at port: 9929[39m
+2024-10-21 22:15:55:1555 [32minfo[39m: [32mAuthentication service GRPC CLIENT started at port: 9909[39m
+2024-10-21 22:15:55:1555 [32minfo[39m: [32mRedis Client Success[39m
+2024-10-21 22:15:56:1556 [32minfo[39m: [32mMongodb connection Successful[39m
