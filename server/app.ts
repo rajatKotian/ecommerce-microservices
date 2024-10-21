@@ -5,7 +5,6 @@ import fs from 'fs'
 import bodyParser from 'body-parser'
 import path from 'path'
 import session from 'express-session'
-import crypto from 'crypto'
 
 import { AppConfig } from './config'
 import routes from './apis/routes'
