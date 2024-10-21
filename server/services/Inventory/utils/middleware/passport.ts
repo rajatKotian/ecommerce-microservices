@@ -5,7 +5,7 @@ import passportLocal from 'passport-local'
 import { AppConfig } from "../../../../config";
 import { ERROR_MESSAGES, HttpErrorStatusCode } from "../../../../utils/constants";
 import { APIError } from "../../../../utils/responseHandlers/error.helper";
-import AuthRepository from "../../repository/inventory.repository";
+import AuthRepository from "../../../Auth/repository/auth.repository";
 
 
 const JWTStrategy = passportJWT.Strategy;
