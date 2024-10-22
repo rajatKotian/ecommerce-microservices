@@ -3,7 +3,7 @@ import { ObjectId, Types } from "mongoose";
 import { IRepository } from "../../../utils/interface/repository";
 import { IRepositoryLayerResponse } from "../../../utils/interface/response";
 import { IUser } from "../interface/request";
-import { User } from "../modal/schemas";
+import { User } from "../modal";
 
 export default class AuthRepository implements IRepository {
     constructor() {

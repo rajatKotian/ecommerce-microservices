@@ -60,7 +60,8 @@ export enum HttpSuccessStatusCode {
 }
 
 export enum Collections {
-    USERS = 'users'
+    USERS = 'users',
+    PRODUCTS = 'products'
 }
 
 export enum HttpErrorStatusCode {
