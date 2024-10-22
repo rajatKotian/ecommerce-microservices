@@ -2,22 +2,9 @@ import mongoose, { Document } from "mongoose";
 import bcrypt from "bcryptjs";
 import Logger from "../../../../utils/helpers/Logger";
 import { Collections } from "../../../../utils/constants";
+import { IUser } from "../../interface/model";
 
 let Schema = mongoose.Schema;
-
-export interface IUser {
-    firstName: string;
-    lastName: string;
-    email: string;
-    password: string;
-    mobile: string;
-    countryCode: string;
-    isEmailVerified: boolean;
-    isMobileVerified: boolean;
-    isActive: boolean;
-    createdBy: string;
-    updatedBy: string;
-};
 
 let userSchema = new Schema({
     firstName: {
