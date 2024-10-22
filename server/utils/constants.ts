@@ -54,6 +54,10 @@ export enum HttpSuccessStatusCode {
     NO_INFORMATION = 204,
 }
 
+export enum Collections {
+    USERS = 'users'
+}
+
 export enum HttpErrorStatusCode {
     BAD_REQUEST = 400,
     UNAUTHORIZED = 401,

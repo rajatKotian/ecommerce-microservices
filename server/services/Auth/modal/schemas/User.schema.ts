@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
-import { AppConfig } from "../../../../config";
-import { ERROR_MESSAGES } from "../../../../utils/constants";
 import Logger from "../../../../utils/helpers/Logger";
 
 let Schema = mongoose.Schema;
