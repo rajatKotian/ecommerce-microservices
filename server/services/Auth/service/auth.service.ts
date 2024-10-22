@@ -139,7 +139,7 @@ export default class AuthServiceLayer implements IAuthService {
             const token = await initiateSession(req, {
                 user
             });
-            console.log({ token });
+
             return new APISuccess(
                 true, HttpSuccessStatusCode.ACCEPTED, { token }
             );

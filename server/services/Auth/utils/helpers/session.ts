@@ -20,7 +20,7 @@ export const initiateSession = async (req: any, data: {
         Logger.info(`${firstName} ${lastName} ${email}`);
 
         const redis = req.redisClient;
-        console.log(redis);
+
         const token = jwt.sign({
             user: data.user,
         }, secretkey, { expiresIn: expiry });
@@ -30,7 +30,6 @@ export const initiateSession = async (req: any, data: {
         return token;
     } catch (error) {
         Logger.error(error);
-        console.log(error);
         throw error;
 
     }
