@@ -100,7 +100,9 @@ export default class AuthServiceLayer implements IAuthService {
             const userExist = await this.authRepository.exists({ email: args?.email });
             if (userExist) {
                 return new APISuccess(
-                    false, HttpErrorStatusCode.FORBIDDEN, ERROR_MESSAGES.USER_EXISTS
+                    false,
+                    HttpErrorStatusCode.FORBIDDEN,
+                    ERROR_MESSAGES.USER_EXISTS
                 );
             }
             const user: IUser = await this.authRepository.create(args);
@@ -115,7 +117,9 @@ export default class AuthServiceLayer implements IAuthService {
             sendEmailVerificationLink(email, this.sendEmail);
 
             return new APISuccess(
-                true, HttpSuccessStatusCode.CREATED, token
+                true,
+                HttpSuccessStatusCode.OK,
+                token
             );
 
         } catch (error) {
