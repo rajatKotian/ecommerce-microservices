@@ -141,7 +141,7 @@ export default class AuthServiceLayer implements IAuthService {
             });
 
             return new APISuccess(
-                true, HttpSuccessStatusCode.ACCEPTED, { token }
+                true, HttpSuccessStatusCode.OK, { token }
             );
 
         } catch (error) {
