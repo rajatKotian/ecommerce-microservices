@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import Logger from "../../../../utils/helpers/Logger";
+import { Collections } from "../../../../utils/constants";
 
 let Schema = mongoose.Schema;
 
@@ -16,7 +17,6 @@ export interface IUser {
     isActive: boolean;
     createdBy: string;
     updatedBy: string;
-    checkPassword(candidatePassword: string | undefined): Promise<boolean>;
 };
 
 let userSchema = new Schema({
@@ -103,14 +103,9 @@ userSchema.pre("save", function (next) {
     }
 })
 
-userSchema.methods.checkPassword = async function (password: string): Promise<boolean> {
-    Logger.debug(`${password} ${this.password}`)
-    return await bcrypt.compare(password, this.password);
-};
-
 userSchema.index({ firstName: "text", lastName: "text" });
 
 
 
 interface IUserModel extends IUser, mongoose.Document { }
-export default mongoose.model<IUserModel>('users', userSchema);
+export default mongoose.model<IUserModel>(Collections.USERS, userSchema);

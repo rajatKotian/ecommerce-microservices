@@ -8,8 +8,7 @@ import session from 'express-session'
 
 import { AppConfig } from './config'
 import routes from './apis/routes'
-import { DatabaseClient, RedisClient } from './db'
-import { redisMiddleware } from './services/Auth/utils/middleware/redis'
+import { RedisClient } from './db';
 import Logger from './utils/helpers/Logger'
 
 
@@ -20,8 +19,6 @@ let port = AppConfig.get("express:port") || 3000
 
 //Client Declarations
 RedisClient.startServer()
-DatabaseClient.startDBServer()
-
 
 // Body-parser middleware
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -38,6 +35,10 @@ const expressSession = {
 let accessLogStream = fs.createWriteStream(path.join(__dirname, '/logs/access.log'), { flags: 'a' })
 
 //Set middleware;
+app.use(
+    RedisClient.setRedisMiddleware()
+);
+
 app.use(
     RedisClient.setRedisMiddleware(),
     session(expressSession),

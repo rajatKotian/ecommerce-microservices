@@ -12,6 +12,7 @@ import { sendEmailVerificationLink } from "../utils/helpers/emailers";
 import { NodeMailer } from "../../../utils/emailerClient";
 import { IRepository } from "../../../utils/interface/repository";
 import { IServiceLayerResponse } from "../../../utils/interface/response";
+import { checkPassword } from "../../../utils/helpers";
 
 export default class AuthServiceLayer implements IAuthService {
     private authRepository: IRepository;
@@ -23,9 +24,9 @@ export default class AuthServiceLayer implements IAuthService {
         this.getProfileDetails = this.getProfileDetails.bind(this);
         this.loginUser = this.loginUser.bind(this);
     }
-    updateProfileDetails = async (req: Request, args: IUser): Promise<IServiceLayerResponse> => {
+    updateProfileDetails = async (req: Request, args: Partial<IUser>): Promise<IServiceLayerResponse> => {
         try {
-            const userInfo: IUser | undefined = req?.user
+            const userInfo: IUser = req?.user as IUser
             const id: string = userInfo?._id || ''
             if (args.password) {
                 return new APISuccess(
@@ -48,7 +49,7 @@ export default class AuthServiceLayer implements IAuthService {
     }
     getProfileDetails = async (req: Request): Promise<IServiceLayerResponse> => {
         try {
-            const userInfo: IUser | undefined = req?.user
+            const userInfo: IUser = req?.user as IUser
             const user = await this.authRepository.getOne({ email: userInfo?.email });
             return new APISuccess(
                 true, HttpSuccessStatusCode.OK, user
@@ -101,23 +102,23 @@ export default class AuthServiceLayer implements IAuthService {
 
     loginUser = async (req: Request, args: { email: string, password: string }): Promise<IServiceLayerResponse> => {
         try {
-            const data: any = await this.authRepository.getOne({
+            const data: IUser = await this.authRepository.getOne({
                 email: args?.email,
                 isActive: true
             });
-            const checkPassword = await data.checkPassword(args?.password)
-            if (!checkPassword) {
+            const results = await checkPassword(args?.password, data.password as string);
+            if (!results) {
                 return new APISuccess(
                     false, HttpErrorStatusCode.NOT_FOUND, ERROR_MESSAGES.INCORRECT_PASSWORD
                 );
             }
 
             const token = await initiateSession(req, {
-                firstName: data?.firstName,
-                lastName: data?.lastName,
+                firstName: data.firstName as string,
+                lastName: data.lastName as string,
                 email: args?.email,
             });
-
+            console.log({ token });
             return new APISuccess(
                 true, HttpSuccessStatusCode.ACCEPTED, { token }
             );

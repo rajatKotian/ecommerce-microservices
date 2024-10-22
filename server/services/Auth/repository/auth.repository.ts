@@ -10,30 +10,30 @@ export default class AuthRepository implements IRepository {
         this.create = this.create.bind(this);
     }
 
-    create = async (args: IUser): Promise<any> => new User(args).save();
+    create = async (args: Partial<IUser>): Promise<any> => new User(args).save();
 
-    exists = async (args: IUser): Promise<any> => {
-        const user: IUser[] = await User.find(args)
+    exists = async (args: Partial<IUser>): Promise<any> => {
+        const user: Partial<IUser>[] = await User.find(args)
         return user.length !== 0
     };
 
     delete = async (args: ObjectId[]): Promise<any> => {
         return { success: true };
     }
-    update = async (query: IUser, payload: IUser): Promise<IRepositoryLayerResponse | null> => {
+    update = async (query: Partial<IUser>, payload: Partial<IUser>): Promise<IRepositoryLayerResponse | null> => {
         return User.findOneAndUpdate(query, payload)
     };
 
-    updateOne = async (query: string | IUser, payload: IUser, options?: {}): Promise<IRepositoryLayerResponse | null> => {
+    updateOne = async (query: string | Partial<IUser>, payload: Partial<IUser>, options?: {}): Promise<IRepositoryLayerResponse | null> => {
         if (typeof query == 'string') {
             return User.findByIdAndUpdate(query, payload, options)
         } else {
             return User.findOneAndUpdate(query, payload, options)
         }
     };
-    getAll = async (query: IUser): Promise<IRepositoryLayerResponse> => {
+    getAll = async (query: Partial<IUser>): Promise<IRepositoryLayerResponse> => {
         return { success: true };
     };
 
-    getOne = async (query: IUser): Promise<any> => User.findOne(query)
+    getOne = async (query: Partial<IUser>): Promise<any> => User.findOne(query);
 }

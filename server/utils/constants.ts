@@ -46,6 +46,11 @@ export const EMAIL_SUBJECTS = Object.freeze({
     VERIFY_EMAIL: "Welcome to [customer portal], please verify your email address",
 });
 
+
+export enum Services {
+    AUTH = 'Auth'
+}
+
 export enum HttpSuccessStatusCode {
     OK = 200,
     CREATED = 201,
