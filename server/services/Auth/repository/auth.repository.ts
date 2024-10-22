@@ -2,8 +2,8 @@ import assert from "assert";
 import { ObjectId, Types } from "mongoose";
 import { IRepository } from "../../../utils/interface/repository";
 import { IRepositoryLayerResponse } from "../../../utils/interface/response";
-import { IUser } from "../interface/request";
 import { User } from "../modal";
+import { IUser } from "../interface/model";
 
 export default class AuthRepository implements IRepository {
     constructor() {

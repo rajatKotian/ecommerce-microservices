@@ -1,13 +1,13 @@
-import { ObjectId } from "mongoose"
-import { IUser } from "../../../services/Auth/interface/request";
+import { ObjectId } from "mongoose";
 import { IRepositoryLayerResponse } from "../response"
+import { Interface } from "readline";
 
 export interface IRepository {
-    create: (args: Partial<IUser>) => Promise<any>
+    create: (args: Partial<any>) => Promise<any>
     delete: (args: ObjectId[]) => Promise<IRepositoryLayerResponse>
-    exists: (query: Partial<IUser>) => Promise<any>;
-    update: (query: Partial<IUser>, payload: Partial<IUser>, options?: any) => Promise<IRepositoryLayerResponse | null>;
-    updateOne: (query: string | Partial<IUser>, payload: Partial<IUser>, options?: any) => Promise<IRepositoryLayerResponse | null>;
-    getOne: (query: Partial<IUser>) => Promise<any>;
-    getAll: (query: Partial<IUser>) => Promise<IRepositoryLayerResponse>;
+    exists: (query: Partial<any>) => Promise<any>;
+    update: (query: Partial<any>, payload: Partial<any>, options?: any) => Promise<IRepositoryLayerResponse | null>;
+    updateOne: (query: string | Partial<any>, payload: Partial<any>, options?: any) => Promise<IRepositoryLayerResponse | null>;
+    getOne: (query: Partial<any>) => Promise<any>;
+    getAll: (query: Partial<any>) => Promise<IRepositoryLayerResponse>;
 };

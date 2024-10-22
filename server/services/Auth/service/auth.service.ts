@@ -1,6 +1,6 @@
 import assert from "assert";
 import { APIError } from "../../../utils/responseHandlers/error.helper";
-import { IUser } from "../interface/request";
+import { IUser } from "../interface/model";
 import AuthRepository from "../repository/auth.repository";
 import { APISuccess } from "../../../utils/responseHandlers/success.helper";
 import { ERROR_MESSAGES, HttpErrorStatusCode, HttpSuccessStatusCode } from "../../../utils/constants";
