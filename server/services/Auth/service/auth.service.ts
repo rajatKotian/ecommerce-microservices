@@ -33,13 +33,21 @@ export default class AuthServiceLayer implements IAuthService {
     updateProfileDetails = async (req: Request, args: Partial<IUser>): Promise<IServiceLayerResponse> => {
         try {
             const userInfo: IUser = req?.user as IUser;
-            const id: string = userInfo?._id || '';
+            const id: string = userInfo._id;
             if (args.password) {
                 return new APISuccess(
-                    false, HttpErrorStatusCode.BAD_REQUEST, ERROR_MESSAGES.CANNOT_UPDATE_PASSWORD
+                    false,
+                    HttpErrorStatusCode.BAD_REQUEST,
+                    ERROR_MESSAGES.CANNOT_UPDATE_PASSWORD
                 );
             }
-            const user = await this.authRepository.updateOne(id, args, { new: true });
+
+            const user = await this.authRepository.updateOne(
+                id,
+                args,
+                { new: true }
+            );
+
             return new APISuccess(
                 true, HttpSuccessStatusCode.CREATED, user
             );
@@ -61,9 +69,14 @@ export default class AuthServiceLayer implements IAuthService {
     getProfileDetails = async (req: Request): Promise<IServiceLayerResponse> => {
         try {
             const userInfo: IUser = req?.user as IUser;
-            const user = await this.authRepository.getOne({ email: userInfo?.email });
+            const user = await this.authRepository.getOne(
+                { email: userInfo?.email }
+            );
+
             return new APISuccess(
-                true, HttpSuccessStatusCode.OK, user
+                true,
+                HttpSuccessStatusCode.OK,
+                user
             );
         } catch (error) {
             Logger.error(JSON.stringify(error));
@@ -129,19 +142,25 @@ export default class AuthServiceLayer implements IAuthService {
                 isActive: true
             });
             const password = user.getWithPassword();
+
             const results = await checkPassword(args?.password, password as string);
             if (!results) {
                 return new APISuccess(
-                    false, HttpErrorStatusCode.NOT_FOUND, ERROR_MESSAGES.INCORRECT_PASSWORD
+                    false,
+                    HttpErrorStatusCode.NOT_FOUND,
+                    ERROR_MESSAGES.INCORRECT_PASSWORD
                 );
             }
 
-            const token = await initiateSession(req, {
-                user
-            });
+            const token = await initiateSession(
+                req,
+                { user }
+            );
 
             return new APISuccess(
-                true, HttpSuccessStatusCode.OK, { token }
+                true,
+                HttpSuccessStatusCode.OK,
+                { token }
             );
 
         } catch (error) {
