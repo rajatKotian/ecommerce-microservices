@@ -90,17 +90,16 @@ export default class AuthServiceLayer implements IAuthService {
                     false, HttpErrorStatusCode.FORBIDDEN, ERROR_MESSAGES.USER_EXISTS
                 );
             }
-            const data = await this.authRepository.create(args);
+            const user: IUser = await this.authRepository.create(args);
+            const { email } = user;
 
             // Initiate Session for new user
             const token = await initiateSession(req, {
-                firstName: data?.firstName,
-                lastName: data?.lastName,
-                email: data?.email,
+                user,
             });
 
             // Send Verification Email
-            sendEmailVerificationLink(data?.email, this.sendEmail);
+            sendEmailVerificationLink(email, this.sendEmail);
 
             return new APISuccess(
                 true, HttpSuccessStatusCode.CREATED, token
@@ -125,11 +124,12 @@ export default class AuthServiceLayer implements IAuthService {
      */
     loginUser = async (req: Request, args: { email: string, password: string; }): Promise<IServiceLayerResponse> => {
         try {
-            const data: IUser = await this.authRepository.getOne({
+            const user = await this.authRepository.getOne({
                 email: args?.email,
                 isActive: true
             });
-            const results = await checkPassword(args?.password, data.password as string);
+            const password = user.getWithPassword();
+            const results = await checkPassword(args?.password, password as string);
             if (!results) {
                 return new APISuccess(
                     false, HttpErrorStatusCode.NOT_FOUND, ERROR_MESSAGES.INCORRECT_PASSWORD
@@ -137,9 +137,7 @@ export default class AuthServiceLayer implements IAuthService {
             }
 
             const token = await initiateSession(req, {
-                firstName: data.firstName as string,
-                lastName: data.lastName as string,
-                email: args?.email,
+                user
             });
             console.log({ token });
             return new APISuccess(

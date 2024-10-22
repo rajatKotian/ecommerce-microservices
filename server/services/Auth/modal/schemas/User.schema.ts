@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Document } from "mongoose";
 import bcrypt from "bcryptjs";
 import Logger from "../../../../utils/helpers/Logger";
 import { Collections } from "../../../../utils/constants";
@@ -78,7 +78,13 @@ let userSchema = new Schema({
             delete user.password;
             return user;
         }
-    }
+    },
+    toJSON: {
+        transform: function (doc, user) {
+            delete user.password;
+            return user;
+        }
+    },
 });
 
 userSchema.pre("save", function (next) {
@@ -103,9 +109,15 @@ userSchema.pre("save", function (next) {
     }
 })
 
+userSchema.methods.getWithPassword = function () {
+    return this.password;
+};
+
 userSchema.index({ firstName: "text", lastName: "text" });
 
 
 
-interface IUserModel extends IUser, mongoose.Document { }
+interface IUserModel extends IUser, Document {
+    getWithPassword(): Partial<IUser>;
+}
 export default mongoose.model<IUserModel>(Collections.USERS, userSchema);
