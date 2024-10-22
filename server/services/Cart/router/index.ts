@@ -9,16 +9,15 @@ router.get('/', controller.testRoute);
 
 
 /* List Items in the cart (CACHEABLE) */
-router.get('/cart', controller.testRoute);
+router.get('/cart', controller.listCart);
 
 /* Add items to the cart  (CACHING TOUCHPOINT) */
-router.post('/cart', controller.testRoute);
-
+router.post('/cart', controller.addProductsToCart);
 
 /* Update items in the cart  (CACHING TOUCHPOINT) */
-router.patch('/cart', controller.testRoute);
+router.patch('/cart', controller.updateProductsInCart);
 
 /* Delete items from the cart (CACHING TOUCHPOINT) */
-router.delete('/cart', controller.testRoute);
+router.delete('/cart', controller.deleteProductsFromCart);
 
 export default router;
