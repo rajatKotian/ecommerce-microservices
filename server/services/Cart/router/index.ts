@@ -1,23 +1,19 @@
 
 import * as express from 'express';
 import { RestController } from "../controllers";
+import { AppConfig } from '../../../config';
+import { Services } from '../../../utils/constants';
+import { DatabaseClient } from '../utils/dbClient';
+import routes from './rest.routes';
 
 let router = express.Router();
 
 let controller = new RestController();
-router.get('/', controller.testRoute);
+const uri = AppConfig.get("mongoDB:service:cart");
+const dbClient = new DatabaseClient(uri, Services.CART);
+dbClient.startDBServer();
 
 
-/* List Items in the cart (CACHEABLE) */
-router.get('/items', controller.listCart);
-
-/* Add items to the cart  (CACHING TOUCHPOINT) */
-router.post('/items', controller.addProductsToCart);
-
-/* Update items in the cart  (CACHING TOUCHPOINT) */
-router.patch('/items', controller.updateProductsInCart);
-
-/* Delete items from the cart (CACHING TOUCHPOINT) */
-router.delete('/items', controller.deleteProductsFromCart);
+router.use('/', routes);
 
 export default router;

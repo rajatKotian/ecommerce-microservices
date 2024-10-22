@@ -2,8 +2,8 @@
 import * as express from 'express'
 import routes from './rest.routes';
 import { AppConfig } from '../../../config';
-import { DatabaseClient } from '../../../db';
 import { Services } from '../../../utils/constants';
+import { DatabaseClient } from '../utils/dbClient';
 
 let router = express.Router();
 

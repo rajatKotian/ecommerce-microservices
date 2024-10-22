@@ -48,7 +48,9 @@ export const EMAIL_SUBJECTS = Object.freeze({
 
 
 export enum Services {
-    AUTH = 'Auth'
+    AUTH = 'Auth',
+    CART = 'Cart',
+    INVENTORY = 'Inventory'
 }
 
 export enum HttpSuccessStatusCode {

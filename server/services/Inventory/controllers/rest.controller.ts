@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { HTTP_SUCCESS_STATUS_CODE } from "../../../utils/constants";
+import { HttpSuccessStatusCode } from "../../../utils/constants";
 
 export default class RestController {
     testRoute = async (req: Request, res: Response) => {
