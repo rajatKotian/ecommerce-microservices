@@ -2,20 +2,10 @@ import mongoose, { Document } from "mongoose";
 import bcrypt from "bcryptjs";
 import Logger from "../../../../utils/helpers/Logger";
 import { Collections } from "../../../../utils/constants";
+import { IProduct } from "../../interface/model";
 
 let Schema = mongoose.Schema;
 
-export interface IProduct {
-    _id: string;
-    InvoiceNo: number;
-    StockCode: string;
-    Description: string;
-    Quantity: number;
-    InvoiceDate: Date;
-    UnitPrice: number;
-    CustomerID: number;
-    Country: string;
-};
 
 let productSchema = new Schema({
     _id: {

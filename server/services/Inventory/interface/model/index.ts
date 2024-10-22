@@ -1,15 +1,12 @@
 
-export interface IUser {
+export interface IProduct {
     _id: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    password: string;
-    mobile: string;
-    countryCode: string;
-    isEmailVerified: boolean;
-    isMobileVerified: boolean;
-    isActive: boolean;
-    createdBy: string;
-    updatedBy: string;
+    InvoiceNo: number;
+    StockCode: string;
+    Description: string;
+    Quantity: number;
+    InvoiceDate: Date;
+    UnitPrice: number;
+    CustomerID: number;
+    Country: string;
 };

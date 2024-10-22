@@ -13,4 +13,10 @@ export default class InventoryServiceLayer implements IInventoryService {
         this.inventoryRepository = new InventoryRepository();
     }
 
+    listProductsService = (params: {
+        skip: number,
+        limit: number;
+    }) => {
+
+    };
 }
