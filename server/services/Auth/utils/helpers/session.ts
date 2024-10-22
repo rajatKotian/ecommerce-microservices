@@ -1,30 +1,37 @@
 import jwt from "jsonwebtoken";
 import { AppConfig } from "../../../../config";
 import Logger from "../../../../utils/helpers/Logger";
-const secretkey: string = AppConfig.get('passport:secret')
-const expiry: string = AppConfig.get('passport:expiry')
+import { IUser } from "../../interface/request";
+const secretkey: string = AppConfig.get('passport:secret');
+const expiry: string = AppConfig.get('passport:expiry');
 
+/**
+ * Initiates a session for a user.
+ *
+ * @param req The request object.
+ * @param data The user data.
+ * @returns The JWT token.
+ */
 export const initiateSession = async (req: any, data: {
-    firstName: string;
-    lastName: string;
-    email: string;
+    user: IUser;
 }) => {
     try {
-        Logger.info(`${data?.firstName} ${data?.lastName} ${data?.email}`)
+        const { firstName, lastName, email } = data.user;
+        Logger.info(`${firstName} ${lastName} ${email}`);
 
         const redis = req.redisClient;
-        console.log(redis)
+        console.log(redis);
         const token = jwt.sign({
-            name: `${data?.firstName} ${data?.lastName}`, email: data?.email
+            user: data.user,
         }, secretkey, { expiresIn: expiry });
 
-        await redis.setKey(data?.email, token);
+        await redis.setKey(email, token);
 
-        return token
+        return token;
     } catch (error) {
-        Logger.error(error)
-        console.log(error)
-        throw error
+        Logger.error(error);
+        console.log(error);
+        throw error;
 
     }
-}
+};
