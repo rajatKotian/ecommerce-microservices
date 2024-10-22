@@ -17,17 +17,23 @@ import { checkPassword } from "../../../utils/helpers";
 export default class AuthServiceLayer implements IAuthService {
     private authRepository: IRepository;
     private sendEmail = NodeMailer.sendMail;
-    constructor() {
+    constructor () {
         this.authRepository = new AuthRepository();
         this.registerNewUser = this.registerNewUser.bind(this);
         this.updateProfileDetails = this.updateProfileDetails.bind(this);
         this.getProfileDetails = this.getProfileDetails.bind(this);
         this.loginUser = this.loginUser.bind(this);
     }
+    /**
+      * Updates the user profile details.
+      * @param req The request object.
+      * @param args The user details to be updated.
+      * @returns A promise that resolves to an IServiceLayerResponse object.
+      */
     updateProfileDetails = async (req: Request, args: Partial<IUser>): Promise<IServiceLayerResponse> => {
         try {
-            const userInfo: IUser = req?.user as IUser
-            const id: string = userInfo?._id || ''
+            const userInfo: IUser = req?.user as IUser;
+            const id: string = userInfo?._id || '';
             if (args.password) {
                 return new APISuccess(
                     false, HttpErrorStatusCode.BAD_REQUEST, ERROR_MESSAGES.CANNOT_UPDATE_PASSWORD
@@ -46,10 +52,15 @@ export default class AuthServiceLayer implements IAuthService {
                 ERROR_MESSAGES.INTERNAL_SERVER_ERROR
             );
         }
-    }
+    };
+    /**
+     * Gets the user profile details.
+     * @param req The request object.
+     * @returns A promise that resolves to an IServiceLayerResponse object.
+     */
     getProfileDetails = async (req: Request): Promise<IServiceLayerResponse> => {
         try {
-            const userInfo: IUser = req?.user as IUser
+            const userInfo: IUser = req?.user as IUser;
             const user = await this.authRepository.getOne({ email: userInfo?.email });
             return new APISuccess(
                 true, HttpSuccessStatusCode.OK, user
@@ -63,8 +74,14 @@ export default class AuthServiceLayer implements IAuthService {
                 ERROR_MESSAGES.INTERNAL_SERVER_ERROR
             );
         }
-    }
+    };
 
+    /**
+     * Registers a new user.
+     * @param req The request object.
+     * @param args The user details to be registered.
+     * @returns A promise that resolves to an IServiceLayerResponse object.
+     */
     registerNewUser = async (req: Request, args: IUser): Promise<IServiceLayerResponse> => {
         try {
             const userExist = await this.authRepository.exists({ email: args?.email });
@@ -98,9 +115,15 @@ export default class AuthServiceLayer implements IAuthService {
                 ERROR_MESSAGES.INTERNAL_SERVER_ERROR
             );
         }
-    }
+    };
 
-    loginUser = async (req: Request, args: { email: string, password: string }): Promise<IServiceLayerResponse> => {
+    /**
+     * Logs in a user.
+     * @param req The request object.
+     * @param args The user's email and password.
+     * @returns A promise that resolves to an IServiceLayerResponse object.
+     */
+    loginUser = async (req: Request, args: { email: string, password: string; }): Promise<IServiceLayerResponse> => {
         try {
             const data: IUser = await this.authRepository.getOne({
                 email: args?.email,
@@ -132,5 +155,5 @@ export default class AuthServiceLayer implements IAuthService {
                 ERROR_MESSAGES.INTERNAL_SERVER_ERROR
             );
         }
-    }
+    };
 }
