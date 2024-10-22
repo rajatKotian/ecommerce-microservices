@@ -21,4 +21,28 @@ export default class RestController {
             res.status(400).send(error)
         }
     }
+
+    listCart = async (req: Request, res: any) => {
+        try {
+            res.status(HttpSuccessStatusCode.ACCEPTED).send('This route is working well');
+        } catch (error) {
+            res.status(400).send(error);
+        }
+    };
+
+    addProductsToCart = async (req: Request, res: any) => {
+        try {
+            res.status(HttpSuccessStatusCode.ACCEPTED).send('This route is working well');
+        } catch (error) {
+            res.status(400).send(error);
+        }
+    };
+
+    updateCart = async (req: Request, res: any) => {
+        try {
+            res.status(HttpSuccessStatusCode.ACCEPTED).send('This route is working well');
+        } catch (error) {
+            res.status(400).send(error);
+        }
+    };
 }
