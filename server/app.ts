@@ -7,7 +7,7 @@ import path from 'path'
 import session from 'express-session'
 
 import { AppConfig } from './config'
-import routes from './apis/routes'
+import routes from './apis/v1/routes';
 import { RedisClient } from './db';
 import Logger from './utils/helpers/Logger'
 
