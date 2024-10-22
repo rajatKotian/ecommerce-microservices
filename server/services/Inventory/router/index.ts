@@ -1,6 +1,5 @@
 
 import * as express from 'express';
-import { RestController } from "../controllers";
 import { AppConfig } from '../../../config';
 import { Services } from '../../../utils/constants';
 import { DatabaseClient } from '../utils/dbClient';
