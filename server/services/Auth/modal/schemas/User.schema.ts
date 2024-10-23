@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 import Logger from "../../../../utils/helpers/Logger";
 import { Collections } from "../../../../utils/constants";
 
-export interface IUser {
+interface IUser {
     firstName: string;
     lastName: string;
     email: string;
