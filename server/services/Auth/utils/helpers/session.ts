@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { AppConfig } from "../../../../config";
 import Logger from "../../../../utils/helpers/Logger";
-import { IUser } from "../../interface/request";
+import { IUserModel } from "../../interface/model";
 const secretkey: string = AppConfig.get('passport:secret');
 const expiry: string = AppConfig.get('passport:expiry');
 
@@ -13,7 +13,7 @@ const expiry: string = AppConfig.get('passport:expiry');
  * @returns The JWT token.
  */
 export const initiateSession = async (req: any, data: {
-    user: IUser;
+    user: IUserModel;
 }) => {
     try {
         const { firstName, lastName, email } = data.user;

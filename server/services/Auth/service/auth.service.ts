@@ -1,6 +1,6 @@
 import assert from "assert";
 import { APIError } from "../../../utils/responseHandlers/error.helper";
-import { IUser } from "../interface/model";
+import { IUserModel } from "../interface/model";
 import AuthRepository from "../repository/auth.repository";
 import { APISuccess } from "../../../utils/responseHandlers/success.helper";
 import { ERROR_MESSAGES, HttpErrorStatusCode, HttpSuccessStatusCode } from "../../../utils/constants";
@@ -30,10 +30,10 @@ export default class AuthServiceLayer implements IAuthService {
       * @param args The user details to be updated.
       * @returns A promise that resolves to an IServiceLayerResponse object.
       */
-    updateProfileDetails = async (req: Request, args: Partial<IUser>): Promise<IServiceLayerResponse> => {
+    updateProfileDetails = async (req: Request, args: Partial<IUserModel>): Promise<IServiceLayerResponse> => {
         try {
-            const userInfo: IUser = req?.user as IUser;
-            const id: string = userInfo._id;
+            const userInfo: IUserModel = req?.user as IUserModel;
+            const id: string = userInfo?._id as string;
             if (args.password) {
                 return new APISuccess(
                     false,
@@ -68,7 +68,7 @@ export default class AuthServiceLayer implements IAuthService {
      */
     getProfileDetails = async (req: Request): Promise<IServiceLayerResponse> => {
         try {
-            const userInfo: IUser = req?.user as IUser;
+            const userInfo: IUserModel = req?.user as IUserModel;
             const user = await this.authRepository.getOne(
                 { email: userInfo?.email }
             );
@@ -95,7 +95,7 @@ export default class AuthServiceLayer implements IAuthService {
      * @param args The user details to be registered.
      * @returns A promise that resolves to an IServiceLayerResponse object.
      */
-    registerNewUser = async (req: Request, args: IUser): Promise<IServiceLayerResponse> => {
+    registerNewUser = async (req: Request, args: IUserModel): Promise<IServiceLayerResponse> => {
         try {
             const userExist = await this.authRepository.exists({ email: args?.email });
             if (userExist) {
@@ -105,7 +105,7 @@ export default class AuthServiceLayer implements IAuthService {
                     ERROR_MESSAGES.USER_EXISTS
                 );
             }
-            const user: IUser = await this.authRepository.create(args);
+            const user: IUserModel = await this.authRepository.create(args);
             const { email } = user;
 
             // Initiate Session for new user
