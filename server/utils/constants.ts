@@ -40,6 +40,7 @@ export const ERROR_MESSAGES = Object.freeze({
     SESSION_EXPIRED: "Session Expired! Try logging in again",
     USER_ID: "User id not found",
     CANNOT_UPDATE_PASSWORD: "Cannot update password!",
+    LIMIT_VALIDATION: "Please set a limit",
 })
 
 export const EMAIL_SUBJECTS = Object.freeze({

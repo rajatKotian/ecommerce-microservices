@@ -1,14 +1,10 @@
 import { Request, Response } from "express";
 import { HttpSuccessStatusCode } from "../../../utils/constants";
-import { IInventoryService } from "../interface/service";
 import InventoryServiceLayer from "../service/inventory.service";
+import { IController } from "../../../utils/interface";
 
-export default class RestController {
-    private service: IInventoryService;
-    constructor () {
-        this.service = new InventoryServiceLayer();
-    }
-
+export default class RestController extends IController {
+    readonly service = new InventoryServiceLayer();
 
     testRoute = async (req: Request, res: Response) => {
         try {
@@ -19,6 +15,8 @@ export default class RestController {
     }
     listProducts = async (req: Request, res: Response) => {
         try {
+            const { skip, limit } = req.body;
+            const response = await this.service.listProductsService({ skip, limit })
             res.status(HttpSuccessStatusCode.ACCEPTED).send('This route is working well');
         } catch (error) {
             res.status(400).send(error);

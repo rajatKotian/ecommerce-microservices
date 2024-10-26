@@ -1,12 +1,14 @@
 
 import * as express from 'express';
 import { RestController } from "../controllers";
-let router = express.Router();
+import { IController, IRouter } from '../../../utils/interface';
 
-let controller = new RestController();
+export class InvertoryRouter extends IRouter {
+    protected router = express.Router();
+    protected controller = new RestController();
 
-
-/* List Products in the cart (CACHEABLE) */
-router.get('/products', controller.listProducts);
-
-export default router;
+    initializeRoutes(): express.Router {
+        this.router.get('/products', this.controller.listProducts.bind(this.controller));
+        return this.router;
+    }
+}
