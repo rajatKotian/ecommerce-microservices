@@ -1,6 +1,6 @@
 import { Request } from "express";
 import { IServiceLayerResponse } from "../../../../utils/interface/response";
-import { IUserModel } from "../model";
+import { IUserModel } from "../modal";
 
 export interface IAuthService {
     registerNewUser(req: Request, args: IUserModel): Promise<IServiceLayerResponse>

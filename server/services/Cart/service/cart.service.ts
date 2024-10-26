@@ -4,14 +4,33 @@ import { IRepository } from "../../../utils/interface/repository";
 import { ERROR_MESSAGES, LOGGER_CONSTANTS } from "../../../utils/constants";
 import Logger from "../../../utils/helpers/Logger";
 import { Request } from "express";
-import { initiateSession } from "../utils/helpers/session";
-import { ICartService } from "../interface/service";
-import CartRepository from "../repository/cart.repository";
+import InventoryRepository from "../repository/inventory.repository";
+import { IServiceLayerResponse } from "../../../utils/interface/response";
+import { IService } from "../../../utils/interface";
 
-export default class CartServiceLayer implements ICartService {
-    private cartRepository: any;
+export default class InventoryServiceLayer implements IService {
+    private inventoryRepository: any;
     constructor() {
-        this.cartRepository = new CartRepository();
+        this.inventoryRepository = new InventoryRepository();
     }
 
+    listProductsService = async (params: {
+        limit: number,
+        skip?: number,
+    }): Promise<IServiceLayerResponse> => {
+        try {
+            const data = {};
+
+            const response: IServiceLayerResponse = {
+                success: false,
+                httpCode: 200,
+                response: data
+            };
+
+            return response;
+        } catch (error) {
+            Logger.error(error);
+            throw error;
+        }
+    };
 }

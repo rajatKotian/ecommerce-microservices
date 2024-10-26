@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { AppConfig } from "../../../../config";
 import Logger from "../../../../utils/helpers/Logger";
-import { IUserModel } from "../../interface/model";
+import { IUserModel } from "../../interface/modal";
 const secretkey: string = AppConfig.get('passport:secret');
 const expiry: string = AppConfig.get('passport:expiry');
 

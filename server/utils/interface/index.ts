@@ -33,14 +33,12 @@ export interface IService {
 }
 
 export abstract class IController {
-    abstract service: IService;
+    protected abstract service: IService;
 }
 
 
 export abstract class IRouter {
     protected abstract router: Router;
     protected abstract controller: IController;
-    initializeRoutes(): Router {
-        return this.router;
-    }
+    public abstract initializeRoutes(): Router;
 }

@@ -1,6 +1,6 @@
 import assert from "assert";
 import { APIError } from "../../../utils/responseHandlers/error.helper";
-import { IUserModel } from "../interface/model";
+import { IUserModel } from "../interface/modal";
 import AuthRepository from "../repository/auth.repository";
 import { APISuccess } from "../../../utils/responseHandlers/success.helper";
 import { ERROR_MESSAGES, HttpErrorStatusCode, HttpSuccessStatusCode } from "../../../utils/constants";
@@ -13,8 +13,9 @@ import { NodeMailer } from "../../../utils/emailerClient";
 import { IRepository } from "../../../utils/interface/repository";
 import { IServiceLayerResponse } from "../../../utils/interface/response";
 import { checkPassword } from "../../../utils/helpers";
+import { IService } from "../../../utils/interface";
 
-export default class AuthServiceLayer implements IAuthService {
+export default class AuthServiceLayer implements IService {
     private authRepository: IRepository;
     private sendEmail = NodeMailer.sendMail;
     constructor () {

@@ -3,15 +3,11 @@ import { Request, Response } from "express";
 import { HttpErrorStatusCode, HttpSuccessStatusCode, ServiceType } from "../../../utils/constants";
 import { checkErrors } from "../../../utils/helpers";
 import Logger from "../../../utils/helpers/Logger";
-import { IAuthService } from "../interface/service";
 import { AuthService } from "../service";
+import { IController, IService } from "../../../utils/interface";
 
-export default class RestController {
-    private authService: IAuthService;
-
-    constructor () {
-        this.authService = new AuthService();
-    }
+export default class RestController extends IController {
+    protected service = new AuthService();
 
     testRoute = async (req: any, res: any) => {
         try {
@@ -29,7 +25,7 @@ export default class RestController {
     register = async (req: Request, res: Response) => {
         try {
             checkErrors(req);
-            const response = await this.authService.registerNewUser(req, req.body);
+            const response = await this.service.registerNewUser(req, req.body);
             res.status(response.httpCode).send(response);
         } catch (error) {
             Logger.error(error);
@@ -45,7 +41,7 @@ export default class RestController {
     login = async (req: Request, res: Response) => {
         try {
             checkErrors(req);
-            const response = await this.authService.loginUser(req, req.body);
+            const response = await this.service.loginUser(req, req.body);
             res.status(response.httpCode).send(response);
         } catch (error) {
             Logger.error(error);
@@ -60,7 +56,7 @@ export default class RestController {
      */
     getProfile = async (req: Request, res: Response) => {
         try {
-            const response = await this.authService.getProfileDetails(req);
+            const response = await this.service.getProfileDetails(req);
             res.status(response.httpCode).send(response);
         } catch (error) {
             Logger.error(error);
@@ -76,7 +72,7 @@ export default class RestController {
     updateProfile = async (req: Request, res: Response) => {
         try {
             checkErrors(req);
-            const response = await this.authService.updateProfileDetails(req, req.body);
+            const response = await this.service.updateProfileDetails(req, req.body);
             res.status(response.httpCode).send(response);
         } catch (error) {
             Logger.error(error);

@@ -33,7 +33,6 @@ export default class DatabaseClient {
             Mongoose.set('strictQuery', true);
             Mongoose.createConnection(uri, options, (error) => {
                 if (error) {
-                    console.log(error);
                     Logger.info(`Mongodb connection Failed for Service ${service}`);
                 }
                 else {
