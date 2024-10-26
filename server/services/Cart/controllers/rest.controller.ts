@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { HttpSuccessStatusCode } from "../../../utils/constants";
-import InventoryServiceLayer from "../service/cart.service";
+import CartServiceLayer from "../service/cart.service";
 import { IController } from "../../../utils/interface";
 
 export default class RestController extends IController {
-    readonly service = new InventoryServiceLayer();
+    readonly service = new CartServiceLayer();
 
     testRoute = async (req: Request, res: Response) => {
         try {

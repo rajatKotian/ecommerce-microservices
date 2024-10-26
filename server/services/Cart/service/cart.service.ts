@@ -4,15 +4,12 @@ import { IRepository } from "../../../utils/interface/repository";
 import { ERROR_MESSAGES, LOGGER_CONSTANTS } from "../../../utils/constants";
 import Logger from "../../../utils/helpers/Logger";
 import { Request } from "express";
-import InventoryRepository from "../repository/inventory.repository";
 import { IServiceLayerResponse } from "../../../utils/interface/response";
 import { IService } from "../../../utils/interface";
+import CartRepository from "../repository/cart.repository";
 
-export default class InventoryServiceLayer implements IService {
-    private inventoryRepository: any;
-    constructor() {
-        this.inventoryRepository = new InventoryRepository();
-    }
+export default class CartServiceLayer implements IService {
+    private cartRepository = new CartRepository();
 
     listProductsService = async (params: {
         limit: number,

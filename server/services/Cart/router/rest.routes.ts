@@ -3,7 +3,7 @@ import * as express from 'express';
 import { RestController } from "../controllers";
 import { IController, IRouter } from '../../../utils/interface';
 
-export class InvertoryRouter extends IRouter {
+export class CartRouter extends IRouter {
     protected router = express.Router();
     protected controller = new RestController();
 

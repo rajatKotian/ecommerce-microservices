@@ -4,7 +4,7 @@ import { IRepositoryLayerResponse } from "../../../utils/interface/response";
 import { Product } from "../modal";
 import { IProduct } from "../interface/modal";
 
-export default class InventoryRepository {
+export default class CartRepository {
     create = async (args: Partial<IProduct>) => {
         return new Product(args).save();
     };

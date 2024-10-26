@@ -3,7 +3,7 @@ import * as express from 'express';
 import { AppConfig } from '../../../config';
 import { Services } from '../../../utils/constants';
 import { DatabaseClient } from '../utils/dbClient';
-import { InvertoryRouter } from './rest.routes';
+import { CartRouter } from './rest.routes';
 
 
 // Start the database server connection
@@ -18,7 +18,7 @@ dbClient.startDBServer();
  * Attach the initialized routes to the base path  
 */
 let router = express.Router();
-let routes = new InvertoryRouter().initializeRoutes();
+let routes = new CartRouter().initializeRoutes();
 router.use('/', routes);
 
 // Export the configured router as the default export
