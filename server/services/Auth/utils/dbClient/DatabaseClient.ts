@@ -31,7 +31,7 @@ export default class DatabaseClient {
             const { service, uri } = this;
             let { options } = AppConfig.get("mongoDB");
             Mongoose.set('strictQuery', true);
-            Mongoose.createConnection(uri, options, (error) => {
+            Mongoose.connect(uri, options, (error) => {
                 if (error) {
                     Logger.info(`Mongodb connection Failed for Service ${service}`);
                 }

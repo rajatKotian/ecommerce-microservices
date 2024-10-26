@@ -53,7 +53,7 @@ export default class AuthServiceLayer implements IService {
                 true, HttpSuccessStatusCode.CREATED, user
             );
         } catch (error) {
-            Logger.error(JSON.stringify(error));
+            Logger.error(error);
             throw new APIError(
                 false,
                 HttpErrorStatusCode.INTERNAL_SERVER,
@@ -80,7 +80,7 @@ export default class AuthServiceLayer implements IService {
                 user
             );
         } catch (error) {
-            Logger.error(JSON.stringify(error));
+            Logger.error(error);
             throw new APIError(
                 false,
                 HttpErrorStatusCode.INTERNAL_SERVER,
@@ -124,7 +124,7 @@ export default class AuthServiceLayer implements IService {
             );
 
         } catch (error) {
-            Logger.error(JSON.stringify(error));
+            Logger.error(error);
             throw new APIError(
                 false,
                 HttpErrorStatusCode.INTERNAL_SERVER,
@@ -169,7 +169,7 @@ export default class AuthServiceLayer implements IService {
             );
 
         } catch (error) {
-            Logger.error(JSON.stringify(error));
+            Logger.error(error);
             throw new APIError(
                 false,
                 HttpErrorStatusCode.INTERNAL_SERVER,
