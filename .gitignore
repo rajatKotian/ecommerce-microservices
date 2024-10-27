@@ -7,3 +7,4 @@ proto/pb/*
 /server/services/Cart/proto/pb/*
 /server/logs/*
 logs/*
+run.sh
