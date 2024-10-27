@@ -14,11 +14,11 @@ import Logger from './utils/helpers/Logger'
 
 //Express App declaration
 let app = express()
-let port = AppConfig.get("express:port") || 3000
+let expressPort = AppConfig.get("express:port") || 3000
 
 
 //Client Declarations
-RedisClient.startServer()
+RedisClient.startServer();
 
 // Body-parser middleware
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -56,9 +56,8 @@ if (AppConfig.get('environment') === 'production') {
     expressSession.cookie.secure = true
 }
 
-app.listen(port, async () => {
-    Logger.info(`Server is listening on ${port}`);
+app.listen(expressPort, async () => {
+    Logger.info(`Server is listening on ${expressPort}`);
 });
 
-export default app
 
