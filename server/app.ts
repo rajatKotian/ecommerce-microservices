@@ -10,15 +10,19 @@ import { AppConfig } from './config'
 import routes from './apis/v1/routes';
 import { RedisClient } from './db';
 import Logger from './utils/helpers/Logger'
+import RabbitMQ from './utils/rabbitMQClient';
 
 
 //Express App declaration
 let app = express()
 let expressPort = AppConfig.get("express:port") || 3000
+let serverUrl = AppConfig.get('baseUrl:rabbitMQUrl');
 
 
 //Client Declarations
 RedisClient.startServer();
+RabbitMQ.startServer(serverUrl);
+
 
 // Body-parser middleware
 app.use(bodyParser.urlencoded({ extended: false }))

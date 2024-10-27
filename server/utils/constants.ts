@@ -41,6 +41,7 @@ export const ERROR_MESSAGES = Object.freeze({
     USER_ID: "User id not found",
     CANNOT_UPDATE_PASSWORD: "Cannot update password!",
     LIMIT_VALIDATION: "Please set a limit",
+    NO_INSTANCE_MQ_FOUND: "No Rabbit MQ instance found",
 })
 
 export const EMAIL_SUBJECTS = Object.freeze({
